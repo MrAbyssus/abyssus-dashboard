@@ -117,6 +117,69 @@
 <body>
   <header>📋 Abyssus Dashboard</header>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Estado del Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    #status {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      max-width: 400px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .error {
+      color: red;
+    }
+    .online {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📡 Estado del Bot</h2>
+  <div id="status">Cargando estado...</div>
+
+  <script>
+    fetch('http://51.77.211.104:3000/status')
+      .then(response => {
+        if (!response.ok) throw new Error('Respuesta no válida');
+        return response.json();
+      })
+      .then(data => {
+        const uptimeMin = Math.floor(data.uptime / 60);
+        const lastUpdated = new Date(data.lastUpdated).toLocaleString();
+
+        document.getElementById('status').innerHTML = `
+          <p class="online">🟢 Bot en línea</p>
+          <p>🖥️ Servidores: ${data.servers}</p>
+          <p>👥 Usuarios: ${data.users}</p>
+          <p>⏱️ Uptime: ${uptimeMin} minutos</p>
+          <p>🛠️ Versión: ${data.version}</p>
+          <p>📅 Última actualización: ${lastUpdated}</p>
+        `;
+      })
+      .catch(error => {
+        document.getElementById('status').innerHTML = `
+          <p class="error">❌ Error al cargar el estado</p>
+        `;
+        console.error('Error al obtener el estado:', error);
+      });
+  </script>
+
+</body>
+</html>
+
+  
   <div class="invite">
     <a href="https://top.gg/bot/680897280433324081/invite" target="_blank">
       ➕ Invitar Abyssus
