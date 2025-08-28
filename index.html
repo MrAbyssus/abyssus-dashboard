@@ -278,29 +278,7 @@
   <div class="command"><h3>/secret</h3><p>Publica un secreto anónimo.</p></div>
 </section>
 
-  <script>
-    function filterCategory(category) {
-      document.querySelectorAll('section[data-category]').forEach(sec => {
-        sec.style.display = sec.getAttribute('data-category') === category ? 'block' : 'none';
-      });
-    }
-
-    document.getElementById('search').addEventListener('input', function () {
-      const term = this.value.toLowerCase();
-      document.querySelectorAll('.command').forEach(cmd => {
-        cmd.style.display = cmd.textContent.toLowerCase().includes(term) ? 'block' : 'none';
-      });
-    });
-
-    fetch('changelog.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('changelogContent');
-        data.forEach(entry => {
-          container.innerHTML += `<h3>${entry.fecha} — ${entry.version}</h3><ul>${entry.cambios.map(c => `<li>${c}</li>`).join('')}</ul>`;
-        });
-      });
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -321,8 +299,38 @@
 <body>
   <h1>Status del Bot</h1>
   <div id="status">Cargando...</div>
+  <input type="text" id="search" placeholder="Buscar comando...">
+  <section data-category="general" class="command">Comando 1</section>
+  <section data-category="admin" class="command">Comando 2</section>
+  <div id="changelogContent"></div>
 
   <script>
+    // Filtro por categoría
+    function filterCategory(category) {
+      document.querySelectorAll('section[data-category]').forEach(sec => {
+        sec.style.display = sec.getAttribute('data-category') === category ? 'block' : 'none';
+      });
+    }
+
+    // Buscador
+    document.getElementById('search').addEventListener('input', function () {
+      const term = this.value.toLowerCase();
+      document.querySelectorAll('.command').forEach(cmd => {
+        cmd.style.display = cmd.textContent.toLowerCase().includes(term) ? 'block' : 'none';
+      });
+    });
+
+    // Cargar changelog
+    fetch('changelog.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('changelogContent');
+        data.forEach(entry => {
+          container.innerHTML += `<h3>${entry.fecha} — ${entry.version}</h3><ul>${entry.cambios.map(c => `<li>${c}</li>`).join('')}</ul>`;
+        });
+      });
+
+    // Cargar status del bot
     fetch('http://51.77.211.104:3000/status')
       .then(res => {
         if (!res.ok) throw new Error('Respuesta no válida');
