@@ -285,32 +285,21 @@
   <h2>📡 Estado del Bot</h2>
   <div id="status">Cargando estado...</div>
 
-  <script>
-    fetch('http://51.77.211.104:3000/status')
-      .then(response => {
-        if (!response.ok) throw new Error('Respuesta no válida');
-        return response.json();
-      })
-      .then(data => {
-        const uptimeMin = Math.floor(data.uptime / 60);
-        const lastUpdated = new Date(data.lastUpdated).toLocaleString();
-
-        document.getElementById('status').innerHTML = `
-          <p class="online">🟢 Bot en línea</p>
-          <p>🖥️ Servidores: ${data.servers}</p>
-          <p>👥 Usuarios: ${data.users}</p>
-          <p>⏱️ Uptime: ${uptimeMin} minutos</p>
-          <p>🛠️ Versión: ${data.version}</p>
-          <p>📅 Última actualización: ${lastUpdated}</p>
-        `;
-      })
-      .catch(error => {
-        document.getElementById('status').innerHTML = `
-          <p class="error">❌ Error al cargar el estado</p>
-        `;
-        console.error('Error al obtener el estado:', error);
-      });
-  </script>
-
+<script>
+  fetch('http://51.77.211.104:3000/status')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('status').innerHTML = `
+        <p>🟢 Bot en línea</p>
+        <p>Servidores: ${data.servers}</p>
+        <p>Usuarios: ${data.users}</p>
+      `;
+    })
+    .catch(err => {
+      document.getElementById('status').innerHTML = `
+        <p style="color: red;">❌ Error al cargar el estado</p>
+      `;
+    });
+</script>
 </body>
 </html>
