@@ -319,36 +319,38 @@
         cmd.style.display = cmd.textContent.toLowerCase().includes(term) ? 'block' : 'none';
       });
     });
+  <script>
+function formatUptime(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}m ${secs}s`;
+}
 
-    // Cargar changelog
-    fetch('changelog.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('changelogContent');
-        data.forEach(entry => {
-          container.innerHTML += `<h3>${entry.fecha} — ${entry.version}</h3><ul>${entry.cambios.map(c => `<li>${c}</li>`).join('')}</ul>`;
-        });
-      });
+function formatTimestamp(isoString) {
+  const date = new Date(isoString);
+  return date.toLocaleString(); // Ajusta según tu zona horaria
+}
 
-    // Cargar status del bot
-    fetch('http://51.77.211.104:3000/status')
-      .then(res => {
-        if (!res.ok) throw new Error('Respuesta no válida');
-        return res.json();
-      })
-      .then(data => {
-        document.getElementById('status').textContent = `
-✅ Online: ${data.online}
-🌐 Servidores: ${data.servers}
-👥 Usuarios: ${data.users}
-⏱️ Uptime: ${data.uptime} segundos
-🧬 Versión: ${data.version}
-        `;
-      })
-      .catch(err => {
-        document.getElementById('status').textContent = '❌ Error al cargar el status';
-        console.error('Error:', err);
-      });
-  </script>
+fetch('http://51.77.211.104:3000/status')
+  .then(res => {
+    if (!res.ok) throw new Error('Respuesta no válida');
+    return res.json();
+  })
+  .then(data => {
+    document.getElementById('status').innerHTML = `
+      <p>✅ <strong>Online:</strong> ${data.online ? 'Sí' : 'No'}</p>
+      <p>🌐 <strong>Servidores:</strong> ${data.servers}</p>
+      <p>👥 <strong>Usuarios:</strong> ${data.users}</p>
+      <p>⏱️ <strong>Uptime:</strong> ${formatUptime(data.uptime)}</p>
+      <p>🧬 <strong>Versión:</strong> ${data.version}</p>
+      <p>🕒 <strong>Última actualización:</strong> ${formatTimestamp(data.lastUpdated)}</p>
+    `;
+  })
+  .catch(err => {
+    document.getElementById('status').textContent = '❌ Error al cargar el estado';
+    console.error('Error:', err);
+  });
+</script>
+
 </body>
 </html>
