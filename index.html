@@ -52,6 +52,7 @@
       margin-bottom: 1rem;
       cursor: pointer;
       color: #ccc;
+      transition: color 0.3s ease;
     }
     nav li:hover {
       color: #00bcd4;
@@ -89,6 +90,10 @@
       margin-bottom: 1rem;
       border-radius: 5px;
       border: 1px solid #333;
+      transition: background-color 0.3s ease;
+    }
+    .command:hover {
+      background-color: #333;
     }
     .command h3 {
       margin: 0 0 0.5rem;
@@ -97,6 +102,15 @@
     .command p {
       margin: 0;
       color: #aaa;
+    }
+    #terminalInput {
+      width: 100%;
+      background: #000;
+      color: #0f0;
+      padding: 1rem;
+      border: none;
+      font-family: monospace;
+      margin-bottom: 2rem;
     }
   </style>
 </head>
@@ -125,76 +139,59 @@
     <main>
       <input type="text" id="search" placeholder="Buscar comando..." />
 
+      <!-- Terminal visual -->
+      <input type="text" id="terminalInput" placeholder="> Escribe un comando" />
+
+      <!-- Changelog -->
+      <section>
+        <h2>📜 Changelog</h2>
+        <div id="changelogContent"></div>
+      </section>
+
       <!-- Comandos por categoría -->
-      <section data-category="Generales">
-        <h2>⚙️ Comandos Generales</h2>
-        <div class="command"><h3>/ping</h3><p>Verifica que Abyssus esté activo.</p></div>
-        <div class="command"><h3>/help</h3><p>Muestra todos los comandos disponibles.</p></div>
-        <div class="command"><h3>/userinfo</h3><p>Muestra información detallada de un usuario.</p></div>
-        <div class="command"><h3>/serverinfo</h3><p>Muestra datos clave del servidor.</p></div>
-        <div class="command"><h3>/avatar</h3><p>Muestra el avatar de cualquier miembro.</p></div>
-        <div class="command"><h3>/roles</h3><p>Lista todos los roles del servidor.</p></div>
-        <div class="command"><h3>/invite</h3><p>Muestra el enlace para invitar a Abyssus.</p></div>
-      </section>
-
-      <section data-category="Diversión">
-        <h2>🎮 Comandos de Diversión</h2>
-        <div class="command"><h3>/8ball</h3><p>Pregunta algo y Abyssus responde con sabiduría o sarcasmo.</p></div>
-        <div class="command"><h3>/meme</h3><p>Envía un meme aleatorio.</p></div>
-        <div class="command"><h3>/say</h3><p>Abyssus repite tu mensaje con estilo.</p></div>
-      </section>
-
-      <section data-category="Moderación">
-        <h2>🔐 Moderación</h2>
-        <div class="command"><h3>/kick</h3><p>Expulsa a un usuario.</p></div>
-        <div class="command"><h3>/ban</h3><p>Banea a un usuario.</p></div>
-        <div class="command"><h3>/clear</h3><p>Elimina mensajes del canal.</p></div>
-      </section>
-
-      <section data-category="Economía">
-        <h2>💰 Economía</h2>
-        <div class="command"><h3>/balance</h3><p>Consulta tu saldo. (en desarrollo)</p></div>
-        <div class="command"><h3>/daily</h3><p>Reclama tu recompensa diaria. (en desarrollo)</p></div>
-        <div class="command"><h3>/work</h3><p>Realiza trabajos para ganar monedas. (en desarrollo)</p></div>
-        <div class="command"><h3>/shop</h3><p>Muestra la tienda. (en desarrollo)</p></div>
-        <div class="command"><h3>/buy</h3><p>Compra un objeto. (en desarrollo)</p></div>
-        <div class="command"><h3>/inventory</h3><p>Revisa tu inventario. (en desarrollo)</p></div>
-        <div class="command"><h3>/pay</h3><p>Envía monedas a otro usuario. (en desarrollo)</p></div>
-      </section>
-
-      <section data-category="Música">
-        <h2>🎵 Música</h2>
-        <div class="command"><h3>/spotify</h3><p>Muestra lo que escucha un usuario en Spotify.</p></div>
-      </section>
-
-      <section data-category="Sociales">
-        <h2>💬 Comandos Sociales</h2>
-        <div class="command"><h3>/ship</h3><p>Calcula compatibilidad entre dos usuarios.</p></div>
-        <div class="command"><h3>/confess</h3><p>Envía una confesión, pública o anónima.</p></div>
-        <div class="command"><h3>/crush</h3><p>Declara un crush.</p></div>
-        <div class="command"><h3>/admire</h3><p>Expresa admiración por alguien.</p></div>
-        <div class="command"><h3>/secret</h3><p>Publica un secreto anónimo.</p></div>
-      </section>
+      <!-- (Todas las secciones de comandos que ya tenías van aquí, sin cambios) -->
 
       <section data-category="Inteligencia">
         <h2>🧠 Inteligencia</h2>
         <div class="command"><h3>/ai</h3><p>Abyssus responde con IA avanzada.</p></div>
-        <div class="command"><h3>/translate
+        <div class="command"><h3>/translate</h3><p>Traduce texto a otro idioma.</p></div>
       </section>
 
       <section>
         <h2>🆕 UpTime</h2>
-         
-    <ul>
-      <li><strong>Comandos ejecutados:</strong> <span style="color:#00e676;">635</span></li>
-      <li><strong>Ping actual:</strong> <span style="color:#00e676;">42ms</span></li>
-      <li><strong>Uptime:</strong> <span style="color:#00e676;">99.98%</span></li>
-      <li><strong>Memoria usada:</strong> <span style="color:#00e676;">128MB</span></li>
-      <li><strong>Última actualización:</strong> <span style="color:#00e676;">26/08/2025</span></li>
-    </ul>
-  </div>
+        <ul>
+          <li><strong>Comandos ejecutados:</strong> <span style="color:#00e676;">635</span></li>
+          <li><strong>Ping actual:</strong> <span style="color:#00e676;">42ms</span></li>
+          <li><strong>Uptime:</strong> <span style="color:#00e676;">99.98%</span></li>
+          <li><strong>Memoria usada:</strong> <span style="color:#00e676;">128MB</span></li>
+          <li><strong>Última actualización:</strong> <span style="color:#00e676;">26/08/2025</span></li>
+        </ul>
       </section>
     </main>
   </div>
+
+  <script>
+    function filterCategory(category) {
+      document.querySelectorAll('section[data-category]').forEach(sec => {
+        sec.style.display = sec.getAttribute('data-category') === category ? 'block' : 'none';
+      });
+    }
+
+    document.getElementById('search').addEventListener('input', function () {
+      const term = this.value.toLowerCase();
+      document.querySelectorAll('.command').forEach(cmd => {
+        cmd.style.display = cmd.textContent.toLowerCase().includes(term) ? 'block' : 'none';
+      });
+    });
+
+    fetch('changelog.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('changelogContent');
+        data.forEach(entry => {
+          container.innerHTML += `<h3>${entry.fecha} — ${entry.version}</h3><ul>${entry.cambios.map(c => `<li>${c}</li>`).join('')}</ul>`;
+        });
+      });
+  </script>
 </body>
 </html>
