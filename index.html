@@ -277,7 +277,13 @@
   <div class="command"><h3>/ship</h3><p>Calcula compatibilidad entre dos usuarios.</p></div>
   <div class="command"><h3>/secret</h3><p>Publica un secreto anónimo.</p></div>
 </section>
+      
 <script>
+<section id="status-panel">
+  <h2>📡 Estado del Bot</h2>
+  <div id="status">Cargando estado...</div>
+</section>
+  <script>
 function formatUptime(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);
@@ -286,27 +292,34 @@ function formatUptime(seconds) {
 
 function formatTimestamp(isoString) {
   const date = new Date(isoString);
-  return date.toLocaleString(); // Ajusta según tu zona horaria
+  return date.toLocaleString();
 }
 
-fetch('http://51.77.211.104:3000/status')
-  .then(res => {
-    if (!res.ok) throw new Error('Respuesta no válida');
-    return res.json();
-  })
-  .then(data => {
-    document.getElementById('status').innerHTML = `
-      <p>✅ <strong>Online:</strong> ${data.online ? 'Sí' : 'No'}</p>
-      <p>🌐 <strong>Servidores:</strong> ${data.servers}</p>
-      <p>👥 <strong>Usuarios:</strong> ${data.users}</p>
-      <p>⏱️ <strong>Uptime:</strong> ${formatUptime(data.uptime)}</p>
-      <p>🧬 <strong>Versión:</strong> ${data.version}</p>
-      <p>🕒 <strong>Última actualización:</strong> ${formatTimestamp(data.lastUpdated)}</p>
-    `;
-  })
-  .catch(err => {
-    document.getElementById('status').textContent = '❌ Error al cargar el estado';
-    console.error('Error:', err);
-  });
+function actualizarStatus() {
+  fetch('http://51.77.211.104:3000/status')
+    .then(res => {
+      if (!res.ok) throw new Error('Respuesta no válida');
+      return res.json();
+    })
+    .then(data => {
+      document.getElementById('status').innerHTML = `
+        <p>✅ <strong>Online:</strong> ${data.online ? 'Sí' : 'No'}</p>
+        <p>🌐 <strong>Servidores:</strong> ${data.servers}</p>
+        <p>👥 <strong>Usuarios:</strong> ${data.users}</p>
+        <p>⏱️ <strong>Uptime:</strong> ${formatUptime(data.uptime)}</p>
+        <p>🧬 <strong>Versión:</strong> ${data.version}</p>
+        <p>🕒 <strong>Última actualización:</strong> ${formatTimestamp(data.lastUpdated)}</p>
+      `;
+    })
+    .catch(err => {
+      document.getElementById('status').textContent = '❌ Error al cargar el estado';
+      console.error('Error:', err);
+    });
+}
+
+// Actualizar cada 10 segundos
+actualizarStatus();
+setInterval(actualizarStatus, 10000);
 </script>
+
 
