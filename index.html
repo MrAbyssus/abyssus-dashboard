@@ -1,279 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abyssus Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Dashboard Abyssus</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #0f0f0f;
-      color: #ffffff;
-    }
-    header {
-      background-color: #1a1a1a;
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      border-bottom: 1px solid #333;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #00bcd4;
-      box-shadow: 0 2px 4px rgba(0, 188, 212, 0.2);
-    }
-    .invite {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    .invite a {
-      background-color: #00bcd4;
-      color: #000;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .container {
-      display: flex;
-    }
-    nav {
-      width: 200px;
-      background-color: #1a1a1a;
-      padding: 1rem;
-      border-right: 1px solid #333;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav li {
-      margin-bottom: 1rem;
-      cursor: pointer;
-      color: #ccc;
-      transition: color 0.3s ease;
-    }
-    nav li:hover {
-      color: #00bcd4;
-    }
-    nav li.active {
-      color: #00bcd4;
-      font-weight: bold;
-    }
-    main {
-      flex: 1;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
       padding: 2rem;
     }
-    #search {
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border-radius: 4px;
-      border: none;
-      background-color: #1a1a1a;
-      color: #fff;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      font-size: 1.2rem;
-      color: #00bcd4;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.3rem;
-    }
-    .command {
-      background-color: #222;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
+
+    .card {
+      background-color: #1c1c1c;
       border: 1px solid #333;
-      transition: background-color 0.3s ease;
-    }
-    .command:hover {
-      background-color: #333;
-    }
-    .command h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1.2rem;
-    }
-    .command p {
-      margin: 0;
-      color: #aaa;
-    }
-    #terminalInput {
-      width: 100%;
-      background: #000;
-      color: #0f0;
-      padding: 1rem;
-      border: none;
-      font-family: monospace;
+      border-radius: 8px;
+      padding: 1.5rem;
       margin-bottom: 2rem;
+      box-shadow: 0 0 10px #00b5ad;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      color: #00b5ad;
+      margin-bottom: 1rem;
+    }
+
+    .json-block {
+      background-color: #121212;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+      color: #00ff88;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: #00b5ad;
+    }
+
+    h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
 <body>
-  <header>📋 Abyssus Dashboard</header>
+
+  <!-- Reporte Diario -->
+  <div class="card">
+    <div class="title">📊 Reporte Diario de Abyssus</div>
+    <p><strong>🌐 Servidores:</strong> 635</p>
+    <p><strong>⏱️ Uptime:</strong> 10 minutos</p>
+    <p><strong>📶 Ping:</strong> 4 ms</p>
+    <p><strong>🧠 Memoria:</strong> 63.55 MiB</p>
+    <p><strong>🧩 Versión:</strong> v3.10</p>
+    <p><strong>🕒 Última Actualización:</strong> 28 de agosto de 2025</p>
+  </div>
+
   
-  <div class="invite">
-    <a href="https://top.gg/bot/680897280433324081/invite" target="_blank">
-      ➕ Invitar Abyssus
-    </a>
+  <!-- Comandos Disponibles -->
+  <div class="card">
+    <div class="title">📘 Comandos Disponibles</div>
+
+ <h3 style="color:#66ccff;">📊 Generales</h3>
+    <ul>
+      <li><strong>/uptime</strong> — Muestra el estado actual del bot</li>
+      <li><strong>/status</strong> — Verifica si el bot está online</li>
+      <li><strong>/help</strong> — Muestra todos los comandos disponibles.</li>
+      <li><strong>/userinfo</strong> — Muestra información detallada de un usuario.</li>
+      <li><strong>/avatar</strong> — Muestra el avatar de cualquier miembro.</li>
+      <li><strong>/roles</strong> — Lista todos los roles del servidor.</li>
+      <li><strong>/ping</strong> — Verifica que Abyssus esté activo.</li>
+      <li><strong>/ia</strong> — Abyssus responde con IA avanzada.</li>
+      <li><strong>/invite</strong> — Muestra el enlace para invitar a Abyssus.</li>
+    </ul>
+
+    <h3 style="color:#ffd700;">🪙 Economía</h3>
+    <ul>
+      <li><strong>/balance</strong> — Consulta tu saldo.</li>
+      <li><strong>/daily</strong> — Reclama tu recompensa diaria.</li>
+      <li><strong>/work</strong> — Realiza trabajos para ganar monedas.</li>
+      <li><strong>/shop</strong> — Muestra la tienda.</li>
+      <li><strong>/shopadd</strong> — Agregar un producto a la tienda.</li>
+      <li><strong>/shoplist</strong> — Muestra los productos.</li>
+      <li><strong>/shopremove</strong> — Remover un articulo de la tienda.</li>
+      <li><strong>/shopbuy</strong> — Comprar producro de la tienda.</li>
+      <li><strong>/shopesearch</strong> — Buscar producto.</li>
+      <li><strong>/give</strong> — Dar dinero.</li>
+      <li><strong>/reset</strong> — Reinicar el sistema de economia.</li>
+      <li><strong>/rob</strong> — Lista de lo mas comprado.</li>
+      <li><strong>/inventory</strong> — Revisa tu inventario.</li>
+      <li><strong>/top</strong> — Lo mas comprado en la tienda.</li>
+      <li><strong>/pay</strong> — Envía monedas a otro usuario.</li>
+    </ul>
+
+    <h3 style="color:#00ffcc;">🎯 Misiones</h3>
+    <ul>
+      <li><strong>/missions</strong> — Revisa tus misiones activas</li>
+      <li><strong>/evento</strong> — Muestra eventos activos</li>
+      
+    </ul>
+
+    <h3 style="color:#66ccff;">📊 Sociales</h3>
+    <ul>
+      <li><strong>/ship</strong> — Calcula compatibilidad entre dos usuarios.</li>
+      <li><strong>/confess</strong> — Envía una confesión, pública o anónima.</li>
+      <li><strong>/crush</strong> — Declara un crush.</li>
+      <li><strong>/admire</strong> — Expresa admiración por alguien.</li>
+      <li><strong>/horscopo</strong> — Te muestra tu horóscopo..</li>
+      <li><strong>/signo</strong> — Te dice tu signo según tu fecha de nacimiento.</li>
+      <li><strong>/secreto</strong> — Publica un secreto anónimo.</li>
+    </ul>
+
+    <h3 style="color:#ff99cc;">🎉 Diversión</h3>
+    <ul>
+      <li><strong>/roleta</strong> — Devuelve respuestas aleatorias tipo ruleta.</li>
+      <li><strong>/chismoso</strong> —  Inventa rumores falsos para entretener.</li>
+      <li><strong>/sabio</strong> — Frases filosóficas absurdas.</li>
+      <li><strong>/emoji</strong> — Responde solo con emojis.</li>
+      <li><strong>/drama</strong> — Simula una situación grave (modo teatral.)</li>
+      <li><strong>/quien</strong> — Elige a un usuario aleatorio del servidor.</li>
+      <li><strong>/consejo</strong> — Da un consejo aleatorio, desde lo sabio hasta lo sarcástico.</li>
+      <li><strong>/duelo</strong> — Enfrenta a dos usuarios en un duelo ficticio.</li>
+      <li><strong>/califica</strong> — El bot califica algo con humor.</li>
+      <li><strong>/apodo</strong> —  Crea un apodo aleatorio para un usuario.</li>
+      <li><strong>/karma</strong> — Muestra el karma acumulado de un usuario.</li>
+      <li><strong>/8ball</strong> — Envía una frase inspiradora</li>
+      <li><strong>/cionflip</strong> — Lanza una moneda virtual y obtiene un resultado aleatorio: cara o cruz.</li>
+      <li><strong>/gracias</strong> — Agradece a otro usuario y suma karma.</li>
+      <li><strong>/define</strong> — Define cualquier palabra.</li>
+      <li><strong>/meme</strong> —  Muestra un meme aleatorio.</li>
+      <li><strong>/quiz</strong> — Preguntas para ver cuánto sabes.</li>
+      <li><strong>/roast</strong> — Lanza una broma sarcástica o burla ligera.</li>
+      <li><strong>/roll</strong> — Lanza dados virtuales.</li>
+    </ul>
   </div>
 
-  <div class="container">
-    <nav>
-      <ul>
-        <li onclick="filterCategory('Generales')">Generales</li>
-        <li onclick="filterCategory('Diversión')">Diversión</li>
-        <li onclick="filterCategory('Moderación')">Moderación</li>
-        <li onclick="filterCategory('Economía')">Economía</li>
-        <li onclick="filterCategory('Música')">Música</li>
-        <li onclick="filterCategory('Sociales')">Sociales</li>
-      </ul>
-    </nav>
-
-    <main>
-      <input type="text" id="search" placeholder="Buscar comando..." />
-
-      <!-- Terminal visual -->
-      <input type="text" id="terminalInput" placeholder="> Escribe un comando" />
-
-      <!-- Changelog -->
-      <section>
-        <h2>📜 Changelog — Evento “La Brecha del Abismo”</h2>
-        <div id="changelogContent"></div>
-        <section>
-  <div class="command">
-    <p><strong>📅 Última actualización:</strong> 27 de agosto</p>
-    <p><strong>🛠️ Versión:</strong> v2.4.7</p>
-
-    <h3>✨ Nuevas funciones</h3>
+  <!-- Anuncios -->
+  <div class="card">
+    <div class="title">📢 Anuncios</div>
     <ul>
-      <li>🕵️ Comando secreto semanal activado (modo detective)</li>
-      <li>🏆 Sistema de logros con <code>/logros</code> y recompensas únicas</li>
-      <li>📊 Panel de estado del bot y VPS en tiempo real</li>
-      <li>🔍 Comando <code>/devstatus</code> para desarrolladores</li>
-      <li>💰 Sistema económico inicial activado:
-        <ul>
-          <li><code>/work</code> para ganar monedas</li>
-          <li><code>/inventory</code> para ver tu saldo y estadísticas</li>
-          <li><code>/shop</code> para comprar objetos únicos</li>
-          <li><code>/shopadd</code> para enviar monedas a otros jugadores</li>
-        </ul>
-      </li>
+      <li><strong>28/08/2025</strong> — Se lanzó el nuevo comando <code>/uptime</code> con reporte automático.</li>
+      <li><strong>26/08/2025</strong> — ¡Evento “Explorador del Abismo” activo! Completa misiones para ganar recompensas.</li>
+      <li><strong>24/08/2025</strong> — Se mejoró el sistema de cooldown en <code>/work</code>.</li>
     </ul>
-
-    <h3>🛠️ Mejoras</h3>
-    <ul>
-      <li>🔄 Reinicio automático de eventos cada 24h</li>
-      <li>⚙️ Optimización de carga modular de comandos</li>
-      <li>📈 Monitoreo cruzado entre VPS para mayor estabilidad</li>
-    </ul>
-
-    <h3>🐞 Correcciones</h3>
-    <ul>
-      <li>🧹 Limpieza de comandos sin etiqueta (94 detectados)</li>
-      <li>🛡️ Ajustes de seguridad en comandos sensibles</li>
-      <li>🔔 Corrección de alertas en eventos de entrada/salida de servidores</li>
-    </ul>
-
-    <p><em>🧠 El Abismo evoluciona. Lo que hoy es misterio, mañana será leyenda.</em></p>
   </div>
-</section>
 
-      </section>
+  <!-- Changelog -->
+  <div class="card">
+    <div class="title">📝 Changelog</div>
+    <ul>
+      <li><strong>v1.0.1</strong> — Corrección de errores menores y mejoras visuales en el reporte.</li>
+      <li><strong>v1.0.0</strong> — Versión inicial del bot Abyssus con comandos base: <code>/work</code>, <code>/balance</code>, <code>/missions</code>.</li>
+    </ul>
+  </div>
 
-      <!-- Comandos por categoría -->
-      <!-- (Todas las secciones de comandos que ya tenías van aquí, sin cambios) -->
-
-      <section data-category="Generales">
-  <h2>⚙️ Generales</h2>
-   <div class="command"><h3>/ping</h3><p>Verifica que Abyssus esté activo.</p></div>
-        <div class="command"><h3>/help</h3><p>Muestra todos los comandos disponibles.</p></div>
-        <div class="command"><h3>/userinfo</h3><p>Muestra información detallada de un usuario.</p></div>
-        <div class="command"><h3>/serverinfo</h3><p>Muestra datos clave del servidor.</p></div>
-        <div class="command"><h3>/avatar</h3><p>Muestra el avatar de cualquier miembro.</p></div>
-        <div class="command"><h3>/roles</h3><p>Lista todos los roles del servidor.</p></div>
-        <div class="command"><h3>/ping</h3><p>Verifica que Abyssus esté activo.</p></div>
-        <div class="command"><h3>/ia</h3><p> Abyssus responde con IA avanzada.</p></div>
-        <div class="command"><h3>/invite</h3><p>Muestra el enlace para invitar a Abyssus.</p></div>
-</section>
-
-<section data-category="Diversión">
-  <h2>🎉 Diversión</h2>
-  <div class="command"><h3>/roleta</h3><p> Devuelve respuestas aleatorias tipo ruleta.</p></div>
-  <div class="command"><h3>/chismoso</h3><p> Inventa rumores falsos para entretener.</p></div>
-  <div class="command"><h3>/sabio</h3><p> Frases filosóficas absurdas.</p></div>
-  <div class="command"><h3>/emoji</h3><p>Responde solo con emojis.</p></div>
-  <div class="command"><h3>/drama</h3><p>Simula una situación grave (modo teatral.</p></div>
-  <div class="command"><h3>/quien</h3><p> Elige a un usuario aleatorio del servidor.</p></div>
-  <div class="command"><h3>/consejo</h3><p>Da un consejo aleatorio, desde lo sabio hasta lo sarcástico.</p></div>
-  <div class="command"><h3>/duelo</h3><p> Enfrenta a dos usuarios en un duelo ficticio.</p></div>
-  <div class="command"><h3>/califica</h3><p> El bot califica algo con humor.</p></div>
-  <div class="command"><h3>/apodo</h3><p> Crea un apodo aleatorio para un usuario.</p></div>
-  <div class="command"><h3>/karma</h3><p>Muestra el karma acumulado de un usuario.</p></div>
-  <div class="command"><h3>/8ball</h3><p>Pregunta a la bola mágica de Abyssus.</p></div>
-  <div class="command"><h3>/coinflip</h3><p>Lanza una moneda virtual y obtiene un resultado aleatorio: cara o cruz.</p></div>
-  <div class="command"><h3>/gracias</h3><p>Agradece a otro usuario y suma karma.</p></div>
-  <div class="command"><h3>/define</h3><p>Define cualquier palabra.</p></div>
-  <div class="command"><h3>/meme</h3><p> Muestra un meme aleatorio.</p></div>
-  <div class="command"><h3>/quiz</h3><p>Preguntas para ver cuánto sabes.</p></div>
-  <div class="command"><h3>/roast</h3><p> Lanza una broma sarcástica o burla ligera.</p></div>
-  <div class="command"><h3>/roll</h3><p>Lanza dados virtuales.</p></div>
-        
-</section>
-
-<section data-category="Moderación">
-  <h2>🛡️ Moderación</h2>
- <div class="command"><h3>/kick</h3><p>Expulsa a un usuario.</p></div>
-  <div class="command"><h3>/ban</h3><p>Banea a un usuario.</p></div>
-  <div class="command"><h3>/warn</h3><p> Advierte a un usuario.</p></div>
-  <div class="command"><h3>/warnings</h3><p>Muestra advertencias.</p></div>
-  <div class="command"><h3>/delwarning</h3><p>Elimina advertencia por ID.</p></div>
-  <div class="command"><h3>/clearwarnings</h3><p>Elimina todas las advertencias.</p></div>
-  <div class="command"><h3>/purge</h3><p>Borra mensajes del canal por cantidad.</p></div>
-  <div class="command"><h3>/mute</h3><p> Silencia temporalmente.</p></div>
-  <div class="command"><h3>/unmute</h3><p>Elimina mensajes del canal.</p></div>
-  <div class="command"><h3>/muted </h3><p>Lista de usuarios silenciados.</p></div>
-  <div class="command"><h3>/ayuda  </h3><p> Solicita asistencia en el servidor.</p></div>
-  <div class="command"><h3>/reportar </h3><p>Recibe denuncias de usuarios.</p></div>
-</section>
-
-<section data-category="Economía">
-  <h2>💰 Economía</h2>
-  <div class="command"><h3>/balance</h3><p>Consulta tu saldo. (en desarrollo)</p></div>
-  <div class="command"><h3>/daily</h3><p>Reclama tu recompensa diaria. (en desarrollo)</p></div>
-  <div class="command"><h3>/work</h3><p>Realiza trabajos para ganar monedas. (en desarrollo)</p></div>
-  <div class="command"><h3>/shop</h3><p>Muestra la tienda. (en desarrollo)</p></div>
-  <div class="command"><h3>/shopadd</h3><p>Agregar un producto a la tienda.</p></div>
-  <div class="command"><h3>/shoplist</h3><p>Muestra los productos.</p></div>
-  <div class="command"><h3>/shopremove</h3><p>Muestra la tienda.</p></div>
-  <div class="command"><h3>/shopbuy</h3><p>Comprar producro de la tienda..</p></div>
-  <div class="command"><h3>/shopsearch</h3><p>Buscar producto..</p></div>
-  <div class="command"><h3>/give</h3><p>Dar dinero..</p></div>
-  <div class="command"><h3>/reset</h3><pReinicar el sistema de economia..</p></div>
-  <div class="command"><h3>/top</h3><p>Muestra la tienda.</p></div>
-  <div class="command"><h3>/rop</h3><p> Lista de lo mas comprado.</p></div>
-  <div class="command"><h3>/inventory</h3><p>Revisa tu inventario.</p></div>
-  <div class="command"><h3>/pay</h3><p>Envía monedas a otro usuario.</p></div>
-</section>
-
-<section data-category="Música">
-  <h2>🎵 Música</h2>
-  <div class="command"><h3>/spotify</h3><p>Comparte tu canción de Spotify actual.</p></div>
-</section>
-
-<section data-category="Sociales">
-  <h2>💬 Sociales</h2>
-  <div class="command"><h3>/ship</h3><p>Calcula compatibilidad entre dos usuarios.</p></div>
-  <div class="command"><h3>/confess</h3><p>Envía una confesión, pública o anónima.</p></div>
-  <div class="command"><h3>/crush</h3><p>Declara un crush.</p></div>
-  <div class="command"><h3>/admire</h3><p>Expresa admiración por alguien.</p></div>
-  <div class="command"><h3>/horoscopo</h3><p> Te muestra tu horóscopo..</p></div>
-  <div class="command"><h3>/signo</h3><p>Te dice tu signo según tu fecha de nacimiento..</p></div>
-  <div class="command"><h3>/ship</h3><p>Calcula compatibilidad entre dos usuarios.</p></div>
-  <div class="command"><h3>/secret</h3><p>Publica un secreto anónimo.</p></div>
+</body>
+</html>
 
