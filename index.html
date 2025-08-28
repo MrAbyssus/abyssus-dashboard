@@ -311,14 +311,6 @@
         sec.style.display = sec.getAttribute('data-category') === category ? 'block' : 'none';
       });
     }
-
-    // Buscador
-    document.getElementById('search').addEventListener('input', function () {
-      const term = this.value.toLowerCase();
-      document.querySelectorAll('.command').forEach(cmd => {
-        cmd.style.display = cmd.textContent.toLowerCase().includes(term) ? 'block' : 'none';
-      });
-    });
   <script>
 function formatUptime(seconds) {
   const mins = Math.floor(seconds / 60);
