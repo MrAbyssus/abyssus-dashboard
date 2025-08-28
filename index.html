@@ -301,5 +301,30 @@
         });
       });
   </script>
+
+      <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Status de Abyssus</title>
+</head>
+<body>
+  <h1>Status del Bot</h1>
+  <pre id="status"></pre>
+
+  <script>
+    fetch('http://51.77.211.104:3000/status')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('status').textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById('status').textContent = 'Error al cargar el status';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
+      
 </body>
 </html>
