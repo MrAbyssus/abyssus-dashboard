@@ -60,3 +60,4 @@ changelog.secciones.forEach(seccion => {
 });
 
 container.appendChild(changelogDiv);
+
