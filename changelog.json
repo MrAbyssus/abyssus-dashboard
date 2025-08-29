@@ -6,8 +6,8 @@ const changelog = {
       tipo: "🔧 Correcciones",
       color: "#e67e22",
       items: [
-        'Se corrigió un bug crítico en el comando <code>/unmute</code> que impedía quitar el rol <strong>"Muteado"</strong> correctamente.',
-        'Todos los comandos de moderación (<code>/ban</code>, <code>/kick</code>, <code>/mute</code>, <code>/unmute</code>) ahora muestran respuestas en formato <strong>embed</strong>, mejorando la claridad y presentación.',
+        'Se corrigió un bug crítico en el comando <code>/fostban</code>.',
+        '',
         'Se mejoró la verificación de jerarquía de roles para evitar errores silenciosos.'
       ]
     },
@@ -15,12 +15,17 @@ const changelog = {
       tipo: "✨ Mejoras",
       color: "#27ae60",
       items: [
-        'Mensajes de error y confirmación ahora son más visuales y profesionales.',
-        `Se agregaron colores temáticos a los embeds:
+        'Se ñadieron nuevos comandos de Anime.',
           <ul>
-            <li>🔴 Rojo para errores</li>
-            <li>🟢 Verde para confirmaciones</li>
-            <li>🟠 Naranja para advertencias</li>
+            <li>Added - kiss</li>
+            <li>Added - slap</li>
+            <li>Added - bite</li>
+            <li>Added - dance</li>
+            <li>Added - sleep</li>
+            <li>Added - highfive</li>
+            <li>Added - laugh</li>
+            <li>Added - cry</li>
+            <li>Added - pat</li>
           </ul>`
       ]
     },
