@@ -15,7 +15,7 @@ const changelog = {
       tipo: "✨ Mejoras",
       color: "#27ae60",
       items: [
-        'Se ñadieron nuevos comandos de Anime.',
+        'Se añadieron nuevos comandos de Anime.',
           <ul>
             <li>Added - kiss</li>
             <li>Added - slap</li>
