@@ -1,7 +1,35 @@
-[
-  {
-    "fecha": "2025-08-28",
-    "autor": "Alex",
-    "mensaje": "Se agregó protección anti-spam al comando /mute"
-  }
-]
+const changelog = {
+  version: "v3.11",
+  titulo: "Actualización de Moderación",
+  secciones: [
+    {
+      tipo: "🔧 Correcciones",
+      color: "#e67e22",
+      items: [
+        'Se corrigió un bug crítico en el comando <code>/unmute</code> que impedía quitar el rol <strong>"Muteado"</strong> correctamente.',
+        'Todos los comandos de moderación (<code>/ban</code>, <code>/kick</code>, <code>/mute</code>, <code>/unmute</code>) ahora muestran respuestas en formato <strong>embed</strong>, mejorando la claridad y presentación.',
+        'Se mejoró la verificación de jerarquía de roles para evitar errores silenciosos.'
+      ]
+    },
+    {
+      tipo: "✨ Mejoras",
+      color: "#27ae60",
+      items: [
+        'Mensajes de error y confirmación ahora son más visuales y profesionales.',
+        `Se agregaron colores temáticos a los embeds:
+          <ul>
+            <li>🔴 Rojo para errores</li>
+            <li>🟢 Verde para confirmaciones</li>
+            <li>🟠 Naranja para advertencias</li>
+          </ul>`
+      ]
+    },
+    {
+      tipo: "📌 Próximamente",
+      color: "#3498db",
+      items: [
+        'Comandos de anime.'
+      ]
+    }
+  ]
+};
