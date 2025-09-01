@@ -27,7 +27,7 @@ Porque cada comando es una chispa de caos controlado
 
 Gracias por la paciencia y por apoyar el desarrollo del bot. ¡Seguimos mejorando! 💪
 
-Solo Invitalo - https://top.gg/bot/680897280433324081/invite
+Solo Invitalo - [https://top.gg/bot/680897280433324081/invite](https://discord.com/oauth2/authorize?client_id=680897280433324081&scope=bot%20applications.commands&permissions=8)
 
 
 
