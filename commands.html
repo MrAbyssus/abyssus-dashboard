@@ -37,30 +37,6 @@
 </nav>
 <!--                       WEBSITE BY Romeo#0700-->
 
-<div id="bot-status">Cargando estado del bot...</div>
-
-<script>
-  async function actualizarEstadoDelBot() {
-    try {
-      const res = await fetch('http://51.77.211.104:3000/status');
-      const data = await res.json();
-
-      document.getElementById('bot-status').innerHTML = `
-        🟢 Estado: ${data.status}<br>
-        👥 Usuarios conectados: ${data.users}<br>
-        ⏱️ Uptime: ${data.uptime}
-      `;
-    } catch (error) {
-      document.getElementById('bot-status').innerText = '❌ No se pudo conectar con el bot';
-      console.error('Error al obtener estado del bot:', error);
-    }
-  }
-
-  actualizarEstadoDelBot();
-  setInterval(actualizarEstadoDelBot, 5000); // Actualiza cada 5 segundos
-</script>
-
-
 <!--                       WEBSITE BY Romeo#0700-->
 
 <body>
