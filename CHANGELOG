@@ -1,0 +1,27 @@
+# Abyssus Bot v2.3 — Release Notes
+
+¡La oscuridad evoluciona! Abyssus Bot se actualiza a la versión **2.3**, trayendo mejoras que redefinen la experiencia de moderación y gestión en tu servidor.
+
+## 🧩 Novedades destacadas
+
+- **🔗 Comando `/status` renovado**  
+  Interfaz más clara, útil y elegante para visualizar el estado del bot.
+
+- **🧙‍♂️ Fusión de comandos de moderación**  
+  `/warn`, `/mute`, `/kick`, `/ban` ahora comparten lógica y estructura, facilitando mantenimiento y consistencia.
+
+- **🎭 Sistema de roles inteligente**  
+  Creación y asignación de roles con detección automática de permisos, evitando errores comunes.
+
+- **🌐 Interacciones públicas refinadas**  
+  Respuestas más limpias, mejor formato y menos ruido visual en canales públicos.
+
+## 🔮 Próximamente
+
+- **📜 Comando `/modlogs`**  
+  Historial completo de moderación por usuario, con filtros avanzados y opción de exportación.
+
+---
+
+**Gracias por usar Abyssus Bot.**  
+Tu servidor merece herramientas oscuramente poderosas ⚔️  
