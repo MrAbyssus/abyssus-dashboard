@@ -63,12 +63,23 @@
 
     
 <div id="commands-minigrid">
-
-<p id="commands-name">/status </p>
-
-<p id="commands-desc">Verifica si el bot está online </p>
-
+  <div style="display: flex; align-items: center; justify-content: space-between;">
+    <p id="commands-name">/status</p>
+    <button onclick="copyCommand('/status')" style="padding: 4px 8px; font-size: 14px; cursor: pointer;">📋 Copiar</button>
+  </div>
+  <p id="commands-desc">Verifica si el bot está online</p>
 </div>
+
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert('¡Comando copiado!');
+    }).catch(err => {
+      alert('Error al copiar el comando');
+    });
+  }
+</script>
+
 
 </div>
 
