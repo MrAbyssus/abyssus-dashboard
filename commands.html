@@ -63,82 +63,23 @@
 
  <!--                       WEBSITE BY Romeo#0700-->
    
-<style>
-  .command-card {
-    background-color: #1e1e2f;
-    border: 1px solid #2e2e3f;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 12px;
-    color: #f0f0f0;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: transform 0.2s ease;
-  }
+</div>
 
-  .command-card:hover {
-    transform: scale(1.02);
-  }
+<div id="commands-minigrid">
 
-  .command-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .command-name {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .copy-btn {
-    background-color: #3a3a4f;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 10px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-  }
-
-  .copy-btn:hover {
-    background-color: #505070;
-  }
-
-  .command-desc {
-    margin-top: 8px;
-    font-size: 15px;
-    color: #c0c0c0;
-  }
-</style>
-
-<div class="command-card">
-  <div class="command-header">
-    <p class="command-name">/status</p>
-    <button class="copy-btn" onclick="copyCommand('/status')">📋 Copiar</button>
-  </div>
-  <p class="command-desc">Verifica si el bot está online</p>
+<p id="commands-name">/status </p>
+<button onclick="copyCommand('/help')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Verifica si el bot esta online. </p>
 </div>
 
 <script>
   function copyCommand(command) {
-    const tempInput = document.createElement("input");
-    tempInput.value = command;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    try {
-      document.execCommand("copy");
-      showCopiedFeedback(event.target);
-    } catch (err) {
-      alert("No se pudo copiar el comando");
-    }
-    document.body.removeChild(tempInput);
-  }
-
-  function showCopiedFeedback(btn) {
-    btn.textContent = '✅ Copiado';
-    setTimeout(() => btn.textContent = '📋 Copiar', 1500);
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
   }
 </script>
 
@@ -164,6 +105,7 @@
 </script>
 
 
+ 
 </div>
 
 <div id="commands-minigrid">
@@ -174,6 +116,7 @@
 
 </div>
 
+ 
 </div>
 
 <div id="commands-minigrid">
@@ -195,6 +138,7 @@
 
 </div>
 
+ 
 </div>
 
 <div id="commands-minigrid">
@@ -205,6 +149,7 @@
 
 </div>
 
+ 
 </div>
 
 <div id="commands-minigrid">
@@ -215,6 +160,7 @@
 
 </div>
 
+ 
 </div>
 
 <div id="commands-minigrid">
