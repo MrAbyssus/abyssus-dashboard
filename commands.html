@@ -123,15 +123,25 @@
 
 <script>
   function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      const btn = event.target;
-      btn.textContent = '✅ Copiado';
-      setTimeout(() => btn.textContent = '📋 Copiar', 1500);
-    }).catch(() => {
-      alert('No se pudo copiar el comando');
-    });
+    const tempInput = document.createElement("input");
+    tempInput.value = command;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+      document.execCommand("copy");
+      showCopiedFeedback(event.target);
+    } catch (err) {
+      alert("No se pudo copiar el comando");
+    }
+    document.body.removeChild(tempInput);
+  }
+
+  function showCopiedFeedback(btn) {
+    btn.textContent = '✅ Copiado';
+    setTimeout(() => btn.textContent = '📋 Copiar', 1500);
   }
 </script>
+
 
 <!--                       WEBSITE BY Romeo#0700-->
 
