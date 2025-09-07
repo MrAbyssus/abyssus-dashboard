@@ -508,12 +508,54 @@
 <button onclick="copyCommand('/911')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
   </p>
 <p id="commands-desc">Sistema de alertas y moderación con subcomandos. </p>
-    <p id="commands-name">/911 enviar </p>
+ <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+    <p id="commands-name">/911 enviar
+     <button onclick="copyCommand('/crearrol')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
     <p id="commands-desc">Envía una alerta al equipo de moderación. </p>
-     <p id="commands-name">/911 estado </p>
+ <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+     <p id="commands-name">/911 estado
+      <button onclick="copyCommand('/crearrol')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
     <p id="commands-desc">Consulta el estado de tu alerta. </p>
-     <p id="commands-name">/911 resolver </p>
+ <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+     <p id="commands-name">/911 resolver
+      <button onclick="copyCommand('/crearrol')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
     <p id="commands-desc">Marca una alerta como resuelta (solo admins). </p>
+ <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
 </div>
 
 
