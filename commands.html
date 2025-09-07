@@ -61,24 +61,79 @@
 
 <div id="commands"></div>
 
-    
-<div id="commands-minigrid">
-  <div style="display: flex; align-items: center; justify-content: space-between;">
-    <p id="commands-name">/status</p>
-    <button onclick="copyCommand('/status')" style="padding: 4px 8px; font-size: 14px; cursor: pointer;">📋 Copiar</button>
+ <!--                       WEBSITE BY Romeo#0700-->
+   
+<style>
+  .command-card {
+    background-color: #1e1e2f;
+    border: 1px solid #2e2e3f;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+  }
+
+  .command-card:hover {
+    transform: scale(1.02);
+  }
+
+  .command-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .command-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .copy-btn {
+    background-color: #3a3a4f;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+
+  .copy-btn:hover {
+    background-color: #505070;
+  }
+
+  .command-desc {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #c0c0c0;
+  }
+</style>
+
+<div class="command-card">
+  <div class="command-header">
+    <p class="command-name">/status</p>
+    <button class="copy-btn" onclick="copyCommand('/status')">📋 Copiar</button>
   </div>
-  <p id="commands-desc">Verifica si el bot está online</p>
+  <p class="command-desc">Verifica si el bot está online</p>
 </div>
 
 <script>
   function copyCommand(command) {
     navigator.clipboard.writeText(command).then(() => {
-      alert('¡Comando copiado!');
-    }).catch(err => {
-      alert('Error al copiar el comando');
+      const btn = event.target;
+      btn.textContent = '✅ Copiado';
+      setTimeout(() => btn.textContent = '📋 Copiar', 1500);
+    }).catch(() => {
+      alert('No se pudo copiar el comando');
     });
   }
 </script>
+
+<!--                       WEBSITE BY Romeo#0700-->
 
 
 </div>
