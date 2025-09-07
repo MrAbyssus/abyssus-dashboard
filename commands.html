@@ -146,15 +146,23 @@
 <!--                       WEBSITE BY Romeo#0700-->
 
 
-</div>
-
 <div id="commands-minigrid">
-
-<p id="commands-name">/help </p>
-
-<p id="commands-desc">Muestra todos los comandos disponibles. </p>
-
+  <p id="commands-name">/help 
+    <button onclick="copyCommand('/help')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+  <p id="commands-desc">Muestra todos los comandos disponibles.</p>
 </div>
+
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+
 
 </div>
 
