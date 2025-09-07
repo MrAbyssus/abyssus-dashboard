@@ -1,27 +1,49 @@
-# Abyssus Bot v2.3 — Release Notes
+# 🚀 Abyssus Bot v2.3 — Release oficial
 
-¡La oscuridad evoluciona! Abyssus Bot se actualiza a la versión **2.3**, trayendo mejoras que redefinen la experiencia de moderación y gestión en tu servidor.
-
-## 🧩 Novedades destacadas
-
-- **🔗 Comando `/status` renovado**  
-  Interfaz más clara, útil y elegante para visualizar el estado del bot.
-
-- **🧙‍♂️ Fusión de comandos de moderación**  
-  `/warn`, `/mute`, `/kick`, `/ban` ahora comparten lógica y estructura, facilitando mantenimiento y consistencia.
-
-- **🎭 Sistema de roles inteligente**  
-  Creación y asignación de roles con detección automática de permisos, evitando errores comunes.
-
-- **🌐 Interacciones públicas refinadas**  
-  Respuestas más limpias, mejor formato y menos ruido visual en canales públicos.
-
-## 🔮 Próximamente
-
-- **📜 Comando `/modlogs`**  
-  Historial completo de moderación por usuario, con filtros avanzados y opción de exportación.
+La versión **2.3** de Abyssus Bot ya está disponible. Esta actualización trae mejoras clave en moderación, gestión de roles y experiencia de usuario.
 
 ---
 
-**Gracias por usar Abyssus Bot.**  
+## 🧩 Cambios principales
+
+- **🔗 `/status` rediseñado**
+  - Interfaz más clara y funcional.
+  - Mejor visualización del estado del bot.
+
+- **🧙‍♂️ Fusión de comandos de moderación**
+  - `/warn`, `/mute`, `/kick`, `/ban` ahora comparten lógica.
+  - Código más limpio y mantenimiento simplificado.
+
+- **🎭 Sistema de roles inteligente**
+  - Creación automática de roles con permisos detectados dinámicamente.
+  - Prevención de errores comunes en asignación.
+
+- **🌐 Interacciones públicas refinadas**
+  - Menos ruido visual en canales.
+  - Formato más limpio y profesional en respuestas.
+
+---
+
+## 🔮 Próximamente
+
+- **📜 `/modlogs`**
+  - Historial completo de moderación por usuario.
+  - Filtros avanzados y exportación de registros.
+
+---
+
+## 📁 Estructura del repositorio
+
+- `css/` — Estilos del dashboard  
+- `js/` — Scripts principales  
+- `img/` — Recursos gráficos  
+- `index.html` — Página principal  
+- `commands.html` — Documentación de comandos  
+- `developers.html` — Créditos y equipo  
+- `CHANGELOG` — Registro técnico de cambios  
+- `README.md` — Información general del proyecto
+
+---
+
+Gracias por usar Abyssus Bot.  
 Tu servidor merece herramientas oscuramente poderosas ⚔️  
