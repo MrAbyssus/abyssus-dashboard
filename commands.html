@@ -62,46 +62,7 @@
 <div id="commands"></div>
 
  <!--                       WEBSITE BY Romeo#0700-->
- <style>
-  #commands-minigrid {
-    background-color: #1e1e2f;
-    border: 1px solid #2e2e3f;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 12px;
-    color: #f0f0f0;
-    font-family: 'Segoe UI', sans-serif;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  }
 
-  #commands-name {
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .copy-btn {
-    background-color: #3a3a4f;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 8px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 13px;
-  }
-
-  .copy-btn:hover {
-    background-color: #505070;
-  }
-
-  #commands-desc {
-    margin-top: 8px;
-    font-size: 15px;
-    color: #c0c0c0;
-  }
-</style>  
 </div>
  
 <div id="commands-minigrid">
@@ -142,8 +103,6 @@
     });
   }
 </script>
-
-
  
 </div>
 
@@ -214,9 +173,10 @@
   </p>
 <p id="commands-desc">Lista todos los roles del servidor. </p>
 <script>
-  function copyCommand(command) {
+  function copyCommand(command, btn) {
     navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
+      btn.textContent = '✅';
+      setTimeout(() => btn.textContent = '📋', 1500);
     }).catch(() => {
       alert("❌ No se pudo copiar el comando");
     });
