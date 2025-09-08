@@ -1,7 +1,9 @@
 
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Abyssus%20Banner.png" width="750"/>
+  <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Abyssus%20Banner.png" width="75%"/>
 </p>
+
 
 👁️‍🗨️ ¿Y si tu servidor tuviera un alma?
 
