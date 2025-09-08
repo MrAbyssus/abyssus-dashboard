@@ -24,6 +24,7 @@ Porque cada comando es una chispa de caos controlado
 
 ---
 
+![Mi imagen](https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Abyssus.png)
 
 Gracias por la paciencia y por apoyar el desarrollo del bot. ¡Seguimos mejorando! 💪
 
