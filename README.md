@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Abyssus%20Banner.png" width="750"/>
+</p>
+
 👁️‍🗨️ ¿Y si tu servidor tuviera un alma?
 
 Un ente que susurra horóscopos, lanza retos imposibles, crea drama donde no lo hay, y responde con sabiduría o sarcasmo según el clima cósmico. Este bot no es solo comandos: es caos con propósito, humor con veneno, y magia digital en cada línea.
@@ -23,10 +28,6 @@ Porque cada comando es una chispa de caos controlado
 🔗 Agrégalo hoy. Deja que Abyssus desate el caos cósmico. Tu comunidad no volverá a ser la misma.
 
 ---
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Abyssus.png" width="300"/>
-</p>
 
 
 Gracias por la paciencia y por apoyar el desarrollo del bot. ¡Seguimos mejorando! 💪
