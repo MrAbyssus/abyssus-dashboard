@@ -7,7 +7,7 @@
 
 👁️‍🗨️ ¿Y si tu servidor tuviera un alma?
 
-Un ente que susurra horóscopos, lanza retos imposibles, crea drama donde no lo hay, y responde con sabiduría o sarcasmo según el clima cósmico. Este bot no es solo comandos: es caos con propósito, humor con veneno, y magia digital en cada línea.
+Unente que susurra horóscopos, lanza retos imposibles, crea drama donde no lo hay, y responde con sabiduría o sarcasmo según el clima cósmico. Este bot no es solo comandos: es caos con propósito, humor con veneno, y magia digital en cada línea.
 
 Con más de 150 comandos únicos, transforma cualquier canal en un escenario donde todo puede pasar. Desde astrología hasta duelos entre usuarios, desde consejos que nadie pidió hasta memes que salvan días grises.
 
