@@ -483,10 +483,30 @@
 
 <div id="commands-minigrid">
 
-<p id="commands-name">/crearrol 
+<p id="commands-name">/rol crear 
 <button onclick="copyCommand('/crearrol')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
   </p>
-<p id="commands-desc">Crea un nuevo rol con opciones avanzadas. </p>
+<p id="commands-desc">Crea nuevo rol con opciones avanzadas. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+
+ </div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/rol eliminar
+<button onclick="copyCommand('/crearrol')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Eliminar rol de un servidor. </p>
 <script>
   function copyCommand(command) {
     navigator.clipboard.writeText(command).then(() => {
@@ -788,6 +808,22 @@
   }
 </script>
 </div>
+
+<p id="commands-name">/limosna 
+<button onclick="copyCommand('/rob')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Pedir limosna diraria o a otro usuario. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+ 
 
 </div>
 
