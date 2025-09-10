@@ -36,6 +36,19 @@ Gracias por la paciencia y por apoyar el desarrollo del bot. ¡Seguimos mejorand
 
 Solo Invitalo - [https://top.gg/bot/680897280433324081/invite](https://discord.com/oauth2/authorize?client_id=680897280433324081&scope=bot%20applications.commands&permissions=8)
 
+---
+
+# 🔒 Filosofía de Abyssus Bot
+
+Abyssus fue creado con una visión clara: moderar sin invadir.
+
+- No guarda mensajes ni datos personales.
+- No usa bases de datos externas.
+- No rastrea actividad fuera del servidor.
+- Todos los registros son locales y visibles solo para administradores.
+
+🧠 Abyssus cree en la autonomía, la transparencia y el respeto por la privacidad.  
+📌 Si estás usando Abyssus, estás eligiendo moderar con integridad.
 
 
 
