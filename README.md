@@ -50,6 +50,31 @@ Abyssus fue creado con una visión clara: moderar sin invadir.
 🧠 Abyssus cree en la autonomía, la transparencia y el respeto por la privacidad.  
 📌 Si estás usando Abyssus, estás eligiendo moderar con integridad.
 
+---
+
+# 🔒 Aviso de Privacidad — Abyssus Bot
+
+Abyssus Bot ha sido diseñado con un principio fundamental: **la privacidad del usuario es intocable**.
+
+## 🛑 No recopilamos datos personales
+- Abyssus no guarda nombres de usuario, mensajes, IDs, ni ningún tipo de información identificable.
+- No se almacenan historiales de comandos ni interacciones.
+
+## 🚫 No rastreamos ni analizamos
+- Abyssus no realiza seguimiento de actividad.
+- No se generan perfiles, estadísticas ni reportes de comportamiento.
+
+## 🔐 Sin conexión a bases de datos externas
+- Toda la información económica (como monedas virtuales) se guarda localmente en el servidor donde se ejecuta el bot.
+- Abyssus no comparte datos con terceros ni se conecta a servicios externos.
+
+## ✅ Solo lo necesario
+- Abyssus procesa únicamente lo indispensable para ejecutar comandos en tiempo real.
+- Una vez completada la acción, no se conserva ningún dato adicional.
+
+---
+
+**Tu privacidad es prioridad. Abyssus Bot no guarda, no analiza y no comparte. Simplemente funciona.**
 
 
 
