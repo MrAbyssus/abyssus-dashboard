@@ -459,6 +459,74 @@
 </script>
 </div>
 
+ <div id="commands-minigrid">
+
+<p id="commands-name">/modlogs tipo 
+<button onclick="copyCommand('/timemute')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Filtar historial por acción. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/modlogs usuario 
+<button onclick="copyCommand('/timemute')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Ver historial de moderación de un usuario. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/modlogs global
+<button onclick="copyCommand('/timemute')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Ver historial completo del servidor. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/configlogs
+<button onclick="copyCommand('/timemute')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Configurar como se regístran los logs de moderación. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+ 
 </div>
 
 <div id="commands-minigrid">
