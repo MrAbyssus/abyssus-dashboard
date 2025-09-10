@@ -1,84 +1,61 @@
-# 🔒 Aviso de Privacidad — Abyssus Bot
+# :lock: Aviso de Privacidad Legal — Abyssus Bot
 
-Abyssus Bot ha sido diseñado con un principio fundamental: **la privacidad del usuario es intocable**.
+**Última actualización: 10 de septiembre de 2025**
 
-## 🛑 No recopilamos datos personales
-- Abyssus no guarda nombres de usuario, mensajes, IDs, ni ningún tipo de información identificable.
-- No se almacenan historiales de comandos ni interacciones.
+Este aviso tiene como finalidad informar a los usuarios del servidor sobre el tratamiento de datos realizado por Abyssus Bot.
 
-## 🚫 No rastreamos ni analizamos
-- Abyssus no realiza seguimiento de actividad.
-- No se generan perfiles, estadísticas ni reportes de comportamiento.
+---
 
-## 🔐 Sin conexión a bases de datos externas
-- Toda la información económica (como monedas virtuales) se guarda localmente en el servidor donde se ejecuta el bot.
-- Abyssus no comparte datos con terceros ni se conecta a servicios externos.
+## :receipt: Identidad del responsable
 
-## ✅ Solo lo necesario
-- Abyssus procesa únicamente lo indispensable para ejecutar comandos en tiempo real.
-- Una vez completada la acción, no se conserva ningún dato adicional.
+Abyssus Bot es operado por el administrador del servidor donde se encuentra instalado. El responsable del uso y configuración del bot es quien lo ejecuta en su entorno local.
+
+---
+
+## :dart: Finalidad del tratamiento
+
+Abyssus Bot **no recopila ni almacena datos personales**. Todas las interacciones se procesan en tiempo real para ejecutar comandos dentro del servidor de Discord.
+
+---
+
+## :scales: Base legal
+
+Dado que Abyssus Bot no realiza tratamiento de datos personales, no aplica ninguna base legal de procesamiento conforme a leyes de protección de datos.
+
+---
+
+## :repeat: Destinatarios de los datos
+
+Abyssus Bot **no comparte información con terceros** ni se conecta a servicios externos. Toda la información generada se mantiene dentro del entorno local del servidor.
+
+---
+
+## :file_folder: Ubicación y almacenamiento
+
+Los únicos datos que Abyssus Bot puede generar son registros de moderación y economía virtual, los cuales se almacenan localmente en archivos como:
+
+- `economia.json` (monedas virtuales)
+- `modlogs.json` (eventos de moderación)
+
+Estos archivos son accesibles únicamente por los administradores del servidor.
+
+---
+
+## :judge: Derechos de los usuarios
+
+Los usuarios pueden solicitar a los administradores del servidor la revisión, modificación o eliminación de cualquier registro generado por Abyssus Bot. No se requiere trámite adicional, ya que no se manejan datos personales.
+
+---
+
+## :white_check_mark: Compromiso de privacidad
+
+Abyssus Bot ha sido diseñado bajo los siguientes principios:
+
+- No guarda nombres de usuario, mensajes, IDs ni información identificable.
+- No rastrea actividad fuera de Discord.
+- No genera perfiles ni estadísticas de comportamiento.
+- No accede a bases de datos externas ni realiza conexiones remotas.
 
 ---
 
 **Tu privacidad es prioridad. Abyssus Bot no guarda, no analiza y no comparte. Simplemente funciona.**
-
----
-
-## ⚙️ ¿Cómo funciona Abyssus Bot?
-
-Abyssus opera sobre cuatro pilares principales:
-
-### 1. 🪙 Economía virtual
-Cada usuario tiene un saldo de monedas virtuales.
-
-- Las monedas se pueden ganar completando misiones, recibir de otros usuarios o como recompensa por logros.
-- Se almacenan localmente en archivos JSON, sin conexión a bases de datos externas.
-
-### 2. 🎯 Misiones automáticas
-El bot registra acciones como pagar, recibir, participar, etc.
-
-- Cada acción puede activar una misión que otorga recompensas.
-- Las misiones están definidas por tipo, progreso y recompensa.
-
-### 3. 🏅 Logros e insignias
-Al completar todas las misiones de una categoría, el usuario desbloquea una insignia.
-
-- Algunas insignias otorgan roles especiales (por ejemplo, `Explorador del Abismo`).
-- El sistema verifica automáticamente si el usuario cumple los requisitos.
-
-### 4. 🛡️ Moderación y transparencia
-Abyssus registra eventos de moderación (baneos, kicks, warns) en un archivo local (`modlogs.json`) o en un canal específico.
-
-- Los administradores pueden revisar, editar o eliminar estos registros.
-- No se guarda información personal ni se rastrea actividad fuera de Discord.
-
----
-
-## 🔐 ¿Qué hace Abyssus Bot?
-
-### ✅ Comandos principales
-
-- `/pay`: Transfiere monedas entre usuarios.  
-- `/balance`: Muestra tu saldo actual.  
-- `/misiones`: Consulta tu progreso en misiones.  
-- `/privacidad`: Muestra el aviso de privacidad.  
-- `/modlog`: Muestra registros de moderación.  
-- `/ayuda`: Abre el menú interactivo de ayuda.
-
----
-
-## 🧩 Comportamiento inteligente
-
-- Detecta si un usuario intenta pagarse a sí mismo y lo bloquea.  
-- Calcula recompensas automáticamente según el tipo de misión.  
-- Verifica si el usuario merece una insignia y asigna el rol correspondiente.  
-- Responde con embeds visuales y mensajes privados cuando es necesario.
-
----
-
-## 🛡️ Filosofía de diseño
-
-- **Privacidad primero**: No guarda datos personales ni rastrea actividad.  
-- **Modularidad**: Cada función está separada y puede activarse o desactivarse.  
-- **Transparencia**: Todo lo que hace el bot puede ser revisado por los administradores.  
-- **Interacción significativa**: Cada acción tiene una consecuencia dentro del sistema.
