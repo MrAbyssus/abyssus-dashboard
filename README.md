@@ -47,7 +47,7 @@ Abyssus Bot ha sido diseñado con un principio fundamental: **la privacidad del 
 - No comparte información con terceros.
 - Toda la información se guarda localmente en el servidor.
 
-Para más detalles, consultá el archivo [`PRIVACIDAD.md`](./PRIVACIDAD.md).
+Para más detalles, consultá el archivo [`Aviso de privacidad.md`](./PRIVACIDAD.md).
 
 
 ---
