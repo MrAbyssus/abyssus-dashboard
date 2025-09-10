@@ -38,25 +38,17 @@ Solo Invitalo - [https://top.gg/bot/680897280433324081/invite](https://discord.c
 
 ---
 
-# 🔒 Aviso de Privacidad — Abyssus Bot
+## 🔒 Aviso de Privacidad Legal
 
 Abyssus Bot ha sido diseñado con un principio fundamental: **la privacidad del usuario es intocable**.
 
-## 🛑 No recopilamos datos personales
-- Abyssus no guarda nombres de usuario, mensajes, IDs, ni ningún tipo de información identificable.
-- No se almacenan historiales de comandos ni interacciones.
+- No recopila ni almacena datos personales.
+- No rastrea actividad fuera de Discord.
+- No comparte información con terceros.
+- Toda la información se guarda localmente en el servidor.
 
-## 🚫 No rastreamos ni analizamos
-- Abyssus no realiza seguimiento de actividad.
-- No se generan perfiles, estadísticas ni reportes de comportamiento.
+Para más detalles, consultá el archivo [`PRIVACIDAD.md`](./PRIVACIDAD.md).
 
-## 🔐 Sin conexión a bases de datos externas
-- Toda la información económica (como monedas virtuales) se guarda localmente en el servidor donde se ejecuta el bot.
-- Abyssus no comparte datos con terceros ni se conecta a servicios externos.
-
-## ✅ Solo lo necesario
-- Abyssus procesa únicamente lo indispensable para ejecutar comandos en tiempo real.
-- Una vez completada la acción, no se conserva ningún dato adicional.
 
 ---
 
