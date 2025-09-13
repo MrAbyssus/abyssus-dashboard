@@ -1249,6 +1249,19 @@
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-rotated {
+    transform: rotate(90deg);
   }
 
   .commands-group {
@@ -1285,9 +1298,10 @@
 <!-- Título grande y centrado -->
 <h1 class="section-title">🐾 Animals</h1>
 
-<!-- Botón para contraer/expandir -->
-<div class="category-toggle" onclick="toggleGroup('animals-group')">
-  Mostrar/Ocultar comandos
+<!-- Botón para contraer/expandir con flecha -->
+<div class="category-toggle" onclick="toggleGroup('animals-group', this)">
+  <span>Mostrar/Ocultar comandos</span>
+  <span class="arrow-icon">▶</span>
 </div>
 
 <!-- Contenido de comandos -->
@@ -1380,9 +1394,13 @@
 </div>
 
 <script>
-  function toggleGroup(id) {
+  function toggleGroup(id, toggleElement) {
     const group = document.getElementById(id);
-    group.style.display = group.style.display === 'none' ? 'block' : 'none';
+    const arrow = toggleElement.querySelector('.arrow-icon');
+    const isHidden = group.style.display === 'none' || group.style.display === '';
+
+    group.style.display = isHidden ? 'block' : 'none';
+    arrow.classList.toggle('arrow-rotated', isHidden);
   }
 
   function copyCommand(command) {
@@ -1393,6 +1411,7 @@
     });
   }
 </script>
+
 
 
 
