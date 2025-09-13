@@ -1231,6 +1231,15 @@
 
 
 <style>
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
   .category-toggle {
     background-color: #2c2f4a;
     color: #fff;
@@ -1238,7 +1247,8 @@
     cursor: pointer;
     border-radius: 6px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
   }
 
   .commands-group {
@@ -1247,7 +1257,7 @@
   }
 
   #commands-minigrid {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
   #commands-name {
@@ -1270,19 +1280,15 @@
     cursor: pointer;
     font-size: 13px;
   }
-<style>
-  .section-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
 </style>
 
 <!-- Título grande y centrado -->
 <h1 class="section-title">🐾 Animals</h1>
+
+<!-- Botón para contraer/expandir -->
+<div class="category-toggle" onclick="toggleGroup('animals-group')">
+  Mostrar/Ocultar comandos
+</div>
 
 <!-- Contenido de comandos -->
 <div id="animals-group" class="commands-group">
