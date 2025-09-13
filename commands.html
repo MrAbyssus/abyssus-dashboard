@@ -1230,10 +1230,31 @@
 </div>
 
 
+<p id="botname-main-1">Animals</p>
+
+</div>
+<div id="commands-minigrid">
+
+<p id="commands-name">/ship 
+<button onclick="copyCommand('/ship')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Calcula compatibilidad entre dos usuarios. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+ 
+ 
+
 <p id="botname-main-1">Sociales</p>
 
 </div>
-
 <div id="commands-minigrid">
 
 <p id="commands-name">/ship 
