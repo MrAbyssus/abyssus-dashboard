@@ -1230,83 +1230,127 @@
 </div>
 
 
-<p id="botname-main-1">Animals</p>
-
-</div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals bunny 
-<button onclick="copyCommand('/animals bunny')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🐰 Muestra un conejo. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
+<style>
+  .category-toggle {
+    background-color: #2c2f4a;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 5px;
   }
-</script>
-</div>
 
- </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals dog
-<button onclick="copyCommand('/animals dog')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🐶 Muestra un perro. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
+  .commands-group {
+    display: none;
+    transition: all 0.3s ease;
   }
-</script>
+
+  #commands-minigrid {
+    margin-bottom: 10px;
+  }
+</style>
+
+<!-- Título contraíble -->
+<div class="category-toggle" onclick="toggleGroup('animals-group')">
+  🐾 Animals
 </div>
 
+<!-- Contenido de comandos -->
+<div id="animals-group" class="commands-group">
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals bunny 
+      <button onclick="copyCommand('/animals bunny')">📋</button>
+    </p>
+    <p id="commands-desc">🐰 Muestra un conejo.</p>
   </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals dolphim
-<button onclick="copyCommand('/animals dolphim')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🐬 Muestra un delfín. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals dog 
+      <button onclick="copyCommand('/animals dog')">📋</button>
+    </p>
+    <p id="commands-desc">🐶 Muestra un perro.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals dolphin 
+      <button onclick="copyCommand('/animals dolphin')">📋</button>
+    </p>
+    <p id="commands-desc">🐬 Muestra un delfín.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals duck 
+      <button onclick="copyCommand('/animals duck')">📋</button>
+    </p>
+    <p id="commands-desc">🦆 Muestra un pato.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals fox 
+      <button onclick="copyCommand('/animals fox')">📋</button>
+    </p>
+    <p id="commands-desc">🦊 Muestra un zorro.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals otter 
+      <button onclick="copyCommand('/animals otter')">📋</button>
+    </p>
+    <p id="commands-desc">🦦 Muestra una nutria.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals panda 
+      <button onclick="copyCommand('/animals panda')">📋</button>
+    </p>
+    <p id="commands-desc">🐼 Muestra un panda.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals parrot 
+      <button onclick="copyCommand('/animals parrot')">📋</button>
+    </p>
+    <p id="commands-desc">🦜 Muestra un loro.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals penguin 
+      <button onclick="copyCommand('/animals penguin')">📋</button>
+    </p>
+    <p id="commands-desc">🐧 Muestra un pingüino.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals raccoon 
+      <button onclick="copyCommand('/animals raccoon')">📋</button>
+    </p>
+    <p id="commands-desc">🦝 Muestra un mapache.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals snake 
+      <button onclick="copyCommand('/animals snake')">📋</button>
+    </p>
+    <p id="commands-desc">🐍 Muestra una serpiente.</p>
+  </div>
+
+  <div id="commands-minigrid">
+    <p id="commands-name">/animals turtle 
+      <button onclick="copyCommand('/animals turtle')">📋</button>
+    </p>
+    <p id="commands-desc">🐢 Muestra una tortuga.</p>
+  </div>
+
 </div>
 
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals duck
-<button onclick="copyCommand('/animals duck')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🦆 Muestra un pato. </p>
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
+  function toggleGroup(id) {
+    const group = document.getElementById(id);
+    group.style.display = group.style.display === 'none' ? 'block' : 'none';
   }
-</script>
-</div>
 
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals fox
-<button onclick="copyCommand('/animals fox')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🦊 Muestra un zorro. </p>
-<script>
   function copyCommand(command) {
     navigator.clipboard.writeText(command).then(() => {
       alert("✅ Comando copiado: " + command);
@@ -1315,126 +1359,7 @@
     });
   }
 </script>
-</div>
 
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals otter
-<button onclick="copyCommand('/animals otter')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🦦 Muestra una nutria. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
-</div>
-
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals panda
-<button onclick="copyCommand('/animals panda')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🐼 Muestra un panda. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
-</div>
-
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals parrot
-<button onclick="copyCommand('/animals parrot')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🦜 Muestra un loro. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
-</div>
-
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals penguin
-<button onclick="copyCommand('/animals penguin')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🐧 Muestra un pingüino. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
-</div>
-
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals reaccoon
-<button onclick="copyCommand('/animals reaccoon')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🦝 Muestra un mapache. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
-</div>
-
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals snake
-<button onclick="copyCommand('/animals snake')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🐍 Muestra una serpiente. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
-</div>
-
-  </div>
-<div id="commands-minigrid">
-<p id="commands-name">/animals turtle
-<button onclick="copyCommand('/animals turtle')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>
-<p id="commands-desc">🐢 Muestra una tortuga. </p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>
-</div>
 
 <p id="botname-main-1">Sociales</p>
 
