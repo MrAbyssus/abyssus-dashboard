@@ -1230,178 +1230,15 @@
 </div>
 
 
-<style>
-  .section-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-
-  .category-toggle {
-    background-color: #2c2f4a;
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .arrow-icon {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-
-  .arrow-rotated {
-    transform: rotate(90deg);
-  }
-
-  .commands-group {
-    display: none;
-  }
-
-  #commands-minigrid {
-    margin-bottom: 12px;
-  }
-
-  #commands-name {
-    font-weight: bold;
-    color: #fff;
-  }
-
-  #commands-desc {
-    color: #ccc;
-    margin-left: 10px;
-  }
-
-  button.copy-btn {
-    margin-left: 10px;
-    background-color: #3a3a4f;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 8px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 13px;
-  }
-</style>
-
-<!-- Título grande -->
-<h1 class="section-title">🐾 Animals</h1>
-
-<!-- Botón con flecha -->
-<div class="category-toggle" onclick="toggleGroup('animals-group', this)">
-  <span>Mostrar/Ocultar comandos</span>
-  <span class="arrow-icon">▶</span>
-</div>
-
-<!-- Contenido de comandos -->
-<div id="animals-group" class="commands-group">
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals bunny 
-      <button class="copy-btn" onclick="copyCommand('/animals bunny')">📋</button>
-    </p>
-    <p id="commands-desc">🐰 Muestra un conejo.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals dog 
-      <button class="copy-btn" onclick="copyCommand('/animals dog')">📋</button>
-    </p>
-    <p id="commands-desc">🐶 Muestra un perro.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals dolphin 
-      <button class="copy-btn" onclick="copyCommand('/animals dolphin')">📋</button>
-    </p>
-    <p id="commands-desc">🐬 Muestra un delfín.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals duck 
-      <button class="copy-btn" onclick="copyCommand('/animals duck')">📋</button>
-    </p>
-    <p id="commands-desc">🦆 Muestra un pato.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals fox 
-      <button class="copy-btn" onclick="copyCommand('/animals fox')">📋</button>
-    </p>
-    <p id="commands-desc">🦊 Muestra un zorro.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals otter 
-      <button class="copy-btn" onclick="copyCommand('/animals otter')">📋</button>
-    </p>
-    <p id="commands-desc">🦦 Muestra una nutria.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals panda 
-      <button class="copy-btn" onclick="copyCommand('/animals panda')">📋</button>
-    </p>
-    <p id="commands-desc">🐼 Muestra un panda.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals parrot 
-      <button class="copy-btn" onclick="copyCommand('/animals parrot')">📋</button>
-    </p>
-    <p id="commands-desc">🦜 Muestra un loro.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals penguin 
-      <button class="copy-btn" onclick="copyCommand('/animals penguin')">📋</button>
-    </p>
-    <p id="commands-desc">🐧 Muestra un pingüino.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals raccoon 
-      <button class="copy-btn" onclick="copyCommand('/animals raccoon')">📋</button>
-    </p>
-    <p id="commands-desc">🦝 Muestra un mapache.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals snake 
-      <button class="copy-btn" onclick="copyCommand('/animals snake')">📋</button>
-    </p>
-    <p id="commands-desc">🐍 Muestra una serpiente.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/animals turtle 
-      <button class="copy-btn" onclick="copyCommand('/animals turtle')">📋</button>
-    </p>
-    <p id="commands-desc">🐢 Muestra una tortuga.</p>
-  </div>
+<p id="botname-main-1">Animals</p>
 
 </div>
-
+<div id="commands-minigrid">
+<p id="commands-name">/animals bunny 
+<button onclick="copyCommand('/animals bunny')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🐰 Muestra un conejo. </p>
 <script>
-  function toggleGroup(id, toggleElement) {
-    const group = document.getElementById(id);
-    const arrow = toggleElement.querySelector('.arrow-icon');
-    const isHidden = group.style.display === 'none' || group.style.display === '';
-
-    group.style.display = isHidden ? 'block' : 'none';
-    arrow.classList.toggle('arrow-rotated', isHidden);
-  }
-
   function copyCommand(command) {
     navigator.clipboard.writeText(command).then(() => {
       alert("✅ Comando copiado: " + command);
@@ -1410,144 +1247,15 @@
     });
   }
 </script>
-
-<style>
-  .section-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-
-  .category-toggle {
-    background-color: #2c2f4a;
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .arrow-icon {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-
-  .arrow-rotated {
-    transform: rotate(90deg);
-  }
-
-  .commands-group {
-    display: none;
-  }
-
-  #commands-minigrid {
-    margin-bottom: 12px;
-  }
-
-  #commands-name {
-    font-weight: bold;
-    color: #fff;
-  }
-
-  #commands-desc {
-    color: #ccc;
-    margin-left: 10px;
-  }
-
-  button.copy-btn {
-    margin-left: 10px;
-    background-color: #3a3a4f;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 8px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 13px;
-  }
-</style>
-
-<!-- Título grande -->
-<h1 class="section-title">💬 Sociales</h1>
-
-<!-- Botón con flecha -->
-<div class="category-toggle" onclick="toggleGroup('sociales-group', this)">
-  <span>Mostrar/Ocultar comandos</span>
-  <span class="arrow-icon">▶</span>
 </div>
 
-<!-- Contenido de comandos -->
-<div id="sociales-group" class="commands-group">
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/ship 
-      <button class="copy-btn" onclick="copyCommand('/ship')">📋</button>
-    </p>
-    <p id="commands-desc">Calcula compatibilidad entre dos usuarios.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/confess 
-      <button class="copy-btn" onclick="copyCommand('/confess')">📋</button>
-    </p>
-    <p id="commands-desc">Envía una confesión, pública o anónima.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/crush 
-      <button class="copy-btn" onclick="copyCommand('/crush')">📋</button>
-    </p>
-    <p id="commands-desc">Declara un crush.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/admire 
-      <button class="copy-btn" onclick="copyCommand('/admire')">📋</button>
-    </p>
-    <p id="commands-desc">Expresa admiración por alguien.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/horoscopo 
-      <button class="copy-btn" onclick="copyCommand('/horoscopo')">📋</button>
-    </p>
-    <p id="commands-desc">Te muestra tu horóscopo.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/signo 
-      <button class="copy-btn" onclick="copyCommand('/signo')">📋</button>
-    </p>
-    <p id="commands-desc">Te dice tu signo según tu fecha de nacimiento.</p>
-  </div>
-
-  <div id="commands-minigrid">
-    <p id="commands-name">/secreto 
-      <button class="copy-btn" onclick="copyCommand('/secreto')">📋</button>
-    </p>
-    <p id="commands-desc">Publica un secreto anónimo.</p>
-  </div>
-
-</div>
-
+ </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals dog
+<button onclick="copyCommand('/animals dog')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🐶 Muestra un perro. </p>
 <script>
-  function toggleGroup(id, toggleElement) {
-    const group = document.getElementById(id);
-    const arrow = toggleElement.querySelector('.arrow-icon');
-    const isHidden = group.style.display === 'none' || group.style.display === '';
-
-    group.style.display = isHidden ? 'block' : 'none';
-    arrow.classList.toggle('arrow-rotated', isHidden);
-  }
-
   function copyCommand(command) {
     navigator.clipboard.writeText(command).then(() => {
       alert("✅ Comando copiado: " + command);
@@ -1556,7 +1264,306 @@
     });
   }
 </script>
+</div>
 
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals dolphim
+<button onclick="copyCommand('/animals dolphim')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🐬 Muestra un delfín. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals duck
+<button onclick="copyCommand('/animals duck')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🦆 Muestra un pato. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals fox
+<button onclick="copyCommand('/animals fox')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🦊 Muestra un zorro. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals otter
+<button onclick="copyCommand('/animals otter')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🦦 Muestra una nutria. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals panda
+<button onclick="copyCommand('/animals panda')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🐼 Muestra un panda. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals parrot
+<button onclick="copyCommand('/animals parrot')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🦜 Muestra un loro. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals penguin
+<button onclick="copyCommand('/animals penguin')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🐧 Muestra un pingüino. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals reaccoon
+<button onclick="copyCommand('/animals reaccoon')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🦝 Muestra un mapache. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals snake
+<button onclick="copyCommand('/animals snake')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🐍 Muestra una serpiente. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+  </div>
+<div id="commands-minigrid">
+<p id="commands-name">/animals turtle
+<button onclick="copyCommand('/animals turtle')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">🐢 Muestra una tortuga. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+<p id="botname-main-1">Sociales</p>
+
+</div>
+<div id="commands-minigrid">
+
+<p id="commands-name">/ship 
+<button onclick="copyCommand('/ship')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Calcula compatibilidad entre dos usuarios. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/confess
+<button onclick="copyCommand('/confess')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Envía una confesión, pública o anónima. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/crush 
+<button onclick="copyCommand('/crush')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Declara un crush. </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/admire 
+<button onclick="copyCommand('/admire')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Expresa admiración por alguien </p>
+<script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>
+</div>
+
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/horoscopo
+    <button onclick="copyCommand('/horoscopo')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Te muestra tu horóscopo.</p>
+ <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>   
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/signo
+    <button onclick="copyCommand('/signo')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Te dice tu signo según tu fecha de nacimiento.</p>
+  <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>      
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/secreto
+    <button onclick="copyCommand('/secreto')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>
+<p id="commands-desc">Publica un secreto anónimo.</p>
+  <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>  
+</div>
 
 
 <p id="botname-main-1">Diversión</p>
@@ -1952,3 +1959,4 @@
 
 
 <!--                       WEBSITE BY Romeo#0700-->
+
