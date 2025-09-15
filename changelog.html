@@ -7,7 +7,6 @@
   <link href="css/style.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tipografía limpia + fondo gris + navegación hover -->
   <style>
     body {
       font-family: 'Segoe UI', 'Roboto', sans-serif;
@@ -33,8 +32,6 @@
       border-radius: 4px;
       font-size: 0.95em;
     }
-
-    /* Navegación flotante con hover */
     #changelog-nav {
       position: fixed;
       top: 120px;
@@ -59,8 +56,6 @@
     #changelog-nav a:hover {
       color: #ffffff;
     }
-
-    /* Activador invisible */
     #changelog-nav-trigger {
       position: fixed;
       top: 120px;
@@ -74,7 +69,6 @@
 
 <body>
 
-  <!-- NAV -->
   <nav id="nav">
     <div id="navtext-div">
       <a href="developers.html" id="navtext">Developers</a>
@@ -84,78 +78,85 @@
     </div>
   </nav>
 
-  <!-- Activador invisible -->
   <div id="changelog-nav-trigger"></div>
 
-  <!-- Navegación flotante -->
   <div id="changelog-nav">
     <a href="#bot">🛠️ Bot</a>
     <a href="#dashboard">🧩 Dashboard</a>
     <a href="#next">🔮 Próximamente</a>
+    <a href="#reputation-doc">📘 /reputation</a>
   </div>
 
-  <!-- LOGO + TÍTULO -->
   <img id="logo-main-1" src="img/logo.jpg" alt="Logo Abyssus">
   <p id="botname-main-1">Changelog</p>
 
-  <!-- CONTENIDO -->
   <div id="main-info">
 
-    <!-- 🔧 Sección: Mejoras del Bot -->
     <details id="bot" open>
       <summary>🛠️ Changelog — Bot (v2.13)</summary>
       <p><strong>Fecha:</strong> 2025-09-14</p>
-
       <p><strong>📦 Mejoras en /reputation</strong><br>
-      ✅ Embed agregado: respuesta visual con campos técnicos y trazabilidad.<br>
-      🔁 Transferencia habilitada: reputación entre usuarios.<br>
-      🔥 Boost detectado: duplica ganancia si está activo.<br>
-      ⏳ Cooldown: 10 min por usuario, con mensaje visual.<br>
-      🧾 Registro: reputationCooldown guardado en <code>Usuario.json</code>.</p>
-
+      ✅ Embed agregado<br>
+      🔁 Transferencia habilitada<br>
+      🔥 Boost detectado<br>
+      ⏳ Cooldown: 10 min<br>
+      🧾 Registro en <code>Usuario.json</code></p>
       <p><strong>📊 Integración en /userinfo</strong><br>
-      📈 Sección agregada: “Reputación y boost” en menú interactivo.<br>
-      🎯 Datos mostrados: reputación actual, estado del boost, tiempo restante, cooldown activo.<br>
-      🧠 Lectura directa desde <code>Usuario.json</code> con trazabilidad.<br>
-      🎛️ Interfaz robusta: menú selectivo y botón de cierre sin errores.</p>
-
+      📈 Sección “Reputación y boost”<br>
+      🎯 Datos mostrados: reputación, boost, cooldown<br>
+      🧠 Lectura desde <code>Usuario.json</code><br>
+      🎛️ Menú selectivo y botón de cierre</p>
       <p><strong>🔧 Correcciones internas</strong><br>
-      🐛 Ajustes menores en lógica de interacción.<br>
-      🚀 Optimización en lectura de datos y actualización de embeds.<br>
-      🛡️ Blindaje adicional en validaciones silenciosas.</p>
+      🐛 Ajustes menores<br>
+      🚀 Optimización de lectura<br>
+      🛡️ Blindaje adicional</p>
     </details>
 
-    <!-- 🧩 Sección: Mejoras del Dashboard -->
     <details id="dashboard">
       <summary>🧩 Changelog — Dashboard</summary>
       <p><strong>📁 Estructura visual:</strong><br>
-      ✅ Integración de changelog como sección nativa.<br>
-      🧠 Separación por versión con bloques plegables.<br>
-      🎨 Tipografía limpia y jerarquía visual clara.<br>
-      🔗 Navegación interna sin botones innecesarios.</p>
-
+      ✅ Changelog como sección nativa<br>
+      🧠 Bloques plegables<br>
+      🎨 Tipografía limpia<br>
+      🔗 Navegación interna</p>
       <p><strong>📦 SEO y semántica:</strong><br>
-      🧬 JSON-LD activo en <code>&lt;head&gt;</code>.<br>
-      🔍 Schema.org: SoftwareApplication, Product, FAQPage, BreadcrumbList.<br>
-      📈 Validación estructural en Google Search Console.</p>
-
+      🧬 JSON-LD en <code>&lt;head&gt;</code><br>
+      🔍 Schema.org activo<br>
+      📈 Validación estructural</p>
       <p><strong>🛡️ Blindaje visual:</strong><br>
-      🚫 Eliminación de estilos genéricos.<br>
-      ✅ Herencia exacta de IDs y clases del dashboard.<br>
-      🔁 Modularidad escalable sin romper diseño.</p>
+      🚫 Sin estilos genéricos<br>
+      ✅ Herencia exacta<br>
+      🔁 Modularidad escalable</p>
     </details>
 
-    <!-- 🔮 Próximamente -->
     <details id="next">
       <summary>🔮 Próximamente</summary>
       <p><strong>/modlogs:</strong><br>
-      Historial completo, filtros avanzados, exportación de registros.</p>
+      Historial completo, filtros avanzados, exportación de registros</p>
+    </details>
+
+    <details id="reputation-doc">
+      <summary>📘 Documentación técnica — /reputation</summary>
+      <p><strong>Descripción:</strong><br>
+      Comando para otorgar reputación entre usuarios. Incluye boost, cooldown y trazabilidad.</p>
+      <p><strong>Parámetros:</strong><br>
+      <code>/reputation @usuario</code><br>
+      <code>boostActivo</code><br>
+      <code>reputationCooldown</code></p>
+      <p><strong>Archivos involucrados:</strong><br>
+      <code>Usuario.json</code><br>
+      <code>Embed.js</code><br>
+      <code>Cooldown.js</code></p>
+      <p><strong>Flujo técnico:</strong><br>
+      1. Verifica cooldown<br>
+      2. Aplica boost<br>
+      3. Actualiza <code>Usuario.json</code><br>
+      4. Genera embed</p>
     </details>
 
     <p style="margin-top:40px;">Gracias por usar Abyssus Bot.<br>Tu servidor merece herramientas oscuramente poderosas ⚔️</p>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <p id="footer-credits">2021–2025 Abyssus. Todos los derechos reservados.</p>
     <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Status</a>
@@ -164,6 +165,7 @@
   <script src="js/script2.js"></script>
 </body>
 </html>
+
 
 
 
