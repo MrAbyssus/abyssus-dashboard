@@ -7,7 +7,7 @@
   <link href="css/style.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tipografía limpia + fondo gris -->
+  <!-- Tipografía limpia + fondo gris + navegación hover -->
   <style>
     body {
       font-family: 'Segoe UI', 'Roboto', sans-serif;
@@ -33,15 +33,22 @@
       border-radius: 4px;
       font-size: 0.95em;
     }
+
+    /* Navegación flotante con hover */
     #changelog-nav {
       position: fixed;
       top: 120px;
-      left: 20px;
+      left: 0;
       background-color: #1a1a1a;
       border-left: 3px solid #3498db;
       padding: 10px 15px;
       font-family: 'Segoe UI', 'Roboto', sans-serif;
       z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    #changelog-nav:hover {
+      opacity: 1;
     }
     #changelog-nav a {
       display: block;
@@ -51,6 +58,16 @@
     }
     #changelog-nav a:hover {
       color: #ffffff;
+    }
+
+    /* Activador invisible */
+    #changelog-nav-trigger {
+      position: fixed;
+      top: 120px;
+      left: 0;
+      width: 40px;
+      height: 120px;
+      z-index: 999;
     }
   </style>
 </head>
@@ -67,7 +84,10 @@
     </div>
   </nav>
 
-  <!-- NAVEGACIÓN FLOTANTE -->
+  <!-- Activador invisible -->
+  <div id="changelog-nav-trigger"></div>
+
+  <!-- Navegación flotante -->
   <div id="changelog-nav">
     <a href="#bot">🛠️ Bot</a>
     <a href="#dashboard">🧩 Dashboard</a>
@@ -144,6 +164,7 @@
   <script src="js/script2.js"></script>
 </body>
 </html>
+
 
 
 
