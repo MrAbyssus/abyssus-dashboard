@@ -202,30 +202,30 @@
 <script>
   let segundosEstado = 0;
 
-  function actualizarIndicador() {
-    fetch('/api/status')
-      .then(res => res.json())
-      .then(data => {
-        const indicador = document.getElementById('indicadorEstado');
-        indicador.textContent = data.online ? '🟢 Abyssus está en línea' : '🔴 Abyssus no responde';
-        indicador.style.color = data.online ? '#00ff88' : '#ff4444';
+function actualizarIndicador() {
+  fetch('http://51.77.211.104:3000/api/status')
+    .then(res => res.json())
+    .then(data => {
+      const indicador = document.getElementById('indicadorEstado');
+      indicador.textContent = data.online ? '🟢 Abyssus está en línea' : '🔴 Abyssus no responde';
+      indicador.style.color = data.online ? '#00ff88' : '#ff4444';
 
-        segundosEstado = 0;
-        document.getElementById('estadoActualizado').textContent = 'Actualizado hace 0 segundos';
-      })
-      .catch(() => {
-        const indicador = document.getElementById('indicadorEstado');
-        indicador.textContent = '🔴 Error al verificar estado';
-        indicador.style.color = '#ff4444';
-      });
-  }
+      segundosEstado = 0;
+      document.getElementById('estadoActualizado').textContent = 'Actualizado hace 0 segundos';
+    })
+    .catch(() => {
+      const indicador = document.getElementById('indicadorEstado');
+      indicador.textContent = '🔴 Error al verificar estado';
+      indicador.style.color = '#ff4444';
+    });
+}
 
-  setInterval(() => {
-    segundosEstado++;
-    document.getElementById('estadoActualizado').textContent = `Actualizado hace ${segundosEstado} segundos`;
-  }, 1000);
+setInterval(() => {
+  segundosEstado++;
+  document.getElementById('estadoActualizado').textContent = `Actualizado hace ${segundosEstado} segundos`;
+}, 1000);
 
-  setInterval(actualizarIndicador, 30000);
-  window.addEventListener('load', actualizarIndicador);
+setInterval(actualizarIndicador, 30000);
+window.addEventListener('load', actualizarIndicador);
 </script>
 
