@@ -6,9 +6,11 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link href="css/style.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       font-family: 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
       background-color: #1a1a1a;
       color: #e0e0e0;
       padding: 0 20px;
@@ -28,204 +30,173 @@
       background-color: #1e1e1e;
       padding: 2px 6px;
       border-radius: 4px;
+      font-size: 0.95em;
     }
-    .updated {
-      animation: flash 0.6s ease;
+    #changelog-nav {
+      position: fixed;
+      top: 120px;
+      left: 0;
+      background-color: #1a1a1a;
+      border-left: 3px solid #3498db;
+      padding: 10px 15px;
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-    @keyframes flash {
-      0% { background-color: #3498db; color: #fff; }
-      100% { background-color: inherit; color: inherit; }
+    #changelog-nav:hover {
+      opacity: 1;
+    }
+    #changelog-nav a {
+      display: block;
+      margin-bottom: 10px;
+      color: #e0e0e0;
+      text-decoration: none;
+    }
+    #changelog-nav a:hover {
+      color: #ffffff;
+    }
+    #changelog-nav-trigger {
+      position: fixed;
+      top: 120px;
+      left: 0;
+      width: 40px;
+      height: 120px;
+      z-index: 999;
     }
   </style>
 </head>
 
 <body>
-  <h1>📘 Changelog técnico — Abyssus Bot</h1>
 
-  <details open>
-    <summary>🛠️ Cambios en el bot</summary>
-    <p><strong>Fecha:</strong> 2025-09-14</p>
-    <p><strong>📦 /reputation:</strong> Embed agregado, boost detectado, cooldown 10 min</p>
-    <p><strong>📊 /userinfo:</strong> Sección reputación integrada, lectura desde <code>Usuario.json</code></p>
-    <p><strong>🔧 Internos:</strong> Optimización de lectura, blindaje adicional</p>
-  </details>
+  <nav id="nav">
+    <div id="navtext-div">
+      <a href="developers.html" id="navtext">Developers</a>
+      <a href="index.html" id="navtext">Home</a>
+      <a href="commands.html" id="navtext">Commands</a>
+      <a href="changelog.html" id="navtext">Changelog</a>
+    </div>
+  </nav>
 
-  <details>
-    <summary>🧩 Cambios en el dashboard</summary>
-    <p><strong>📁 Visual:</strong> Tipografía limpia, bloques plegables, navegación interna</p>
-    <p><strong>📦 SEO:</strong> JSON-LD activo, validación estructural</p>
-    <p><strong>🛡️ Blindaje:</strong> Herencia exacta, sin estilos genéricos</p>
-  </details>
+  <div id="changelog-nav-trigger"></div>
 
-  <details>
-    <summary>📘 Documentación técnica — /modlogs</summary>
-    <p><strong>Descripción:</strong> Historial de moderación con filtros y exportación</p>
-    <p><strong>Commit:</strong> <code>f2d1a8c</code> · 2025-09-15 · Mr.Abyssus</p>
-  </details>
+  <div id="changelog-nav">
+    <a href="#bot">🛠️ Bot</a>
+    <a href="#dashboard">🧩 Dashboard</a>
+    <a href="#recent">📌 Cambios recientes</a>
+    <a href="#reputation-doc">📘 /reputation</a>
+    <a href="#modlogs-doc">📘 /modlogs</a>
+  </div>
 
-  <details open>
-    <summary>📡 Estado del sistema — Abyssus Bot</summary>
-    <p><strong>📶 Latencia:</strong> <span id="latency">Cargando...</span></p>
-    <p><strong>⏱️ Uptime:</strong> <span id="uptime">Cargando...</span></p>
-    <p><strong>🕒 Última actualización:</strong> <span id="timestamp">Cargando...</span></p>
-    <p><strong>🌍 Servidores:</strong> <span id="servers">Cargando...</span></p>
-    <p><strong>👥 Usuarios:</strong> <span id="users">Cargando...</span></p>
-    <p><strong>📈 Comandos usados:</strong> <span id="commandsUsed">Cargando...</span></p>
-    <p><em id="lastUpdate">Actualizado hace 0 segundos</em></p>
-    <button onclick="updateStatus()">🔄 Actualizar estado</button>
-  </details>
+  <img id="logo-main-1" src="img/logo.jpg" alt="Logo Abyssus">
+  <p id="botname-main-1">Changelog</p>
 
+  <div id="main-info">
+
+    <details id="bot" open>
+      <summary>🛠️ Changelog — Bot (v2.13)</summary>
+      <p><strong>Fecha:</strong> 2025-09-14</p>
+      <p><strong>📦 Mejoras en /reputation</strong><br>
+      ✅ Embed agregado<br>
+      🔁 Transferencia habilitada<br>
+      🔥 Boost detectado<br>
+      ⏳ Cooldown: 10 min<br>
+      🧾 Registro en <code>Usuario.json</code></p>
+      <p><strong>📊 Integración en /userinfo</strong><br>
+      📈 Sección “Reputación y boost”<br>
+      🎯 Datos mostrados: reputación, boost, cooldown<br>
+      🧠 Lectura desde <code>Usuario.json</code><br>
+      🎛️ Menú selectivo y botón de cierre</p>
+      <p><strong>🔧 Correcciones internas</strong><br>
+      🐛 Ajustes menores<br>
+      🚀 Optimización de lectura<br>
+      🛡️ Blindaje adicional</p>
+    </details>
+
+    <details id="dashboard">
+      <summary>🧩 Changelog — Dashboard</summary>
+      <p><strong>📁 Estructura visual:</strong><br>
+      ✅ Changelog como sección nativa<br>
+      🧠 Bloques plegables<br>
+      🎨 Tipografía limpia<br>
+      🔗 Navegación interna</p>
+      <p><strong>📦 SEO y semántica:</strong><br>
+      🧬 JSON-LD en <code>&lt;head&gt;</code><br>
+      🔍 Schema.org activo<br>
+      📈 Validación estructural</p>
+      <p><strong>🛡️ Blindaje visual:</strong><br>
+      🚫 Sin estilos genéricos<br>
+      ✅ Herencia exacta<br>
+      🔁 Modularidad escalable</p>
+    </details>
+
+    <details id="recent">
+      <summary>📌 Cambios recientes — /modlogs</summary>
+      <p><strong>Comando:</strong> <code>/modlogs</code></p>
+      <p><strong>Funciones:</strong><br>
+      🧾 Historial completo<br>
+      🔍 Filtros por tipo, usuario y fecha<br>
+      📤 Exportación técnica<br>
+      🛡️ Validación semántica</p>
+      <p><strong>Archivos involucrados:</strong><br>
+      <code>Modlogs.json</code>, <code>Filtro.js</code>, <code>Exportador.js</code></p>
+      <p><strong>Flujo técnico:</strong><br>
+      1. Recibe parámetros<br>
+      2. Busca en <code>Modlogs.json</code><br>
+      3. Genera embed o archivo<br>
+      4. Devuelve respuesta visual</p>
+    </details>
+
+    <details id="reputation-doc">
+      <summary>📘 Documentación técnica — /reputation</summary>
+      <p><strong>Descripción:</strong><br>
+      Comando para otorgar reputación entre usuarios. Incluye boost, cooldown y trazabilidad.</p>
+      <p><strong>Parámetros:</strong><br>
+      <code>/reputation @usuario</code><br>
+      <code>boostActivo</code><br>
+      <code>reputationCooldown</code></p>
+      <p><strong>Archivos involucrados:</strong><br>
+      <code>Usuario.json</code><br>
+      <code>Embed.js</code><br>
+      <code>Cooldown.js</code></p>
+      <p><strong>Flujo técnico:</strong><br>
+      1. Verifica cooldown<br>
+      2. Aplica boost<br>
+      3. Actualiza <code>Usuario.json</code><br>
+      4. Genera embed</p>
+      <p><strong>Commit técnico:</strong><br>
+      Hash: <code>c7a9f3b</code><br>
+      Fecha: 2025-09-14<br>
+      Autor: Mr.Abyssus</p>
+    </details>
+
+    <details id="modlogs-doc">
+      <summary>📘 Documentación técnica — /modlogs</summary>
+      <p><strong>Descripción:</strong><br>
+      Comando para consultar historial de moderación con filtros y exportación.</p>
+      <p><strong>Parámetros:</strong><br>
+      <code>/modlogs tipo=ban usuario=@usuario fecha=2025-09-14</code></p>
+      <p><strong>Archivos involucrados:</strong><br>
+      <code>Modlogs.json</code><br>
+      <code>Filtro.js</code><br>
+      <code>Exportador.js</code></p>
+      <p><strong>Flujo técnico:</strong><br>
+      1. Recibe filtros<br>
+      2. Busca coincidencias<br>
+      3. Genera embed o archivo<br>
+      4. Devuelve respuesta</p>
+      <p><strong>Commit técnico:</strong><br>
+      Hash: <code>f2d1a8c</code><br>
+      Fecha: 2025-09-15<br>
+      Autor: Mr.Abyssus</p>
+    </details>
+    
+  <!-- FOOTER -->
   <footer>
-    <p>2021–2025 Abyssus. Todos los derechos reservados.</p>
-    <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Ver estado completo</a>
+    <p id="footer-credits">2021–2025 Abyssus. Todos los derechos reservados.</p>
+    <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Status</a>
   </footer>
 
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <title>Status de Abyssus</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background-color: #0f0f0f;
-      color: #f0f0f0;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-    }
-    .card {
-      background-color: #1e1e1e;
-      padding: 2em;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,255,255,0.2);
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      margin-top: 2em;
-    }
-    h1 { color: #00ffff; margin-bottom: 0.5em; }
-    p { font-size: 1.1em; margin: 0.5em 0; }
-    .emoji { font-size: 2em; }
-    button {
-      margin-top: 1em;
-      padding: 0.5em 1em;
-      background-color: #00ffff;
-      border: none;
-      border-radius: 6px;
-      color: #0f0f0f;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .updated {
-      animation: pulse 0.6s ease-in-out;
-    }
-    @keyframes pulse {
-      0% { background-color: rgba(0,255,255,0.1); }
-      50% { background-color: rgba(0,255,255,0.3); }
-      100% { background-color: rgba(0,255,255,0.1); }
-    }
-    #modalLog {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
-    #modalLogContent {
-      background-color: #1e1e1e;
-      padding: 2em;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 90%;
-      color: #f0f0f0;
-      box-shadow: 0 0 20px rgba(0,255,255,0.3);
-      overflow-y: auto;
-      max-height: 80vh;
-    }
-    #logContenido {
-      white-space: pre-wrap;
-      font-size: 0.9em;
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="emoji">🤖</div>
-    <h1>Abyssus está <span id="status">...</span></h1>
-    <p><strong>📶 Latencia:</strong> <span id="latency">...</span></p>
-    <p><strong>⏱️ Uptime:</strong> <span id="uptime">...</span></p>
-    <p><strong>🕒 Última actualización:</strong> <span id="timestamp">...</span></p>
-    <p><strong>🌍 Servidores:</strong> <span id="servers">...</span></p>
-    <p><strong>👥 Usuarios:</strong> <span id="users">...</span></p>
-    <p><strong>📈 Comandos usados:</strong> <span id="commandsUsed">...</span></p>
-    <p><em id="lastUpdate">Actualizado hace 0 segundos</em></p>
-    <button onclick="abrirLog()">📜 Ver log</button>
-  </div>
-
-  <div id="modalLog">
-    <div id="modalLogContent">
-      <h2 style="color:#00ffff;">📜 Registro de eventos</h2>
-      <pre id="logContenido">Cargando...</pre>
-      <button onclick="cerrarLog()">Cerrar</button>
-    </div>
-  </div>
-
-  <script>
-    const TOKEN_ADMIN = 'ghostnet-abyssus-2025';
-    let secondsSinceUpdate = 0;
-    let updateTimer;
-
-    function formatUptime(seconds) {
-      const h = Math.floor(seconds / 3600);
-      const m = Math.floor((seconds % 3600) / 60);
-      const s = Math.floor(seconds % 60);
-      return `${h}h ${m}m ${s}s`;
-    }
-
-    function animateUpdate(id) {
-      const el = document.getElementById(id);
-      el.classList.add('updated');
-      setTimeout(() => el.classList.remove('updated'), 600);
-    }
-
-    async function updateStatus() {
-      try {
-        const res = await fetch('/api/status');
-        const data = await res.json();
-
-        document.getElementById('status').textContent = data.online ? '✅ Online' : '⚠️ Sin conexión';
-        document.getElementById('status').style.color = data.online ? '#00ff88' : '#ff4444';
-        document.getElementById('latency').textContent = `${data.latency} ms`;
-        document.getElementById('uptime').textContent = formatUptime(data.uptime);
-        document.getElementById('timestamp').textContent = data.timestamp;
-        document.getElementById('servers').textContent = data.servers;
-        document.getElementById('users').textContent = data.users;
-        document.getElementById('commandsUsed').textContent = data.commandsUsed.toLocaleString();
-
-        ['status','latency','uptime','timestamp','servers','users','commandsUsed'].forEach(animateUpdate);
-
-        secondsSinceUpdate = 0;
-        document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
-      } catch (err) {
-        console.error('[STATUS] Error al obtener estado:', err);
-      }
-    }
-
-    setInterval(() => {
-      secondsSinceUpdate++;
-      document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
-    }, 1000);
-
-    setInterval(updateStatus, 30000); // 🔁 Autoactualiza cada 30s
-
-    async function abrirLog() {
-      const res = await fetch('/api/log');
-      const data = await res.text();
-      document.getElementById('logContenido
+  <script src="js/script2.js"></script>
+</body>
+</html>
