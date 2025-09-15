@@ -79,68 +79,251 @@
     <p>2021–2025 Abyssus. Todos los derechos reservados.</p>
     <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Ver estado completo</a>
   </footer>
+require('dotenv').config();
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
 
- let secondsSinceUpdate = 0;
-let updateTimer;
-let autoRefreshTimer;
+module.exports = function (client) {
+  const app = express();
+  const port = 3000;
 
-function formatUptime(ms) {
-  const totalSeconds = Math.floor(ms / 1000);
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-  return `${hours}h ${minutes}m ${seconds}s`;
-}
+  app.use(express.json());
 
-function animateUpdate(id) {
-  const el = document.getElementById(id);
-  el.classList.add('updated');
-  setTimeout(() => el.classList.remove('updated'), 600);
-}
+  app.post('/api/changelog', (req, res) => {
+    const auth = req.headers['x-auth-token'];
+    if (auth !== process.env.TOKEN_ADMIN) return res.status(403).send('❌ No autorizado');
 
-async function updateStatus() {
-  try {
-    const res = await fetch('/api/status');
-    const data = await res.json();
+    const { titulo, cambios } = req.body;
+    if (!titulo || !cambios) return res.status(400).send('❌ Datos incompletos');
 
-    document.getElementById('latency').textContent = `${data.latency} ms`;
-    document.getElementById('uptime').textContent = formatUptime(data.uptime);
-    document.getElementById('timestamp').textContent = data.timestamp;
-    document.getElementById('servers').textContent = data.servers;
-    document.getElementById('users').textContent = data.users;
-    document.getElementById('commandsUsed').textContent = data.commandsUsed.toLocaleString();
+    const logPath = path.join(__dirname, 'logs', 'eventos.log');
+    const timestamp = new Date().toLocaleString();
+    const entrada = `🔧 ${titulo} (${timestamp})\n${cambios.split('\n').map(c => `• ${c.trim()}`).join('\n')}\n\n`;
 
-    ['latency', 'uptime', 'timestamp', 'servers', 'users', 'commandsUsed'].forEach(animateUpdate);
+    try {
+      fs.appendFileSync(logPath, entrada, 'utf8');
+      res.send('✅ Changelog registrado');
+    } catch (err) {
+      console.error('❌ Error al registrar changelog:', err.message);
+      res.status(500).send('Error interno');
+    }
+  });
 
-    secondsSinceUpdate = 0;
-    document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
+  app.get('/status', (req, res) => {
+    const statusHTML = `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Status de Abyssus</title>
+    <style>
+      body {
+        background-color: #0f0f0f;
+        color: #f0f0f0;
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        background-color: #1e1e1e;
+        padding: 2em;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,255,255,0.2);
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+        margin-top: 2em;
+      }
+      h1 {
+        color: #00ffff;
+        margin-bottom: 0.5em;
+      }
+      p {
+        font-size: 1.1em;
+        margin: 0.5em 0;
+      }
+      .emoji {
+        font-size: 2em;
+      }
+      button {
+        margin-top: 1em;
+        padding: 0.5em 1em;
+        background-color: #00ffff;
+        border: none;
+        border-radius: 6px;
+        color: #0f0f0f;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .updated {
+        animation: pulse 0.6s ease-in-out;
+      }
+      @keyframes pulse {
+        0% { background-color: rgba(0,255,255,0.1); }
+        50% { background-color: rgba(0,255,255,0.3); }
+        100% { background-color: rgba(0,255,255,0.1); }
+      }
+      #modalLog {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      }
+      #modalLogContent {
+        background-color: #1e1e1e;
+        padding: 2em;
+        border-radius: 12px;
+        max-width: 600px;
+        width: 90%;
+        color: #f0f0f0;
+        box-shadow: 0 0 20px rgba(0,255,255,0.3);
+        overflow-y: auto;
+        max-height: 80vh;
+      }
+      #logContenido {
+        white-space: pre-wrap;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="emoji">🤖</div>
+      <h1>Abyssus está <span id="status">...</span></h1>
+      <p><strong>📶 Latencia:</strong> <span id="latency">...</span></p>
+      <p><strong>⏱️ Uptime:</strong> <span id="uptime">...</span></p>
+      <p><strong>🕒 Última actualización:</strong> <span id="timestamp">...</span></p>
+      <p><strong>🌍 Servidores:</strong> <span id="servers">...</span></p>
+      <p><strong>👥 Usuarios:</strong> <span id="users">...</span></p>
+      <p><strong>📈 Comandos usados:</strong> <span id="commandsUsed">...</span></p>
+      <p><em id="lastUpdate">Actualizado hace 0 segundos</em></p>
+      <button onclick="updateStatus()">🔄 Actualizar</button>
+      <button onclick="abrirLog()">📜 Ver log</button>
+    </div>
 
-  } catch (err) {
-    console.error('[STATUS] Error al obtener estado:', err);
-  }
-}
+    <div id="modalLog">
+      <div id="modalLogContent">
+        <h2 style="color:#00ffff;">📜 Registro de eventos</h2>
+        <pre id="logContenido">Cargando...</pre>
+        <button onclick="cerrarLog()">Cerrar</button>
+      </div>
+    </div>
 
-window.addEventListener('load', () => {
-  updateStatus();
+    <script>
+      const TOKEN_ADMIN = 'ghostnet-abyssus-2025';
 
-  // ⏱️ Actualiza contador cada segundo
-  updateTimer = setInterval(() => {
-    secondsSinceUpdate++;
-    document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
-  }, 1000);
+      let secondsSinceUpdate = 0;
+      let updateTimer;
 
-  // 🔁 Actualiza status cada 30 segundos
-  autoRefreshTimer = setInterval(() => {
-    updateStatus();
-  }, 30000);
-});
+      function animateUpdate(id) {
+        const el = document.getElementById(id);
+        el.classList.add('updated');
+        setTimeout(() => el.classList.remove('updated'), 600);
+      }
 
+      async function updateStatus() {
+        const res = await fetch('/api/status');
+        const data = await res.json();
 
+        document.getElementById('status').textContent = data.online ? '✅ Online' : '⚠️ Sin conexión';
+        document.getElementById('status').style.color = data.online ? '#00ff88' : '#ff4444';
+        animateUpdate('status');
 
+        document.getElementById('latency').textContent = data.latency + ' ms';
+        animateUpdate('latency');
 
+        document.getElementById('uptime').textContent = formatUptime(data.uptime);
+        animateUpdate('uptime');
 
+        document.getElementById('timestamp').textContent = data.timestamp;
+        animateUpdate('timestamp');
 
+        document.getElementById('servers').textContent = data.servers;
+        animateUpdate('servers');
 
+        document.getElementById('users').textContent = data.users;
+        animateUpdate('users');
 
+        document.getElementById('commandsUsed').textContent = data.commandsUsed.toLocaleString();
+        animateUpdate('commandsUsed');
 
+        secondsSinceUpdate = 0;
+        document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
 
+        if (!updateTimer) {
+          updateTimer = setInterval(() => {
+            secondsSinceUpdate++;
+            document.getElementById('lastUpdate').textContent = \`Actualizado hace \${secondsSinceUpdate} segundos\`;
+          }, 1000);
+        }
+      }
+
+      function formatUptime(seconds) {
+        const h = Math.floor(seconds / 3600);
+        const m = Math.floor((seconds % 3600) / 60);
+        const s = Math.floor(seconds % 60);
+        return \`\${h}h \${m}m \${s}s\`;
+      }
+
+      async function abrirLog() {
+        const res = await fetch('/api/log');
+        const data = await res.text();
+        document.getElementById('logContenido').textContent = data || 'Sin eventos recientes.';
+        document.getElementById('modalLog').style.display = 'flex';
+      }
+
+      function cerrarLog() {
+        document.getElementById('modalLog').style.display = 'none';
+      }
+
+      async function enviarChangelog() {
+        const titulo = prompt('Título del changelog:');
+        const cambios = prompt('Lista de cambios (separados por salto de línea):');
+
+        if (!titulo || !cambios) return alert('❌ Datos incompletos');
+
+        const res = await fetch('/api/changelog', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-auth-token': TOKEN_ADMIN
+          },
+          body: JSON.stringify({ titulo, cambios })
+        });
+
+        const msg = await res.text();
+        alert(msg);
+        updateStatus();
+      }
+
+              function mostrarBotonChangelog() {
+        const clave = prompt('🔐 Ingresa tu clave para registrar cambios:');
+        if (clave !== TOKEN_ADMIN) return;
+
+        const btn = document.createElement('button');
+        btn.textContent = '🧩 Registrar cambios';
+        btn.onclick = enviarChangelog;
+        btn.style.marginTop = '1em';
+        document.querySelector('.card').appendChild(btn);
+      }
+
+      window.onload = () => {
+        updateStatus();
+        mostrarBotonChangelog();
+      };
+    </script>
+  </body>
+</html>`;
+    res.send(statusHTML);
+  });
+
+  app.listen(port, () => {
+    console.log(`🌐 Dashboard activo en http://localhost:${port}/status`);
+  });
+};
