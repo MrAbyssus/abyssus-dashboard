@@ -80,11 +80,9 @@
     <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Ver estado completo</a>
   </footer>
 
-  <script src="js/status.js"></script>
-</body>
-</html>
-let secondsSinceUpdate = 0;
+ let secondsSinceUpdate = 0;
 let updateTimer;
+let autoRefreshTimer;
 
 function formatUptime(ms) {
   const totalSeconds = Math.floor(ms / 1000);
@@ -117,18 +115,25 @@ async function updateStatus() {
     secondsSinceUpdate = 0;
     document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
 
-    if (!updateTimer) {
-      updateTimer = setInterval(() => {
-        secondsSinceUpdate++;
-        document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
-      }, 1000);
-    }
   } catch (err) {
     console.error('[STATUS] Error al obtener estado:', err);
   }
 }
 
-window.addEventListener('load', updateStatus);
+window.addEventListener('load', () => {
+  updateStatus();
+
+  // ⏱️ Actualiza contador cada segundo
+  updateTimer = setInterval(() => {
+    secondsSinceUpdate++;
+    document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
+  }, 1000);
+
+  // 🔁 Actualiza status cada 30 segundos
+  autoRefreshTimer = setInterval(() => {
+    updateStatus();
+  }, 30000);
+});
 
 
 
