@@ -64,6 +64,16 @@
       height: 120px;
       z-index: 999;
     }
+    #estadoBot {
+      margin: 30px 0;
+      text-align: center;
+      border-left: 2px solid #00ff88;
+      padding-left: 15px;
+    }
+    #indicadorEstado {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
   </style>
 </head>
 
@@ -93,6 +103,14 @@
 
   <div id="main-info">
 
+    <!-- 🔁 Indicador de estado del bot -->
+    <div id="estadoBot">
+      <summary>📡 Estado del sistema — Abyssus Bot</summary>
+      <p><span id="indicadorEstado">🟡 Verificando estado...</span></p>
+      <p><em id="estadoActualizado">Actualizado hace 0 segundos</em></p>
+    </div>
+
+    <!-- 🔧 Secciones funcionales -->
     <details id="bot" open>
       <summary>🛠️ Changelog — Bot (v2.13)</summary>
       <p><strong>Fecha:</strong> 2025-09-14</p>
@@ -181,22 +199,33 @@
       <code>Filtro.js</code><br>
       <code>Exportador.js</code></p>
       <p><strong>Flujo técnico:</strong><br>
-      1. Recibe filtros<br>
-      2. Busca coincidencias<br>
-      3. Genera embed o archivo<br>
-      4. Devuelve respuesta</p>
-      <p><strong>Commit técnico:</strong><br>
-      Hash: <code>f2d1a8c</code><br>
-      Fecha: 2025-09-15<br>
-      Autor: Mr.Abyssus</p>
-    </details>
-    
-  <!-- FOOTER -->
-  <footer>
-    <p id="footer-credits">2021–2025 Abyssus. Todos los derechos reservados.</p>
-    <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Status</a>
-  </footer>
+<script>
+  let segundosEstado = 0;
 
-  <script src="js/script2.js"></script>
-</body>
-</html>
+  function actualizarIndicador() {
+    fetch('/api/status')
+      .then(res => res.json())
+      .then(data => {
+        const indicador = document.getElementById('indicadorEstado');
+        indicador.textContent = data.online ? '🟢 Abyssus está en línea' : '🔴 Abyssus no responde';
+        indicador.style.color = data.online ? '#00ff88' : '#ff4444';
+
+        segundosEstado = 0;
+        document.getElementById('estadoActualizado').textContent = 'Actualizado hace 0 segundos';
+      })
+      .catch(() => {
+        const indicador = document.getElementById('indicadorEstado');
+        indicador.textContent = '🔴 Error al verificar estado';
+        indicador.style.color = '#ff4444';
+      });
+  }
+
+  setInterval(() => {
+    segundosEstado++;
+    document.getElementById('estadoActualizado').textContent = `Actualizado hace ${segundosEstado} segundos`;
+  }, 1000);
+
+  setInterval(actualizarIndicador, 30000);
+  window.addEventListener('load', actualizarIndicador);
+</script>
+
