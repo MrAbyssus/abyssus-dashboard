@@ -64,6 +64,13 @@
       height: 120px;
       z-index: 999;
     }
+    .updated {
+      animation: flash 0.6s ease;
+    }
+    @keyframes flash {
+      0% { background-color: #3498db; color: #fff; }
+      100% { background-color: inherit; color: inherit; }
+    }
   </style>
 </head>
 
@@ -86,6 +93,7 @@
     <a href="#recent">📌 Cambios recientes</a>
     <a href="#reputation-doc">📘 /reputation</a>
     <a href="#modlogs-doc">📘 /modlogs</a>
+    <a href="#status">📡 Estado del sistema</a>
   </div>
 
   <img id="logo-main-1" src="img/logo.jpg" alt="Logo Abyssus">
@@ -93,113 +101,78 @@
 
   <div id="main-info">
 
-    <details id="bot" open>
-      <summary>🛠️ Changelog — Bot (v2.13)</summary>
-      <p><strong>Fecha:</strong> 2025-09-14</p>
-      <p><strong>📦 Mejoras en /reputation</strong><br>
-      ✅ Embed agregado<br>
-      🔁 Transferencia habilitada<br>
-      🔥 Boost detectado<br>
-      ⏳ Cooldown: 10 min<br>
-      🧾 Registro en <code>Usuario.json</code></p>
-      <p><strong>📊 Integración en /userinfo</strong><br>
-      📈 Sección “Reputación y boost”<br>
-      🎯 Datos mostrados: reputación, boost, cooldown<br>
-      🧠 Lectura desde <code>Usuario.json</code><br>
-      🎛️ Menú selectivo y botón de cierre</p>
-      <p><strong>🔧 Correcciones internas</strong><br>
-      🐛 Ajustes menores<br>
-      🚀 Optimización de lectura<br>
-      🛡️ Blindaje adicional</p>
+    <!-- Secciones previas omitidas para brevedad -->
+
+    <details id="status" open>
+      <summary>📡 Estado del sistema — Abyssus Bot</summary>
+      <p><strong>📶 Latencia:</strong> <span id="latency">Cargando...</span></p>
+      <p><strong>⏱️ Uptime:</strong> <span id="uptime">Cargando...</span></p>
+      <p><strong>🕒 Última actualización:</strong> <span id="timestamp">Cargando...</span></p>
+      <p><strong>🌍 Servidores:</strong> <span id="servers">Cargando...</span></p>
+      <p><strong>👥 Usuarios:</strong> <span id="users">Cargando...</span></p>
+      <p><strong>📈 Comandos usados:</strong> <span id="commandsUsed">Cargando...</span></p>
+      <p><em id="lastUpdate">Actualizado hace 0 segundos</em></p>
+      <button onclick="updateStatus()">🔄 Actualizar estado</button>
     </details>
 
-    <details id="dashboard">
-      <summary>🧩 Changelog — Dashboard</summary>
-      <p><strong>📁 Estructura visual:</strong><br>
-      ✅ Changelog como sección nativa<br>
-      🧠 Bloques plegables<br>
-      🎨 Tipografía limpia<br>
-      🔗 Navegación interna</p>
-      <p><strong>📦 SEO y semántica:</strong><br>
-      🧬 JSON-LD en <code>&lt;head&gt;</code><br>
-      🔍 Schema.org activo<br>
-      📈 Validación estructural</p>
-      <p><strong>🛡️ Blindaje visual:</strong><br>
-      🚫 Sin estilos genéricos<br>
-      ✅ Herencia exacta<br>
-      🔁 Modularidad escalable</p>
-    </details>
+  </div>
 
-    <details id="recent">
-      <summary>📌 Cambios recientes — /modlogs</summary>
-      <p><strong>Comando:</strong> <code>/modlogs</code></p>
-      <p><strong>Funciones:</strong><br>
-      🧾 Historial completo<br>
-      🔍 Filtros por tipo, usuario y fecha<br>
-      📤 Exportación técnica<br>
-      🛡️ Validación semántica</p>
-      <p><strong>Archivos involucrados:</strong><br>
-      <code>Modlogs.json</code>, <code>Filtro.js</code>, <code>Exportador.js</code></p>
-      <p><strong>Flujo técnico:</strong><br>
-      1. Recibe parámetros<br>
-      2. Busca en <code>Modlogs.json</code><br>
-      3. Genera embed o archivo<br>
-      4. Devuelve respuesta visual</p>
-    </details>
-
-    <details id="reputation-doc">
-      <summary>📘 Documentación técnica — /reputation</summary>
-      <p><strong>Descripción:</strong><br>
-      Comando para otorgar reputación entre usuarios. Incluye boost, cooldown y trazabilidad.</p>
-      <p><strong>Parámetros:</strong><br>
-      <code>/reputation @usuario</code><br>
-      <code>boostActivo</code><br>
-      <code>reputationCooldown</code></p>
-      <p><strong>Archivos involucrados:</strong><br>
-      <code>Usuario.json</code><br>
-      <code>Embed.js</code><br>
-      <code>Cooldown.js</code></p>
-      <p><strong>Flujo técnico:</strong><br>
-      1. Verifica cooldown<br>
-      2. Aplica boost<br>
-      3. Actualiza <code>Usuario.json</code><br>
-      4. Genera embed</p>
-      <p><strong>Commit técnico:</strong><br>
-      Hash: <code>c7a9f3b</code><br>
-      Fecha: 2025-09-14<br>
-      Autor: Mr.Abyssus</p>
-    </details>
-
-    <details id="modlogs-doc">
-      <summary>📘 Documentación técnica — /modlogs</summary>
-      <p><strong>Descripción:</strong><br>
-      Comando para consultar historial de moderación con filtros y exportación.</p>
-      <p><strong>Parámetros:</strong><br>
-      <code>/modlogs tipo=ban usuario=@usuario fecha=2025-09-14</code></p>
-      <p><strong>Archivos involucrados:</strong><br>
-      <code>Modlogs.json</code><br>
-      <code>Filtro.js</code><br>
-      <code>Exportador.js</code></p>
-      <p><strong>Flujo técnico:</strong><br>
-      1. Recibe filtros<br>
-      2. Busca coincidencias<br>
-      3. Genera embed o archivo<br>
-      4. Devuelve respuesta</p>
-      <p><strong>Commit técnico:</strong><br>
-      Hash: <code>f2d1a8c</code><br>
-      Fecha: 2025-09-15<br>
-      Autor: Mr.Abyssus</p>
-    </details>
-    
-  <!-- FOOTER -->
   <footer>
     <p id="footer-credits">2021–2025 Abyssus. Todos los derechos reservados.</p>
     <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Status</a>
   </footer>
 
-  <script src="js/script2.js"></script>
+  <script>
+    let secondsSinceUpdate = 0;
+    let updateTimer;
+
+    function formatUptime(ms) {
+      const totalSeconds = Math.floor(ms / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return `${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    function animateUpdate(id) {
+      const el = document.getElementById(id);
+      el.classList.add('updated');
+      setTimeout(() => el.classList.remove('updated'), 600);
+    }
+
+    async function updateStatus() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+
+        document.getElementById('latency').textContent = `${data.latency} ms`;
+        document.getElementById('uptime').textContent = formatUptime(data.uptime);
+        document.getElementById('timestamp').textContent = data.timestamp;
+        document.getElementById('servers').textContent = data.servers;
+        document.getElementById('users').textContent = data.users;
+        document.getElementById('commandsUsed').textContent = data.commandsUsed.toLocaleString();
+
+        ['latency', 'uptime', 'timestamp', 'servers', 'users', 'commandsUsed'].forEach(animateUpdate);
+
+        secondsSinceUpdate = 0;
+        document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
+
+        if (!updateTimer) {
+          updateTimer = setInterval(() => {
+            secondsSinceUpdate++;
+            document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
+          }, 1000);
+        }
+      } catch (err) {
+        console.error('[STATUS] Error al obtener estado:', err);
+      }
+    }
+
+    window.addEventListener('load', updateStatus);
+  </script>
 </body>
 </html>
+
 
 
 
