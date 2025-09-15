@@ -8,25 +8,26 @@
 
 
 <url>
-  <loc>https://abyssus-dashboard.netlify.app/</loc>
+  <loc>www.abyssus-dashboard.netlify.app/</loc>
   <lastmod>2025-09-15T18:51:34+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://abyssus-dashboard.netlify.app/developers</loc>
+  <loc>www./abyssus-dashboard.netlify.app/developers</loc>
   <lastmod>2025-09-15T18:51:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abyssus-dashboard.netlify.app/commands</loc>
+  <loc>www.abyssus-dashboard.netlify.app/commands</loc>
   <lastmod>2025-09-15T18:51:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://abyssus-dashboard.netlify.app/changelog</loc>
+  <loc>www.abyssus-dashboard.netlify.app/changelog</loc>
   <lastmod>2025-09-15T18:51:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 
 
 </urlset>
