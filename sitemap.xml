@@ -5,7 +5,8 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+User-agent: *
+Allow: /
 
 <url>
   <loc>https://abyssus-dashboard.netlify.app/</loc>
@@ -27,6 +28,7 @@
   <lastmod>2025-09-15T18:51:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 
 
 </urlset>
