@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-		<!--	created with www.mysitemapgenerator.com	-->
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-	<loc>https://abyssus-dashboard.netlify.app/</loc>
-	<lastmod>2025-09-15T22:15:02+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://abyssus-dashboard.netlify.app/developers</loc>
-	<lastmod>2025-09-15T22:15:02+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://abyssus-dashboard.netlify.app/commands</loc>
-	<lastmod>2025-09-15T22:15:02+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://abyssus-dashboard.netlify.app/changelog</loc>
-	<lastmod>2025-09-15T22:15:02+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://abyssus-dashboard.netlify.app/</loc>
+    <lastmod>2025-09-15T22:15:02+01:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://abyssus-dashboard.netlify.app/developers</loc>
+    <lastmod>2025-09-15T22:15:02+01:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://abyssus-dashboard.netlify.app/commands</loc>
+    <lastmod>2025-09-15T22:15:02+01:00</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://abyssus-dashboard.netlify.app/changelog</loc>
+    <lastmod>2025-09-15T22:15:02+01:00</lastmod>
+    <priority>1.0</priority>
+  </url>
 </urlset>
+
 
 
 
