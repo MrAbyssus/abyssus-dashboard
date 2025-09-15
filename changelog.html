@@ -3,25 +3,10 @@
 <head>
   <!-- CSS -->
   <link href="css/style.css" rel="stylesheet">
-
-  <!-- Título y Favicon -->
   <title>Abyssus Bot</title>
   <link rel="icon" type="image/png" href="img/favicon.png">
-
-  <!-- Verificación Google Search Console -->
-  <meta name="google-site-verification" content="5NUscbEtjToA7LHN9FGSDdr4MFkaaQ_Vtm">
-
-  <!-- Metadatos SEO -->
   <meta charset="utf-8">
-  <meta name="description" content="Changelog técnico de Abyssus Bot: funciones, versiones y evolución del sistema.">
-  <meta name="keywords" content="Abyssus bot, Discord, changelog, actualizaciones, comandos, moderación">
-  <meta name="author" content="Mr.Abyssus">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Changelog — Abyssus Bot">
-  <meta property="og:description" content="Registro técnico de cambios y evolución de Abyssus Bot.">
-  <meta property="og:url" content="https://abyssus-dashboard.netlify.app/changelog.html">
 </head>
 
 <nav id="nav">
@@ -35,61 +20,73 @@
 
 <body>
 
-  <!-- LOGO + TÍTULO -->
   <img id="logo-main-1" src="img/logo.jpg">
   <p id="botname-main-1">Changelog</p>
 
-  <!-- BOTONES PRINCIPALES -->
   <div id="main-buttons">
     <a href="#v1"><button id="main-button-1">Ver v1.0</button></a>
     <a href="#v2"><button id="main-button-2">Ver v2.0</button></a>
   </div>
 
-  <div style="margin:50px 0 50px 0;"></div>
+  <div style="margin:50px 0;"></div>
 
-  <!-- CONTENIDO -->
   <div id="main-info">
 
-    <p id="main-info-1">🧾 <strong id="v1">Versión 1.0 — Sistematización semántica</strong><br>
-    Sistematización política, organización, vestes, abrachamientos, programa, producto, interacción compilada con conjunto de actividades.</p>
+    <details id="v1" open>
+      <summary><p id="main-info-1">🧾 <strong>Versión 1.0 — Sistematización semántica</strong></p></summary>
+      <p id="main-info-2">🔧 <strong>Sistematización:</strong><br>
+      Política, organización, vestes, abrachamientos, programa, producto, interacción compilada.</p>
 
-    <p id="main-info-2">🛠️ <strong>Funciones base</strong><br>
-    Actividades base, conjuntos definidos, replicación de actividades, procesos de interacción, actividades de interacción.</p>
+      <p id="main-info-2">🛠️ <strong>Funciones base:</strong><br>
+      Actividades base, conjuntos definidos, replicación de actividades, procesos de interacción.</p>
 
-    <p id="main-info-2">✅ <strong>Verificación base</strong><br>
-    Verificación teórica, HTML, sample, inputs, outputs, procesos de verificación, replicación de actividades.</p>
+      <p id="main-info-2">✅ <strong>Verificación:</strong><br>
+      HTML, sample, inputs, outputs, replicación de procesos.</p>
 
-    <p id="main-info-2">📦 <strong>Cargas para usuarios bot</strong><br>
-    Estructura de header, herramientas segmentadas, podrings v1.</p>
+      <p id="main-info-2">📦 <strong>Carga bot:</strong><br>
+      Header estructurado, herramientas segmentadas, podrings v1.</p>
+    </details>
 
-    <p id="main-info-1">🚀 <strong id="v2">Versión 2.0 — Funciones avanzadas</strong><br>
-    Conjuntos de generación, moderación, replicación e interacción social. Logs automáticos, control, uso por múltiples usuarios.</p>
+    <details id="v2">
+      <summary><p id="main-info-1">🚀 <strong>Versión 2.0 — Funciones avanzadas</strong></p></summary>
+      <p id="main-info-2">🛠️ <strong>Funciones base:</strong><br>
+      Generación, moderación, replicación, interacción social. Logs automáticos, control multiusuario.</p>
 
-    <p id="main-info-2">🌐 <strong>Serv. presencia</strong><br>
-    Presencia de usuarios, replicación de actividades, verificación de sesión cruzada, sistema de logs.</p>
+      <p id="main-info-2">🌐 <strong>Presencia:</strong><br>
+      Replicación cruzada, verificación de sesión, sistema de logs.</p>
 
-    <p id="main-info-2">📦 <strong>Cargas para usuarios bot</strong><br>
-    Estructura de header, herramientas segmentadas, podrings v2.</p>
+      <p id="main-info-2">📦 <strong>Carga bot:</strong><br>
+      Header estructurado, herramientas segmentadas, podrings v2.</p>
 
-    <p id="main-info-2">🧠 <strong>Sistematización semántica</strong><br>
-    Sistematización computada, filtros avanzados y exportación de estadísticas.</p>
+      <p id="main-info-2">🧠 <strong>Sistematización:</strong><br>
+      Computada, filtros avanzados, exportación de estadísticas.</p>
+    </details>
+
+    <details>
+      <summary><p id="main-info-1">🔮 <strong>Próximamente</strong></p></summary>
+      <p id="main-info-2">📜 <strong>/modlogs:</strong><br>
+      Historial completo, filtros avanzados, exportación de registros.</p>
+    </details>
+
+    <p id="main-info-1">📁 <strong>Estructura del repositorio</strong><br>
+    <code>css/</code>, <code>js/</code>, <code>img/</code>, <code>index.html</code>, <code>commands.html</code>, <code>developers.html</code>, <code>changelog.html</code>, <code>CHANGELOG</code>, <code>README.md</code></p>
 
     <p id="main-info-1">Gracias por usar Abyssus Bot.<br>Tu servidor merece herramientas oscuramente poderosas ⚔️</p>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <p id="footer-copyright">2021 All rights reserved.</p>
     <div id="main-buttons">
       <a href="http://abyssusbot.mired.ovh:3000/status"><button id="main-button-2">Status</button></a>
     </div>
-    <div style="margin:50px 0 50px 0;"></div>
+    <div style="margin:50px 0;"></div>
     <a href=""><p id="footer-credits"> Website by Romeo</p></a>
   </footer>
 
   <script src="js/script2.js"></script>
 </body>
 </html>
+
 
 
 
