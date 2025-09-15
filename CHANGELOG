@@ -1,3 +1,34 @@
+# 🧾 Changelog técnico — Abyssus v3.0
+
+## 🔧 Infraestructura semántica
+- Integración de bloques `JSON-LD`:  
+  - `SoftwareApplication`: declarado como aplicación funcional  
+  - `Organization`: marca técnica con enlaces verificados  
+  - `WebSite`: sitio con búsqueda interna  
+  - `BreadcrumbList`: navegación jerárquica  
+  - `FAQPage`: respuestas directas en Google  
+  - `Product`: herramienta gratuita con funciones premium
+
+## 🛠️ Funciones base
+- Comandos de economía, moderación, reputación y social
+- Logs automáticos y trazabilidad total
+- Control VIP por rol/token
+- Blindaje de endpoints y validación granular
+
+## 🚀 Funciones premium
+- Boost visual y cooldowns extendidos
+- Blindajes avanzados y reputación escalable
+- Registro extendido y advertencias previas en acciones destructivas
+
+## 📦 SEO y presencia
+- Metadatos optimizados (`description`, `keywords`, `og:`)
+- Verificación en Google Search Console
+- Sitemap y robots.txt activos
+
+## 📌 Documentación
+- Markdown técnico y HTML limpio
+- Favicon, logo y presentación adaptable
+
 
 ## [SEO estructurado JSON-LD] - 2025-09-15
 
