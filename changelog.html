@@ -6,11 +6,9 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link href="css/style.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       font-family: 'Segoe UI', 'Roboto', sans-serif;
-      line-height: 1.6;
       background-color: #1a1a1a;
       color: #e0e0e0;
       padding: 0 20px;
@@ -30,39 +28,6 @@
       background-color: #1e1e1e;
       padding: 2px 6px;
       border-radius: 4px;
-      font-size: 0.95em;
-    }
-    #changelog-nav {
-      position: fixed;
-      top: 120px;
-      left: 0;
-      background-color: #1a1a1a;
-      border-left: 3px solid #3498db;
-      padding: 10px 15px;
-      font-family: 'Segoe UI', 'Roboto', sans-serif;
-      z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    #changelog-nav:hover {
-      opacity: 1;
-    }
-    #changelog-nav a {
-      display: block;
-      margin-bottom: 10px;
-      color: #e0e0e0;
-      text-decoration: none;
-    }
-    #changelog-nav a:hover {
-      color: #ffffff;
-    }
-    #changelog-nav-trigger {
-      position: fixed;
-      top: 120px;
-      left: 0;
-      width: 40px;
-      height: 120px;
-      z-index: 999;
     }
     .updated {
       animation: flash 0.6s ease;
@@ -75,103 +40,96 @@
 </head>
 
 <body>
+  <h1>📘 Changelog técnico — Abyssus Bot</h1>
 
-  <nav id="nav">
-    <div id="navtext-div">
-      <a href="developers.html" id="navtext">Developers</a>
-      <a href="index.html" id="navtext">Home</a>
-      <a href="commands.html" id="navtext">Commands</a>
-      <a href="changelog.html" id="navtext">Changelog</a>
-    </div>
-  </nav>
+  <details open>
+    <summary>🛠️ Cambios en el bot</summary>
+    <p><strong>Fecha:</strong> 2025-09-14</p>
+    <p><strong>📦 /reputation:</strong> Embed agregado, boost detectado, cooldown 10 min</p>
+    <p><strong>📊 /userinfo:</strong> Sección reputación integrada, lectura desde <code>Usuario.json</code></p>
+    <p><strong>🔧 Internos:</strong> Optimización de lectura, blindaje adicional</p>
+  </details>
 
-  <div id="changelog-nav-trigger"></div>
+  <details>
+    <summary>🧩 Cambios en el dashboard</summary>
+    <p><strong>📁 Visual:</strong> Tipografía limpia, bloques plegables, navegación interna</p>
+    <p><strong>📦 SEO:</strong> JSON-LD activo, validación estructural</p>
+    <p><strong>🛡️ Blindaje:</strong> Herencia exacta, sin estilos genéricos</p>
+  </details>
 
-  <div id="changelog-nav">
-    <a href="#bot">🛠️ Bot</a>
-    <a href="#dashboard">🧩 Dashboard</a>
-    <a href="#recent">📌 Cambios recientes</a>
-    <a href="#reputation-doc">📘 /reputation</a>
-    <a href="#modlogs-doc">📘 /modlogs</a>
-    <a href="#status">📡 Estado del sistema</a>
-  </div>
+  <details>
+    <summary>📘 Documentación técnica — /modlogs</summary>
+    <p><strong>Descripción:</strong> Historial de moderación con filtros y exportación</p>
+    <p><strong>Commit:</strong> <code>f2d1a8c</code> · 2025-09-15 · Mr.Abyssus</p>
+  </details>
 
-  <img id="logo-main-1" src="img/logo.jpg" alt="Logo Abyssus">
-  <p id="botname-main-1">Changelog</p>
-
-  <div id="main-info">
-
-    <!-- Secciones previas omitidas para brevedad -->
-
-    <details id="status" open>
-      <summary>📡 Estado del sistema — Abyssus Bot</summary>
-      <p><strong>📶 Latencia:</strong> <span id="latency">Cargando...</span></p>
-      <p><strong>⏱️ Uptime:</strong> <span id="uptime">Cargando...</span></p>
-      <p><strong>🕒 Última actualización:</strong> <span id="timestamp">Cargando...</span></p>
-      <p><strong>🌍 Servidores:</strong> <span id="servers">Cargando...</span></p>
-      <p><strong>👥 Usuarios:</strong> <span id="users">Cargando...</span></p>
-      <p><strong>📈 Comandos usados:</strong> <span id="commandsUsed">Cargando...</span></p>
-      <p><em id="lastUpdate">Actualizado hace 0 segundos</em></p>
-      <button onclick="updateStatus()">🔄 Actualizar estado</button>
-    </details>
-
-  </div>
+  <details open>
+    <summary>📡 Estado del sistema — Abyssus Bot</summary>
+    <p><strong>📶 Latencia:</strong> <span id="latency">Cargando...</span></p>
+    <p><strong>⏱️ Uptime:</strong> <span id="uptime">Cargando...</span></p>
+    <p><strong>🕒 Última actualización:</strong> <span id="timestamp">Cargando...</span></p>
+    <p><strong>🌍 Servidores:</strong> <span id="servers">Cargando...</span></p>
+    <p><strong>👥 Usuarios:</strong> <span id="users">Cargando...</span></p>
+    <p><strong>📈 Comandos usados:</strong> <span id="commandsUsed">Cargando...</span></p>
+    <p><em id="lastUpdate">Actualizado hace 0 segundos</em></p>
+    <button onclick="updateStatus()">🔄 Actualizar estado</button>
+  </details>
 
   <footer>
-    <p id="footer-credits">2021–2025 Abyssus. Todos los derechos reservados.</p>
-    <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Status</a>
+    <p>2021–2025 Abyssus. Todos los derechos reservados.</p>
+    <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Ver estado completo</a>
   </footer>
 
-  <script>
-    let secondsSinceUpdate = 0;
-    let updateTimer;
-
-    function formatUptime(ms) {
-      const totalSeconds = Math.floor(ms / 1000);
-      const hours = Math.floor(totalSeconds / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-      return `${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    function animateUpdate(id) {
-      const el = document.getElementById(id);
-      el.classList.add('updated');
-      setTimeout(() => el.classList.remove('updated'), 600);
-    }
-
-    async function updateStatus() {
-      try {
-        const res = await fetch('/api/status');
-        const data = await res.json();
-
-        document.getElementById('latency').textContent = `${data.latency} ms`;
-        document.getElementById('uptime').textContent = formatUptime(data.uptime);
-        document.getElementById('timestamp').textContent = data.timestamp;
-        document.getElementById('servers').textContent = data.servers;
-        document.getElementById('users').textContent = data.users;
-        document.getElementById('commandsUsed').textContent = data.commandsUsed.toLocaleString();
-
-        ['latency', 'uptime', 'timestamp', 'servers', 'users', 'commandsUsed'].forEach(animateUpdate);
-
-        secondsSinceUpdate = 0;
-        document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
-
-        if (!updateTimer) {
-          updateTimer = setInterval(() => {
-            secondsSinceUpdate++;
-            document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
-          }, 1000);
-        }
-      } catch (err) {
-        console.error('[STATUS] Error al obtener estado:', err);
-      }
-    }
-
-    window.addEventListener('load', updateStatus);
-  </script>
+  <script src="js/status.js"></script>
 </body>
 </html>
+let secondsSinceUpdate = 0;
+let updateTimer;
+
+function formatUptime(ms) {
+  const totalSeconds = Math.floor(ms / 1000);
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return `${hours}h ${minutes}m ${seconds}s`;
+}
+
+function animateUpdate(id) {
+  const el = document.getElementById(id);
+  el.classList.add('updated');
+  setTimeout(() => el.classList.remove('updated'), 600);
+}
+
+async function updateStatus() {
+  try {
+    const res = await fetch('/api/status');
+    const data = await res.json();
+
+    document.getElementById('latency').textContent = `${data.latency} ms`;
+    document.getElementById('uptime').textContent = formatUptime(data.uptime);
+    document.getElementById('timestamp').textContent = data.timestamp;
+    document.getElementById('servers').textContent = data.servers;
+    document.getElementById('users').textContent = data.users;
+    document.getElementById('commandsUsed').textContent = data.commandsUsed.toLocaleString();
+
+    ['latency', 'uptime', 'timestamp', 'servers', 'users', 'commandsUsed'].forEach(animateUpdate);
+
+    secondsSinceUpdate = 0;
+    document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
+
+    if (!updateTimer) {
+      updateTimer = setInterval(() => {
+        secondsSinceUpdate++;
+        document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
+      }, 1000);
+    }
+  } catch (err) {
+    console.error('[STATUS] Error al obtener estado:', err);
+  }
+}
+
+window.addEventListener('load', updateStatus);
+
 
 
 
