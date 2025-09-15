@@ -47,12 +47,13 @@
   }
   </script>
 
-  <script type="application/ld+json">
+  
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Abyssus Bot",
-  "description": "Bot en español para Discord con comandos únicos de economía, moderación, reputación y blindajes. Integración visual sobria, trazabilidad total y control VIP.",
+  "description": "Bot en español para Discord con comandos gratuitos de economía, moderación y reputación. Incluye funciones premium opcionales como blindajes avanzados, cooldowns extendidos y boost visual.",
   "image": "https://abyssus-dashboard.netlify.app/img/logo.jpg",
   "brand": {
     "@type": "Organization",
@@ -60,10 +61,27 @@
   },
   "url": "https://abyssus-dashboard.netlify.app/",
   "offers": {
-    "@type": "Offer",
-    "price": "0",
+    "@type": "AggregateOffer",
+    "lowPrice": "0",
+    "highPrice": "5",
     "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
+    "offerCount": "2",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "Acceso gratuito a comandos base"
+      },
+      {
+        "@type": "Offer",
+        "price": "5",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "description": "Funciones premium opcionales"
+      }
+    ]
   },
   "review": {
     "@type": "Review",
@@ -80,7 +98,6 @@
 }
 </script>
 
-
   <!-- JSON-LD: Organization -->
   <script type="application/ld+json">
   {
@@ -96,40 +113,6 @@
     ]
   }
   </script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Abyssus Bot",
-  "description": "Bot en español para Discord con comandos únicos de economía, moderación, reputación y blindajes. Integración visual sobria, trazabilidad total y control VIP.",
-  "image": "https://abyssus-dashboard.netlify.app/img/logo.jpg",
-  "brand": {
-    "@type": "Organization",
-    "name": "Abyssus"
-  },
-  "url": "https://abyssus-dashboard.netlify.app/",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Usuario Discord"
-    }
-  }
-}
-</script>
-
 
   <!-- JSON-LD: WebSite -->
   <script type="application/ld+json">
