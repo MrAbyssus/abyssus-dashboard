@@ -79,3 +79,153 @@
     <p>2021–2025 Abyssus. Todos los derechos reservados.</p>
     <a href="http://abyssusbot.mired.ovh:3000/status" style="color:#3498db;">Ver estado completo</a>
   </footer>
+
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Status de Abyssus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    .card {
+      background-color: #1e1e1e;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      margin-top: 2em;
+    }
+    h1 { color: #00ffff; margin-bottom: 0.5em; }
+    p { font-size: 1.1em; margin: 0.5em 0; }
+    .emoji { font-size: 2em; }
+    button {
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      background-color: #00ffff;
+      border: none;
+      border-radius: 6px;
+      color: #0f0f0f;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .updated {
+      animation: pulse 0.6s ease-in-out;
+    }
+    @keyframes pulse {
+      0% { background-color: rgba(0,255,255,0.1); }
+      50% { background-color: rgba(0,255,255,0.3); }
+      100% { background-color: rgba(0,255,255,0.1); }
+    }
+    #modalLog {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    #modalLogContent {
+      background-color: #1e1e1e;
+      padding: 2em;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 90%;
+      color: #f0f0f0;
+      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+    #logContenido {
+      white-space: pre-wrap;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">🤖</div>
+    <h1>Abyssus está <span id="status">...</span></h1>
+    <p><strong>📶 Latencia:</strong> <span id="latency">...</span></p>
+    <p><strong>⏱️ Uptime:</strong> <span id="uptime">...</span></p>
+    <p><strong>🕒 Última actualización:</strong> <span id="timestamp">...</span></p>
+    <p><strong>🌍 Servidores:</strong> <span id="servers">...</span></p>
+    <p><strong>👥 Usuarios:</strong> <span id="users">...</span></p>
+    <p><strong>📈 Comandos usados:</strong> <span id="commandsUsed">...</span></p>
+    <p><em id="lastUpdate">Actualizado hace 0 segundos</em></p>
+    <button onclick="abrirLog()">📜 Ver log</button>
+  </div>
+
+  <div id="modalLog">
+    <div id="modalLogContent">
+      <h2 style="color:#00ffff;">📜 Registro de eventos</h2>
+      <pre id="logContenido">Cargando...</pre>
+      <button onclick="cerrarLog()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const TOKEN_ADMIN = 'ghostnet-abyssus-2025';
+    let secondsSinceUpdate = 0;
+    let updateTimer;
+
+    function formatUptime(seconds) {
+      const h = Math.floor(seconds / 3600);
+      const m = Math.floor((seconds % 3600) / 60);
+      const s = Math.floor(seconds % 60);
+      return `${h}h ${m}m ${s}s`;
+    }
+
+    function animateUpdate(id) {
+      const el = document.getElementById(id);
+      el.classList.add('updated');
+      setTimeout(() => el.classList.remove('updated'), 600);
+    }
+
+    async function updateStatus() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+
+        document.getElementById('status').textContent = data.online ? '✅ Online' : '⚠️ Sin conexión';
+        document.getElementById('status').style.color = data.online ? '#00ff88' : '#ff4444';
+        document.getElementById('latency').textContent = `${data.latency} ms`;
+        document.getElementById('uptime').textContent = formatUptime(data.uptime);
+        document.getElementById('timestamp').textContent = data.timestamp;
+        document.getElementById('servers').textContent = data.servers;
+        document.getElementById('users').textContent = data.users;
+        document.getElementById('commandsUsed').textContent = data.commandsUsed.toLocaleString();
+
+        ['status','latency','uptime','timestamp','servers','users','commandsUsed'].forEach(animateUpdate);
+
+        secondsSinceUpdate = 0;
+        document.getElementById('lastUpdate').textContent = 'Actualizado hace 0 segundos';
+      } catch (err) {
+        console.error('[STATUS] Error al obtener estado:', err);
+      }
+    }
+
+    setInterval(() => {
+      secondsSinceUpdate++;
+      document.getElementById('lastUpdate').textContent = `Actualizado hace ${secondsSinceUpdate} segundos`;
+    }, 1000);
+
+    setInterval(updateStatus, 30000); // 🔁 Autoactualiza cada 30s
+
+    async function abrirLog() {
+      const res = await fetch('/api/log');
+      const data = await res.text();
+      document.getElementById('logContenido
