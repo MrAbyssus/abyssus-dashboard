@@ -1,3 +1,30 @@
+
+## [SEO estructurado JSON-LD] - 2025-09-15
+
+### 📦 Integración en index.html
+- Inserción del bloque `JSON-LD` en `<head>` para escalar SEO y activar Google Knowledge Graph
+- Tipo: `SoftwareApplication`
+- Nombre: Abyssus Bot
+- Plataforma: Web, Discord
+- Versión: v3.0
+- Autor: Mr.Abyssus
+- Imagen: logo oficial del bot
+- Enlaces relacionados:
+  - Discord: https://discord.gg/gU7XAxTpX5
+  - Top.gg: https://top.gg/bot/680897280433324081
+  - GitHub: https://github.com/MrAbyssus/abyssus-dashboard
+
+### ✅ Objetivo
+- Mejorar visibilidad en búsquedas como “bot Discord en español”, “economía Discord”, “moderación automática”
+- Activar paneles enriquecidos en resultados de Google
+- Marcar a Abyssus como aplicación funcional con presencia técnica
+
+### 🧠 Estado
+- Bloque activo en producción
+- Validación estructural: correcta
+- Listo para ser detectado por Google en próximos ciclos de rastreo
+
+
 # 🚀 Abyssus Bot v2.3 — Release oficial
 
 La versión **2.3** de Abyssus Bot ya está disponible. Esta actualización trae mejoras clave en moderación, gestión de roles y experiencia de usuario.
