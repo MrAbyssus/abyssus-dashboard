@@ -91,7 +91,7 @@
   <div id="changelog-nav-trigger"></div>
 
   <div id="changelog-nav">
-    <a href="#bot">🛠️ Bot</a>
+    <a href="#petSystem">🐾 Sistema Emocional</a>
     <a href="#dashboard">🧩 Dashboard</a>
     <a href="#recent">📌 Cambios recientes</a>
     <a href="#reputation-doc">📘 /reputation</a>
@@ -103,39 +103,34 @@
 
   <div id="main-info">
 
-    <!-- 🔁 Indicador de estado del bot -->
     <div id="estadoBot">
       <summary>📡 Estado del sistema — Abyssus Bot</summary>
       <p><span id="indicadorEstado">🟡 Verificando estado...</span></p>
       <p><em id="estadoActualizado">Actualizado hace 0 segundos</em></p>
     </div>
 
-    <!-- 🔧 Secciones funcionales -->
-  <details id="petSystem" open>
-  <summary>🐾 Changelog — Sistema Emocional + Premium (v2.13)</summary>
-  <p><strong>Fecha:</strong> 2025-09-16</p>
-
-  <p><strong>✅ Nuevos módulos integrados</strong><br>
-  /pet jugar — Interacción emocional con botones: <code>fusionar</code>, <code>alimentar</code>, <code>liberar</code><br>
-  gestionarPet.js — Sistema de mascotas con rareza, estado emocional y persistencia por usuario<br>
-  Visuales abismales — Integrados en todos los embeds (<code>pet</code>, <code>interact</code>, <code>welcome</code>)</p>
-
-  <p><strong>🔧 Mejoras aplicadas</strong><br>
-  Corrección de errores en botones de <code>/pet jugar</code><br>
-  Blindaje de rutas y persistencia en <code>mascotas.json</code><br>
-  Logs de interacción en consola para trazabilidad<br>
-  Integración oficial de <code>/pet</code> al comando <code>/help</code></p>
-
-  <p><strong>💠 Mejora del sistema premium</strong><br>
-  Centralización de gestión de accesos premium y revocaciones como subcomandos<br>
-  Blindaje visual y semántico de roles premium<br>
-  Compatibilidad con módulos emocionales y reputacionales</p>
-</details>
+    <details id="petSystem" open>
+      <summary>🐾 Changelog — Sistema Emocional + Premium (v2.13)</summary>
+      <p><strong>Fecha:</strong> 2025-09-16</p>
+      <p><strong>✅ Nuevos módulos integrados</strong><br>
+      /pet jugar — Botones: <code>fusionar</code>, <code>alimentar</code>, <code>liberar</code><br>
+      gestionarPet.js — Rareza, estado emocional y persistencia<br>
+      Visuales abismales — Integrados en todos los embeds</p>
+      <p><strong>🔧 Mejoras aplicadas</strong><br>
+      Corrección en <code>/pet jugar</code><br>
+      Blindaje en <code>mascotas.json</code><br>
+      Logs en consola<br>
+      Integración oficial en <code>/help</code></p>
+      <p><strong>💠 Mejora del sistema premium</strong><br>
+      Gestión centralizada de accesos<br>
+      Blindaje visual y semántico<br>
+      Compatibilidad emocional y reputacional</p>
+    </details>
 
     <details id="dashboard">
       <summary>🧩 Changelog — Dashboard</summary>
       <p><strong>📁 Estructura visual:</strong><br>
-      ✅ Changelog como sección nativa<br>
+      ✅ Changelog nativo<br>
       🧠 Bloques plegables<br>
       🎨 Tipografía limpia<br>
       🔗 Navegación interna</p>
@@ -157,7 +152,7 @@
       🔍 Filtros por tipo, usuario y fecha<br>
       📤 Exportación técnica<br>
       🛡️ Validación semántica</p>
-      <p><strong>Archivos involucrados:</strong><br>
+      <p><strong>Archivos:</strong><br>
       <code>Modlogs.json</code>, <code>Filtro.js</code>, <code>Exportador.js</code></p>
       <p><strong>Flujo técnico:</strong><br>
       1. Recibe parámetros<br>
@@ -168,13 +163,12 @@
 
     <details id="reputation-doc">
       <summary>📘 Documentación técnica — /reputation</summary>
-      <p><strong>Descripción:</strong><br>
-      Comando para otorgar reputación entre usuarios. Incluye boost, cooldown y trazabilidad.</p>
+      <p><strong>Descripción:</strong> Comando para otorgar reputación entre usuarios.</p>
       <p><strong>Parámetros:</strong><br>
       <code>/reputation @usuario</code><br>
       <code>boostActivo</code><br>
       <code>reputationCooldown</code></p>
-      <p><strong>Archivos involucrados:</strong><br>
+      <p><strong>Archivos:</strong><br>
       <code>Usuario.json</code><br>
       <code>Embed.js</code><br>
       <code>Cooldown.js</code></p>
@@ -191,26 +185,36 @@
 
     <details id="modlogs-doc">
       <summary>📘 Documentación técnica — /modlogs</summary>
-      <p><strong>Descripción:</strong><br>
-      Comando para consultar historial de moderación con filtros y exportación.</p>
+      <p><strong>Descripción:</strong> Consulta historial de moderación con filtros y exportación.</p>
       <p><strong>Parámetros:</strong><br>
       <code>/modlogs tipo=ban usuario=@usuario fecha=2025-09-14</code></p>
-      <p><strong>Archivos involucrados:</strong><br>
+      <p><strong>Archivos:</strong><br>
       <code>Modlogs.json</code><br>
       <code>Filtro.js</code><br>
       <code>Exportador.js</code></p>
-      <p><strong>Flujo técnico</p>
-        </details> <!-- cierre de /modlogs-doc -->
+      <p><strong>Flujo técnico:</strong><br>
+      1. Recibe parámetros<br>
+      2. Filtra por tipo y fecha<br>
+      3. Genera embed o archivo<br>
+      4. Devuelve respuesta visual</p>
+    </details>
 
+       <hr style="margin: 60px 0; border: none; border-top: 2px solid #3498db;">
+
+    <section id="firma-tecnica" style="text-align: center; color: #888; padding-bottom: 40px;">
+      <h2 style="color: #00ffff;">🔐 Firma técnica institucional</h2>
+      <p>Este changelog forma parte del sistema técnico Abyssus.</p>
+      <p>Diseñado, estructurado y blindado por <strong>Mr.Abyssus</strong>.</p>
+      <p>Cada módulo está firmado. Cada ciclo está documentado. Cada expansión deja huella.</p>
+      <p style="margin-top: 20px;">Versión: <strong>v3.4</strong> — Publicado: <strong>2025-09-17</strong></p>
+    </section>
   </div> <!-- cierre de #main-info -->
 
-  <!-- FOOTER -->
-  <footer>
-    <p id="footer-credits">2021–2025 Abyssus. Todos los derechos reservados.</p>
-    <a href="http://51.77.211.104:3000/status" style="color:#3498db;">Status</a>
+  <footer style="text-align: center; margin-top: 40px; color: #555;">
+    <p>© 2021–2025 Abyssus. Todos los derechos reservados.</p>
+    <a href="http://51.77.211.104:3000/status" style="color:#3498db;">📡 Estado en vivo</a>
   </footer>
 
-  <!-- ✅ Script funcional para estado del bot -->
   <script>
     let segundosEstado = 0;
 
@@ -221,7 +225,6 @@
           const indicador = document.getElementById('indicadorEstado');
           indicador.textContent = data.online ? '🟢 Abyssus está en línea' : '🔴 Abyssus no responde';
           indicador.style.color = data.online ? '#00ff88' : '#ff4444';
-
           segundosEstado = 0;
           document.getElementById('estadoActualizado').textContent = 'Actualizado hace 0 segundos';
         })
@@ -242,6 +245,7 @@
   </script>
 </body>
 </html>
+
 
 
   
