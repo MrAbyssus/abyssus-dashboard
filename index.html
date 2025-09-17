@@ -7,87 +7,76 @@
   <link href="css/style.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png">
 
-  <!-- SEO y verificación -->
+  <!-- SEO -->
   <meta name="description" content="Bot en español con economía, moderación, reputación y trazabilidad institucional.">
   <meta name="keywords" content="Discord, bot, Abyssus, moderación, economía, reputación">
   <meta name="author" content="Mr.Abyssus">
-  <meta name="google-site-verification" content="5NUscbEtjToA7LHN9FGSDdr4MFkaaQ_Vtm">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Abyssus Bot">
-  <meta property="og:description" content="Bot en español con economía, moderación y reputación.">
-  <meta property="og:url" content="https://discord.gg/gU7XAxTpX5">
-  <meta property="og:image" content="https://abyssus-dashboard.netlify.app/img/logo.jpg">
 </head>
 
 <body>
   <!-- NAV -->
   <nav id="nav">
     <div id="navtext-div">
-      <a href="developers.html" id="navtext">Developers</a>
-      <a href="index.html" id="navtext">Home</a>
-      <a href="commands.html" id="navtext">Commands</a>
+      <a href="index.html" id="navtext">Inicio</a>
+      <a href="commands.html" id="navtext">Comandos</a>
+      <a href="developers.html" id="navtext">Desarrollador</a>
       <a href="changelog.html" id="navtext">Changelog</a>
     </div>
   </nav>
 
   <!-- LOGO + NOMBRE -->
-  <img id="logo-main-1" src="img/logo.jpg" alt="Logo Abyssus">
-  <p id="botname-main-1">Abyssus Bot</p>
+  <div id="header">
+    <img id="logo-main-1" src="img/logo.jpg" alt="Logo Abyssus">
+    <p id="botname-main-1">Abyssus Bot</p>
+    <p id="slogan">Sistema modular, visual y emocional para servidores con identidad.</p>
+  </div>
 
   <!-- BOTONES PRINCIPALES -->
   <div id="main-buttons">
-    <a href="#intro"><button id="main-button-1">Saber más</button></a>
+    <a href="#origen"><button id="main-button-1">Saber más</button></a>
     <a href="https://discord.com/oauth2/authorize?client_id=680897280433324081&scope=bot%20applications.commands&permissions=8">
       <button id="main-button-2">Invitame!</button>
     </a>
   </div>
 
-  <!-- CONTADOR INSTITUCIONAL -->
+  <!-- CONTADOR DE SERVIDORES -->
   <div id="estado-expansion">
-    <p id="server-count">🧠 Abyssus está activo en <strong>648 servidores</strong> y creciendo cada día.</p>
-    <p id="expansion-note">Hoy se sumaron <strong>2 servidores nuevos</strong>. La expansión sigue.</p>
+    <p>🧠 Abyssus está activo en <strong id="server-count">648 servidores</strong></p>
+    <p>📈 Hoy se sumaron <strong>2 nuevos servidores</strong>. La expansión continúa.</p>
   </div>
 
-  <!-- INFO PRINCIPAL -->
+  <!-- RECOMPENSA -->
   <div id="main-info">
-    <br id="intro">
-    <p id="main-info-1">🎁 <strong>¡Reclama tu recompensa por invocar a Abyssus!</strong><br>
-    🧙‍♂️ Invitá al bot a tu servidor y entrá al templo oficial para recibir AbyCoins.</p>
-
-    <p id="main-info-2">Si ya invitaste a Abyssus, usá <code>/reclamar</code> para recibir tu recompensa.<br>
-    Si no lo hiciste aún, ¡estás a tiempo!<br>
-    🔗 Invitá al bot y desbloqueá tus AbyCoins.</p>
+    <p>🎁 <strong>¡Reclama tu recompensa por invocar a Abyssus!</strong><br>
+    Usá <code>/reclamar</code> en el servidor oficial para recibir tus AbyCoins.</p>
+    <p>🔗 Si aún no lo hiciste, invitá al bot y desbloqueá tu recompensa.</p>
   </div>
 
   <!-- ORIGEN DEL PROYECTO -->
-  <div id="origen-abyssus">
-    <p><strong>📜 Origen institucional:</strong><br>
-    Abyssus nació como un experimento para un servidor de amigos. La comunidad lo adoptó, lo recomendó y lo impulsó. Así nació la versión pública: un sistema modular, visual y emocional que ofrece todo lo esencial sin saturar el servidor.</p>
+  <div id="origen">
+    <h2>📜 Origen institucional</h2>
+    <p>Abyssus nació como un experimento para un servidor de amigos. No buscaba fama, solo orden.  
+    Pero la comunidad lo adoptó, lo recomendó y lo impulsó. Así nació la versión pública:  
+    un sistema modular, visual y emocional que ofrece todo lo esencial sin saturar el servidor.</p>
   </div>
 
   <!-- BOTONES SECUNDARIOS -->
-  <div id="main-buttons" style="margin-top: 200px;">
-    <a href="https://discord.gg/gU7XAxTpX5"><button id="main-button-2-1">Join support server</button></a>  
-  </div>
-
-  <div id="main-buttons-2" style="margin-top: 30px">
-    <a href="https://top.gg/bot/680897280433324081/vote"><button id="main-button-3">Vota</button></a>  
-    <a href="https://www.paypal.com/donate/?hosted_button_id=DMFBBR5VNYV94"><button id="main-button-4">Apoyá el proyecto Abyssus</button></a>  
+  <div id="main-buttons-2">
+    <a href="https://discord.gg/gU7XAxTpX5"><button id="main-button-2-1">Servidor de soporte</button></a>  
+    <a href="https://top.gg/bot/680897280433324081/vote"><button id="main-button-3">Votá por Abyssus</button></a>  
+    <a href="https://www.paypal.com/donate/?hosted_button_id=DMFBBR5VNYV94"><button id="main-button-4">Apoyá el proyecto</button></a>  
   </div>
 
   <!-- FIRMA TÉCNICA -->
-  <div id="firma-tecnica" style="margin-top: 50px;">
+  <div id="firma-tecnica">
     <p>🔐 Sistema diseñado, estructurado y blindado por <strong>Mr.Abyssus</strong><br>
     Cada módulo está firmado. Cada ciclo está documentado. Cada expansión deja huella.</p>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <p id="footer-copyright">2021–2025 All rights reserved.</p>
-    <a href="https://github.com/MrAbyssus/abyssus-dashboard/blob/main/Aviso%20de%20privacidad" target="_blank" style="color: #3498db;">
-      📄 Aviso de Privacidad
-    </a>
+    <p>© 2021–2025 Abyssus. Todos los derechos reservados.</p>
+    <a href="https://github.com/MrAbyssus/abyssus-dashboard/blob/main/Aviso%20de%20privacidad" target="_blank">📄 Aviso de Privacidad</a>
   </footer>
 
   <!-- JS -->
