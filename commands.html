@@ -2368,25 +2368,6 @@
 
 <div id="commands-minigrid">
 
-<p id="commands-name">/define
-<button onclick="copyCommand('/define')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
-  </p>    
-<p id="commands-desc">Define cualquier palabra.</p>
-<script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert("✅ Comando copiado: " + command);
-    }).catch(() => {
-      alert("❌ No se pudo copiar el comando");
-    });
-  }
-</script>    
-</div>
-
-</div>
-
-<div id="commands-minigrid">
-
 <p id="commands-name">/meme
 <button onclick="copyCommand('/meme')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
   </p>    
@@ -2406,10 +2387,10 @@
 
 <div id="commands-minigrid">
 
-<p id="commands-name">/quiz
-  <button onclick="copyCommand('/quiz')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+<p id="commands-name">/trivia
+  <button onclick="copyCommand('/trivia')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
   </p>  
-<p id="commands-desc">Preguntas para ver cuánto sabes.</p>
+<p id="commands-desc">Responde una pregunta de trivia.</p>
 <script>
   function copyCommand(command) {
     navigator.clipboard.writeText(command).then(() => {
@@ -2444,8 +2425,27 @@
 
 <div id="commands-minigrid">
 
-<p id="commands-name">/roll
-<button onclick="copyCommand('/roll')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+<p id="commands-name">/ppt
+<button onclick="copyCommand('/ppt')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>    
+<p id="commands-desc">Juega piedra, papel o tijera.</p>
+  <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>  
+</div>
+
+</div>
+
+<div id="commands-minigrid">
+
+<p id="commands-name">/dados
+<button onclick="copyCommand('/dados')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
   </p>    
 <p id="commands-desc">Lanza dados virtuales.</p>
   <script>
@@ -2459,13 +2459,29 @@
 </script>  
 </div>
 
-
 </div>
 
+<div id="commands-minigrid">
 
+<p id="commands-name">/adivinanza
+<button onclick="copyCommand('/adivinanza')" style="margin-left: 10px; background-color: #3a3a4f; border: none; border-radius: 6px; padding: 4px 8px; color: #fff; cursor: pointer; font-size: 13px;">📋</button>
+  </p>    
+<p id="commands-desc">REsuelve una adivinanza.</p>
+  <script>
+  function copyCommand(command) {
+    navigator.clipboard.writeText(command).then(() => {
+      alert("✅ Comando copiado: " + command);
+    }).catch(() => {
+      alert("❌ No se pudo copiar el comando");
+    });
+  }
+</script>  
+</div>
+
+  
+</div>
 
 </body>
-
 
 <footer>
 
