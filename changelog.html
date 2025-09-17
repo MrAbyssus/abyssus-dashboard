@@ -6,14 +6,13 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link href="css/style.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
     body {
       font-family: 'Segoe UI', 'Roboto', sans-serif;
-      line-height: 1.6;
-      background-color: #1a1a1a;
+      background-color: #0f0f0f;
       color: #e0e0e0;
       padding: 0 20px;
+      line-height: 1.6;
     }
     summary {
       font-size: 1.2em;
@@ -39,7 +38,6 @@
       background-color: #1a1a1a;
       border-left: 3px solid #3498db;
       padding: 10px 15px;
-      font-family: 'Segoe UI', 'Roboto', sans-serif;
       z-index: 1000;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -79,17 +77,23 @@
 
 <body>
 
-  <nav id="nav">
-    <div id="navtext-div">
-      <a href="developers.html" id="navtext">Developers</a>
-      <a href="index.html" id="navtext">Home</a>
-      <a href="commands.html" id="navtext">Commands</a>
-      <a href="changelog.html" id="navtext">Changelog</a>
-    </div>
+  <!-- NAV -->
+  <nav id="nav" style="text-align: center; margin-top: 20px;">
+    <a href="index.html" style="margin: 0 15px; color: #00ffff;">Inicio</a>
+    <a href="commands.html" style="margin: 0 15px; color: #00ffff;">Comandos</a>
+    <a href="developers.html" style="margin: 0 15px; color: #00ffff;">Developers</a>
+    <a href="changelog.html" style="margin: 0 15px; color: #00ffff;">Changelog</a>
   </nav>
 
-  <div id="changelog-nav-trigger"></div>
+  <!-- HEADER -->
+  <div style="text-align: center; margin-top: 40px;">
+    <img src="img/logo.jpg" alt="Logo Abyssus" style="width: 120px; border-radius: 50%;">
+    <h1 style="font-size: 2.5em; margin: 10px 0;">Changelog técnico</h1>
+    <p style="font-size: 1.2em; color: #bbbbbb;">Documentación institucional de módulos, comandos y ciclos firmados.</p>
+  </div>
 
+  <!-- NAVEGACIÓN INTERNA -->
+  <div id="changelog-nav-trigger"></div>
   <div id="changelog-nav">
     <a href="#petSystem">🐾 Sistema Emocional</a>
     <a href="#dashboard">🧩 Dashboard</a>
@@ -98,30 +102,29 @@
     <a href="#modlogs-doc">📘 /modlogs</a>
   </div>
 
-  <img id="logo-main-1" src="img/logo.jpg" alt="Logo Abyssus">
-  <p id="botname-main-1">Changelog</p>
+  <!-- ESTADO DEL BOT -->
+  <section id="estadoBot">
+    <summary>📡 Estado del sistema — Abyssus Bot</summary>
+    <p><span id="indicadorEstado">🟡 Verificando estado...</span></p>
+    <p><em id="estadoActualizado">Actualizado hace 0 segundos</em></p>
+  </section>
 
-  <div id="main-info">
-
-    <div id="estadoBot">
-      <summary>📡 Estado del sistema — Abyssus Bot</summary>
-      <p><span id="indicadorEstado">🟡 Verificando estado...</span></p>
-      <p><em id="estadoActualizado">Actualizado hace 0 segundos</em></p>
-    </div>
+  <!-- BLOQUES DE CAMBIO -->
+  <section id="main-info">
 
     <details id="petSystem" open>
       <summary>🐾 Changelog — Sistema Emocional + Premium (v2.13)</summary>
       <p><strong>Fecha:</strong> 2025-09-16</p>
-      <p><strong>✅ Nuevos módulos integrados</strong><br>
+      <p><strong>✅ Nuevos módulos:</strong><br>
       /pet jugar — Botones: <code>fusionar</code>, <code>alimentar</code>, <code>liberar</code><br>
       gestionarPet.js — Rareza, estado emocional y persistencia<br>
       Visuales abismales — Integrados en todos los embeds</p>
-      <p><strong>🔧 Mejoras aplicadas</strong><br>
+      <p><strong>🔧 Mejoras:</strong><br>
       Corrección en <code>/pet jugar</code><br>
       Blindaje en <code>mascotas.json</code><br>
       Logs en consola<br>
       Integración oficial en <code>/help</code></p>
-      <p><strong>💠 Mejora del sistema premium</strong><br>
+      <p><strong>💠 Premium:</strong><br>
       Gestión centralizada de accesos<br>
       Blindaje visual y semántico<br>
       Compatibilidad emocional y reputacional</p>
@@ -129,16 +132,16 @@
 
     <details id="dashboard">
       <summary>🧩 Changelog — Dashboard</summary>
-      <p><strong>📁 Estructura visual:</strong><br>
+      <p><strong>Visual:</strong><br>
       ✅ Changelog nativo<br>
       🧠 Bloques plegables<br>
       🎨 Tipografía limpia<br>
       🔗 Navegación interna</p>
-      <p><strong>📦 SEO y semántica:</strong><br>
+      <p><strong>SEO:</strong><br>
       🧬 JSON-LD en <code>&lt;head&gt;</code><br>
       🔍 Schema.org activo<br>
       📈 Validación estructural</p>
-      <p><strong>🛡️ Blindaje visual:</strong><br>
+      <p><strong>Blindaje:</strong><br>
       🚫 Sin estilos genéricos<br>
       ✅ Herencia exacta<br>
       🔁 Modularidad escalable</p>
@@ -156,7 +159,7 @@
       <code>Modlogs.json</code>, <code>Filtro.js</code>, <code>Exportador.js</code></p>
       <p><strong>Flujo técnico:</strong><br>
       1. Recibe parámetros<br>
-      2. Busca en <code>Modlogs.json</code><br>
+      2. Filtra por tipo y fecha<br>
       3. Genera embed o archivo<br>
       4. Devuelve respuesta visual</p>
     </details>
@@ -187,7 +190,7 @@
       <summary>📘 Documentación técnica — /modlogs</summary>
       <p><strong>Descripción:</strong> Consulta historial de moderación con filtros y exportación.</p>
       <p><strong>Parámetros:</strong><br>
-      <code>/modlogs tipo=ban usuario=@usuario fecha=2025-09-14</code></p>
+      <code>/modlogs tipo=ban usuario=@usuario fecha=2025-09-      14</code></p>
       <p><strong>Archivos:</strong><br>
       <code>Modlogs.json</code><br>
       <code>Filtro.js</code><br>
@@ -199,16 +202,16 @@
       4. Devuelve respuesta visual</p>
     </details>
 
-       <hr style="margin: 60px 0; border: none; border-top: 2px solid #3498db;">
+    <hr style="margin: 60px 0; border: none; border-top: 2px solid #3498db;">
 
     <section id="firma-tecnica" style="text-align: center; color: #888; padding-bottom: 40px;">
       <h2 style="color: #00ffff;">🔐 Firma técnica institucional</h2>
       <p>Este changelog forma parte del sistema técnico Abyssus.</p>
       <p>Diseñado, estructurado y blindado por <strong>Mr.Abyssus</strong>.</p>
       <p>Cada módulo está firmado. Cada ciclo está documentado. Cada expansión deja huella.</p>
-      <p style="margin-top: 20px;">Versión: <strong>v3.4</strong> — Publicado: <strong>2025-09-17</strong></p>
+      <p style="margin-top: 20px;">Versión: <strong>v3.5</strong> — Publicado: <strong>2025-09-17</strong></p>
     </section>
-  </div> <!-- cierre de #main-info -->
+  </section> <!-- cierre de #main-info -->
 
   <footer style="text-align: center; margin-top: 40px; color: #555;">
     <p>© 2021–2025 Abyssus. Todos los derechos reservados.</p>
