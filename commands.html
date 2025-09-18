@@ -93,12 +93,9 @@
 <!-- FUNCIÓN DE COPIADO -->
 <script>
   function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
-    });
+    navigator.clipboard.writeText(command);
   }
 </script>
-
 
  
 <!-- COMANDOS GENERALES -->
