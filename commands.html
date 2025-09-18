@@ -106,50 +106,44 @@
 
 
  
-<!-- COMANDOS GENERALES -->
-<section id="generales" style="width: 80%; margin: 40px auto;">
+<!-- COMANDOS VIP -->
+<section id="vip" style="width: 80%; margin: 40px auto;">
   <details style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">💎 Comandos Generales</summary>
+    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">💎 Comandos VIP</summary>
 
     <div class="command-block" style="margin-top: 20px;">
-      <p><strong>/ping</strong> — Verifica que Abyssus esté activo
-        <button class="copy-button" onclick="copyCommand('/ping')">Copiar</button>
+      <p><strong>/vip boost</strong> — Activa boost de reputación por 1 hora
+        <button class="copy-button" onclick="copyCommand('/vip boost')">Copiar</button>
       </p>
-      <p><strong>/help</strong> — Muestra esta lista de comandos
-        <button class="copy-button" onclick="copyCommand('/help')">Copiar</button>
+      <p><strong>/vip ghostkick</strong> — Expulsá a un usuario sin dejar rastro
+        <button class="copy-button" onclick="copyCommand('/vip ghostkick')">Copiar</button>
       </p>
-      <p><strong>/userinfo</strong> — Muestra información de un usuario
-        <button class="copy-button" onclick="copyCommand('/userinfo')">Copiar</button>
+      <p><strong>/vip lockdown</strong> — Bloqueá el canal actual por minutos
+        <button class="copy-button" onclick="copyCommand('/vip lockdown')">Copiar</button>
       </p>
-      <p><strong>/serverinfo</strong> — Muestra información del servidor
-        <button class="copy-button" onclick="copyCommand('/serverinfo')">Copiar</button>
+      <p><strong>/vip override</strong> — Ignorá restricciones en comandos específicos
+        <button class="copy-button" onclick="copyCommand('/vip override')">Copiar</button>
       </p>
-      <p><strong>/avatar</strong> — Muestra el avatar de un usuario
-        <button class="copy-button" onclick="copyCommand('/avatar')">Copiar</button>
+      <p><strong>/enlace</strong> — Analiza una URL
+        <button class="copy-button" onclick="copyCommand('/enlace')">Copiar</button>
       </p>
-      <p><strong>/roles</strong> — Lista los roles del servidor
-        <button class="copy-button" onclick="copyCommand('/roles')">Copiar</button>
+      <p><strong>/ia consejo</strong> — Recibe un consejo de la IA
+        <button class="copy-button" onclick="copyCommand('/ia consejo')">Copiar</button>
       </p>
-      <p><strong>/abrir-cofre</strong> — Abre un cofre y recibe una recompensa
-        <button class="copy-button" onclick="copyCommand('/abrir-cofre')">Copiar</button>
+      <p><strong>/ia historia</strong> — Genera una historia
+        <button class="copy-button" onclick="copyCommand('/ia historia')">Copiar</button>
       </p>
-      <p><strong>/embedgenerador</strong> — Genera un mensaje embed personalizado
-        <button class="copy-button" onclick="copyCommand('/embedgenerador')">Copiar</button>
-      </p>
-      <p><strong>/premiuminfo</strong> — 💠 Muestra los beneficios del acceso PREMIUM
-        <button class="copy-button" onclick="copyCommand('/premiuminfo')">Copiar</button>
-      </p>
-      <p><strong>/lol-champion</strong> — Muestra información sobre un campeón de League of Legends
-        <button class="copy-button" onclick="copyCommand('/lol-champion')">Copiar</button>
-      </p>
-      <p><strong>/invite</strong> — Enlace para invitar a Abyssus
-        <button class="copy-button" onclick="copyCommand('/invite')">Copiar</button>
+      <p><strong>/ia npc</strong> — Simula un personaje
+        <button class="copy-button" onclick="copyCommand('/ia npc')">Copiar</button>
       </p>
     </div>
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- PALOMA ANIMADA -->
+<div id="copiedIcon" style="display:none; position:fixed; bottom:20px; right:20px; font-size:2em;">🕊️</div>
+
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -168,16 +162,32 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  @keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    80% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.8); }
+  }
+
+  #copiedIcon {
+    animation: fadeOut 2s ease-in-out;
+  }
 </style>
 
 <!-- FUNCIÓN DE COPIADO -->
 <script>
   function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
-    });
+    navigator.clipboard.writeText(command);
+    const icon = document.getElementById("copiedIcon");
+    icon.style.display = "block";
+    icon.style.opacity = "1";
+    icon.style.animation = "fadeOut 2s ease-in-out";
+    setTimeout(() => {
+      icon.style.display = "none";
+    }, 2000);
   }
 </script>
+
 
 
 
