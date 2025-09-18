@@ -183,7 +183,7 @@ function enviarComentario(e) {
 
   const comentario = { texto, fecha: new Date().toISOString(), clave };
 
-  fetch("https://discord.com/api/webhooks/1418319104703598774/ISJUJi9Zwm2r6mO9Wo7LPAq9SdM0U02Kc8ch08rf_hwXCvwZCvEiqpeOSztBrf6eePT1", {
+  fetch("https://discord.com/api/webhooks/1418324959805182002/nRwSmYkRsNM6TY-csZsYEtPXkS9-p0TmZftKvshMgA_5b9Sqxfg1GusRuewWFWWT0C7Q", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ content: `📝 Comentario:\n${texto}` })
