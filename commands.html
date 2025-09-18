@@ -70,53 +70,49 @@
 </section>
 
 <!-- PALOMA ANIMADA -->
-<div id="copiedIcon" style="display:none; position:fixed; bottom:20px; right:20px; font-size:2em;">🕊️</div>
+<button class="copy-button" onclick="copyCommand(this, '/vip boost')">Copiar</button>
 
 <!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
-  .copy-button {
-    background-color: #FFD700;
-    color: #1c1c1c;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: 10px;
-  }
+ .copy-button {
+  background-color: #FFD700;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
 
-  .copy-button:hover {
-    background-color: #fff176;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-  }
+.copy-button:hover {
+  background-color: #fff176;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
 
-  @keyframes fadeOut {
-    0% { opacity: 1; transform: scale(1); }
-    80% { opacity: 1; transform: scale(1.2); }
-    100% { opacity: 0; transform: scale(0.8); }
-  }
+.copy-button.copied {
+  background-color: #2ecc71;
+  color: white;
+  transform: scale(1.1);
+}
 
-  #copiedIcon {
-    animation: fadeOut 2s ease-in-out;
-  }
 </style>
 
 <!-- FUNCIÓN DE COPIADO -->
 <script>
-  function copyCommand(command) {
+  function copyCommand(button, command) {
     navigator.clipboard.writeText(command);
-    const icon = document.getElementById("copiedIcon");
-    icon.style.display = "block";
-    icon.style.opacity = "1";
-    icon.style.animation = "fadeOut 2s ease-in-out";
+    button.innerText = '🕊️';
+    button.classList.add('copied');
+
     setTimeout(() => {
-      icon.style.display = "none";
-    }, 2000);
+      button.innerText = 'Copiar';
+      button.classList.remove('copied');
+    }, 1500);
   }
 </script>
-
 
  
 <!-- COMANDOS GENERALES -->
