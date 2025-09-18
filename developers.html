@@ -147,31 +147,43 @@
     <p style="color: #aaa; text-align: center;">¿Querés dejar feedback técnico, sugerencias o reportar un módulo?  
     Este espacio está para eso. Todo se documenta. Todo se firma.</p>
 
-    <form onsubmit="guardarComentario(event)" style="margin-top: 20px;">
+    <form onsubmit="enviarComentario(event)" style="margin-top: 20px;">
       <textarea id="comentario" placeholder="Escribí tu comentario aquí..." rows="5" style="width: 100%; padding: 15px; border-radius: 8px; border: none; background-color: #0f0f0f; color: #f1f1f1;"></textarea>
+      <input type="password" id="claveModerador" placeholder="Clave de moderador (opcional)" style="margin-top: 10px; width: 100%; padding: 10px; border-radius: 6px; border: none; background-color: #0f0f0f; color: #f1f1f1;">
       <button type="submit" style="margin-top: 15px; padding: 10px 20px; background-color: #00ffff; color: #1c1c1c; border: none; border-radius: 6px;">Enviar comentario</button>
     </form>
-
-    <p style="color: #555; font-size: 0.9em; margin-top: 15px; text-align: center;">Los comentarios se guardan localmente en tu navegador. No se envían a ningún servidor.</p>
 
     <div id="listaComentarios" style="margin-top: 30px;">
       <h3 style="color: #00ffff;">🗂 Comentarios recibidos</h3>
       <ul id="comentariosGuardados" style="list-style: none; padding: 0; color: #ccc;"></ul>
-      <button onclick="borrarTodos()" style="margin-top: 20px; padding: 8px 16px; background-color: #ff4444; color: white; border: none; border-radius: 6px;">🗑️ Borrar todos</button>
     </div>
   </div>
 </section>
 
 <script>
-function guardarComentario(e) {
+const CLAVE_CORRECTA = "claveAbyssus";
+
+function enviarComentario(e) {
   e.preventDefault();
   const texto = document.getElementById("comentario").value.trim();
+  const clave = document.getElementById("claveModerador").value.trim();
   if (!texto) return alert("El comentario está vacío.");
 
+  const comentario = { texto, fecha: new Date().toISOString(), clave };
+
+  // Enviar a Discord
+  fetch("https://discord.com/api/webhooks/TU_WEBHOOK_AQUI", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ content: `📝 Comentario:\n${texto}` })
+  });
+
+  // Guardar en localStorage como simulación de JSON público
   const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
-  comentarios.unshift(texto);
+  comentarios.unshift(comentario);
   localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
   document.getElementById("comentario").value = "";
+  document.getElementById("claveModerador").value = "";
   mostrarComentarios();
 }
 
@@ -180,33 +192,34 @@ function mostrarComentarios() {
   const lista = document.getElementById("comentariosGuardados");
   lista.innerHTML = "";
 
-  comentarios.slice(0, 5).forEach((c, i) => {
+  comentarios.slice(0, 10).forEach((c, i) => {
     const item = document.createElement("li");
-    item.innerHTML = `📝 ${c} <button onclick="borrarComentario(${i})" style="margin-left: 10px; background-color: #ff4444; color: white; border: none; border-radius: 4px; padding: 2px 6px;">Eliminar</button>`;
-    item.style.marginBottom = "10px";
+    item.innerHTML = `📝 ${c.texto} <br><span style="font-size: 0.8em; color: #777;">${new Date(c.fecha).toLocaleString()}</span>`;
+    item.style.marginBottom = "15px";
+
+    if (c.clave === CLAVE_CORRECTA) {
+      const btn = document.createElement("button");
+      btn.textContent = "Eliminar";
+      btn.style.marginLeft = "10px";
+      btn.style.backgroundColor = "#ff4444";
+      btn.style.color = "white";
+      btn.style.border = "none";
+      btn.style.borderRadius = "4px";
+      btn.style.padding = "4px 8px";
+      btn.onclick = () => {
+        comentarios.splice(i, 1);
+        localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
+        mostrarComentarios();
+      };
+      item.appendChild(btn);
+    }
+
     lista.appendChild(item);
   });
 }
 
-function borrarComentario(index) {
-  const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
-  comentarios.splice(index, 1);
-  localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
-  mostrarComentarios();
-}
-
-function borrarTodos() {
-  if (confirm("¿Seguro que querés borrar todos los comentarios?")) {
-    localStorage.removeItem("abyssusComentarios");
-    mostrarComentarios();
-  }
-}
-
 document.addEventListener("DOMContentLoaded", mostrarComentarios);
 </script>
-
-
-
 
   <!-- OVERLAY PARA FONDO OSCURO -->
   <div class="overlay"></div>
