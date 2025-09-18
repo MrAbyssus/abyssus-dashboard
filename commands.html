@@ -41,75 +41,18 @@
     <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">💎 Comandos VIP</summary>
 
     <div class="command-block" style="margin-top: 20px;">
-      <p><strong>/vip boost</strong> — Activa boost de reputación por 1 hora
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
-      <p><strong>/vip ghostkick</strong> — Expulsá a un usuario sin dejar rastro
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
-      <p><strong>/vip lockdown</strong> — Bloqueá el canal actual por minutos
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
-      <p><strong>/vip override</strong> — Ignorá restricciones en comandos específicos
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
-      <p><strong>/enlace</strong> — Analiza una URL
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
-      <p><strong>/ia consejo</strong> — Recibe un consejo de la IA
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
-      <p><strong>/ia historia</strong> — Genera una historia
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
-      <p><strong>/ia npc</strong> — Simula un personaje
-        <button class="copy-button" onclick="copyCommand(this)">Copiar</button>
-      </p>
+      <p><strong>/vip boost</strong> — Activa boost de reputación por 1 hora <button onclick="copyCommand('/vip boost')">📋</button></p>
+      <p><strong>/vip ghostkick</strong> — Expulsá a un usuario sin dejar rastro <button onclick="copyCommand('/vip ghostkick')">📋</button></p>
+      <p><strong>/vip lockdown</strong> — Bloqueá el canal actual por minutos <button onclick="copyCommand('/vip lockdown')">📋</button></p>
+      <p><strong>/vip override</strong> — Ignorá restricciones en comandos específicos <button onclick="copyCommand('/vip override')">📋</button></p>
+      <p><strong>/enlace</strong> — Analiza una URL <button onclick="copyCommand('/enlace')">📋</button></p>
+      <p><strong>/ia consejo</strong> — Recibe un consejo de la IA <button onclick="copyCommand('/ia consejo')">📋</button></p>
+      <p><strong>/ia historia</strong> — Genera una historia <button onclick="copyCommand('/ia historia')">📋</button></p>
+      <p><strong>/ia npc</strong> — Simula un personaje <button onclick="copyCommand('/ia npc')">📋</button></p>
     </div>
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
-<style>
-  .copy-button {
-    background-color: #FFD700;
-    color: #1c1c1c;
-    border: none;
-    border-radius: 6px;
-    padding: 6px 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: 10px;
-  }
-
-  .copy-button:hover {
-    background-color: #fff176;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-  }
-
-  .copy-button.copied {
-    background-color: #2ecc71;
-    color: white;
-    transform: scale(1.1);
-  }
-</style>
-
-<!-- FUNCIÓN DE COPIADO CORREGIDA -->
-<script>
-  function copyCommand(button) {
-    const command = button.previousSibling.textContent.trim();
-    navigator.clipboard.writeText(command);
-    button.innerText = '🕊️';
-    button.classList.add('copied');
-
-    setTimeout(() => {
-      button.innerText = 'Copiar';
-      button.classList.remove('copied');
-    }, 1500);
-  }
-</script>
 
 
 
