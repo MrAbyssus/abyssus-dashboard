@@ -124,37 +124,37 @@
 
     <div class="command-block" style="margin-top: 20px;">
       <p><strong>/ping</strong> — Verifica que Abyssus esté activo
-        <button class="copy-button" onclick="copyCommand('/ping')">Copiar</button>
+        <button class="copy-button" data-command="/ping">Copiar</button>
       </p>
       <p><strong>/help</strong> — Muestra esta lista de comandos
-        <button class="copy-button" onclick="copyCommand('/help')">Copiar</button>
+        <button class="copy-button" data-command="/help">Copiar</button>
       </p>
       <p><strong>/userinfo</strong> — Muestra información de un usuario
-        <button class="copy-button" onclick="copyCommand('/userinfo')">Copiar</button>
+        <button class="copy-button" data-command="/userinfo">Copiar</button>
       </p>
       <p><strong>/serverinfo</strong> — Muestra información del servidor
-        <button class="copy-button" onclick="copyCommand('/serverinfo')">Copiar</button>
+        <button class="copy-button" data-command="/serverinfo">Copiar</button>
       </p>
       <p><strong>/avatar</strong> — Muestra el avatar de un usuario
-        <button class="copy-button" onclick="copyCommand('/avatar')">Copiar</button>
+        <button class="copy-button" data-command="/avatar">Copiar</button>
       </p>
       <p><strong>/roles</strong> — Lista los roles del servidor
-        <button class="copy-button" onclick="copyCommand('/roles')">Copiar</button>
+        <button class="copy-button" data-command="/roles">Copiar</button>
       </p>
       <p><strong>/abrir-cofre</strong> — Abre un cofre y recibe una recompensa
-        <button class="copy-button" onclick="copyCommand('/abrir-cofre')">Copiar</button>
+        <button class="copy-button" data-command="/abrir-cofre">Copiar</button>
       </p>
       <p><strong>/embedgenerador</strong> — Genera un mensaje embed personalizado
-        <button class="copy-button" onclick="copyCommand('/embedgenerador')">Copiar</button>
+        <button class="copy-button" data-command="/embedgenerador">Copiar</button>
       </p>
       <p><strong>/premiuminfo</strong> — 💠 Muestra los beneficios del acceso PREMIUM
-        <button class="copy-button" onclick="copyCommand('/premiuminfo')">Copiar</button>
+        <button class="copy-button" data-command="/premiuminfo">Copiar</button>
       </p>
       <p><strong>/lol-champion</strong> — Muestra información sobre un campeón de League of Legends
-        <button class="copy-button" onclick="copyCommand('/lol-champion')">Copiar</button>
+        <button class="copy-button" data-command="/lol-champion">Copiar</button>
       </p>
       <p><strong>/invite</strong> — Enlace para invitar a Abyssus
-        <button class="copy-button" onclick="copyCommand('/invite')">Copiar</button>
+        <button class="copy-button" data-command="/invite">Copiar</button>
       </p>
     </div>
   </details>
@@ -187,6 +187,7 @@
   }
 </style>
 
+
 <!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -206,6 +207,7 @@
     });
   });
 </script>
+
 
 
 
