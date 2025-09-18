@@ -110,25 +110,24 @@
         </div>
       </div>
 
-    <!-- Changelog institucional -->
-<div class="card">
-  <h3 style="color: #FFD700;">🔐 Changelog institucional</h3>
-  <p style="color: #ccc;">Actualizaciones y estado técnico.</p>
-  <div class="extra">
-    <p style="color: #aaa;">Este módulo muestra el ciclo técnico de Abyssus Bot:  
-    cada update, cada reinicio, cada override documentado.  
-    También podés verificar el estado del VPS y la trazabilidad del servicio.</p>
-    <div style="margin-top: 15px;">
-      <a href="changelog.html">
-        <button style="margin: 5px; padding: 10px 20px; background-color: #FFD700; color: #1c1c1c; border: none; border-radius: 6px;">📜 Ver changelog</button>
-      </a>
-      <a href="http://abyssusbot.mired.ovh:3000/status">
-        <button style="margin: 5px; padding: 10px 20px; background-color: #00ffff; color: #1c1c1c; border: none; border-radius: 6px;">🖥️ Ver status VPS</button>
-      </a>
-    </div>
-  </div>
-</div>
-
+      <!-- Changelog institucional -->
+      <div class="card">
+        <h3 style="color: #FFD700;">🔐 Changelog institucional</h3>
+        <p style="color: #ccc;">Actualizaciones y estado técnico.</p>
+        <div class="extra">
+          <p style="color: #aaa;">Este módulo muestra el ciclo técnico de Abyssus Bot:  
+          cada update, cada reinicio, cada override documentado.  
+          También podés verificar el estado del VPS y la trazabilidad del servicio.</p>
+          <div style="margin-top: 15px;">
+            <a href="changelog.html">
+              <button style="margin: 5px; padding: 10px 20px; background-color: #FFD700; color: #1c1c1c; border: none; border-radius: 6px;">📜 Ver changelog</button>
+            </a>
+            <a href="http://abyssusbot.mired.ovh:3000/status">
+              <button style="margin: 5px; padding: 10px 20px; background-color: #00ffff; color: #1c1c1c; border: none; border-radius: 6px;">🖥️ Ver status VPS</button>
+            </a>
+          </div>
+        </div>
+      </div>
 
       <!-- Expansión -->
       <div class="card">
@@ -150,7 +149,7 @@
           <ul style="list-style: none; padding: 0; color: #aaa; text-align: left;">
             <li>📦 2021 — Primer módulo experimental</li>
             <li>🔐 2022 — Blindaje técnico y firma institucional</li>
-            <li>📈 2023 — Expansión a 1000 servidores</li>
+            <li>📈 2023 — Expansión a 300 servidores</li>
             <li>🧠 2024 — Integración de IA y comandos inteligentes</li>
             <li>🏛️ 2025 — Indexación pública y trazabilidad total</li>
           </ul>
@@ -165,54 +164,7 @@
   <div class="overlay"></div>
 
   <!-- FOOTER -->
-  <footer style="text-align: center; margin-top: 60px; color: #555;">
-    <p>© 2021–2025 Abyssus. Todos los derechos reservados.</p>
-    <a href="http://abyssusbot.mired.ovh:3000/status">
-      <button style="margin: 10px; padding: 10px 20px; background-color: #9b59b6; color: white; border: none; border-radius: 6px;">Status</button>
-    </a>
-   
-    <p style="margin-top: 20px;">Website firmado por <strong>Mr.Abyssus</strong></p>
-  </footer>
-
-  <!-- SCRIPT PARA EXPANSIÓN Y CONTADOR -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".card");
-      const overlay = document.querySelector(".overlay");
-
-      cards.forEach(card => {
-        card.addEventListener("click", () => {
-          const isExpanded = card.classList.contains("expanded");
-          document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
-          overlay.classList.remove("active");
-
-          if (!isExpanded) {
-            card.classList.add("expanded");
-            overlay.classList.add("active");
-          }
-        });
-      });
-
-      overlay.addEventListener("click", () => {
-        document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
-        overlay.classList.remove("active");
-      });
-
-      // Contador animado
-      let count = 0;
-      const target = 648;
-      const display = document.getElementById("serverCount");
-      if (display) {
-        const interval = setInterval(() => {
-          count += 4;
-          display.textContent = count;
-          if (count >= target) clearInterval(interval);
-        }, 30);
-      }
-    });
-  </script>
-</body>
-</html>
+  <footer style="text-align: center; margin-top: 60px; color: #
 
 
 
