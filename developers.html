@@ -1,184 +1,81 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <title>Abyssus Bot — Developers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="img/favicon.png">
-  <meta name="description" content="Equipo técnico detrás de Abyssus Bot. Sistema institucional con trazabilidad, blindaje y firma técnica.">
-  <meta name="author" content="Mr.Abyssus">
-  <style>
-    .card {
-      background-color: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      transition: all 0.4s ease;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid transparent;
-      z-index: 1;
-    }
-
-    .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(0,255,255,0.3);
-    }
-
-    .card.expanded {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(1.1);
-      width: 90%;
-      max-width: 600px;
-      background-color: #0f0f0f;
-      z-index: 999;
-      box-shadow: 0 0 40px rgba(0,255,255,0.5);
-      border-color: #00ffff;
-    }
-
-    .card .extra {
-      max-height: 0;
-      opacity: 0;
-      transition: max-height 0.6s ease, opacity 0.6s ease;
-    }
-
-    .card.expanded .extra {
-      max-height: 500px;
-      opacity: 1;
-      margin-top: 15px;
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      z-index: 998;
-      display: none;
-    }
-
-    .overlay.active {
-      display: block;
-    }
-  </style>
-</head>
-
-<body style="background-color: #0f0f0f; color: #f1f1f1; font-family: 'Segoe UI', sans-serif;">
-
-  <!-- NAV -->
-  <nav id="nav" style="text-align: center; margin-top: 20px;">
-    <a href="index.html" style="margin: 0 15px; color: #00ffff;">Inicio</a>
-    <a href="commands.html" style="margin: 0 15px; color: #00ffff;">Comandos</a>
-    <a href="developers.html" style="margin: 0 15px; color: #00ffff;">Developers</a>
-    <a href="changelog.html" style="margin: 0 15px; color: #00ffff;">Changelog</a>
-  </nav>
-
-  <!-- HEADER -->
-  <div style="text-align: center; margin-top: 40px;">
-    <img src="img/logo.jpg" alt="Logo Abyssus" style="width: 120px; border-radius: 50%;">
-    <h1 style="font-size: 2.5em; margin: 10px 0;">Staff</h1>
-    <p style="font-size: 1.2em; color: #bbbbbb;"></p>
-  </div>
-
-  <!-- EQUIPO TÉCNICO INSTITUCIONAL -->
-  <section id="equipo" style="width: 90%; margin: 60px auto;">
-    <h2 style="text-align: center; font-size: 2em; color: #00ffff;">👥 Equipo técnico institucional</h2>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
-      
-      <!-- Mr.Abyssus -->
-      <div class="card">
-        <img src="img/arpan.jpg" alt="Mr.Abyssus" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
-        <h3 style="color: #FFD700;">👑 Mr.Abyssus</h3>
-        <p style="color: #ccc;">Arquitecto técnico e institucional.</p>
-        <div class="extra">
-          <p style="color: #aaa;">Diseña, audita y firma cada bloque. Lidera la expansión, controla la narrativa visual y emocional, y blinda la identidad técnica del sistema.</p>
-        </div>
-      </div>
-
-      <!-- Hikendrasec -->
-      <div class="card">
-        <img src="img/hdr.jpg" alt="Hikendrasec" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
-        <h3 style="color: #00ffff;">🧪 Hikendrasec</h3>
-        <p style="color: #ccc;">Tester institucional.</p>
-        <div class="extra">
-          <p style="color: #aaa;">Realiza pruebas de módulos, comandos y respuesta emocional. Evalúa la experiencia del usuario y la coherencia narrativa del sistema.</p>
-        </div>
-      </div>
-
-      <!-- Firma técnica -->
-      <div class="card">
-        <h3 style="color: #FFD700;">🔐 Firma técnica</h3>
-        <p style="color: #ccc;">Blindaje y trazabilidad.</p>
-        <div class="extra">
-          <p style="color: #aaa;">Cada línea está documentada. Cada dashboard está firmado. La autoría técnica es pública, verificable y sin ambigüedad.</p>
-        </div>
-      </div>
-
-      <!-- Expansión -->
-      <div class="card">
-        <h3 style="color: #00ff99;">📈 Expansión</h3>
-        <p style="color: #ccc;">648 servidores activos.</p>
-        <div class="extra">
-          <p style="color: #aaa;">Cada semana se suman nuevos módulos, comandos y bloques visuales. La expansión es real, trazable y emocionalmente integrada.</p>
-        </div>
-      </div>
-
-      <!-- Legado -->
-      <div class="card">
-        <h3 style="color: #888;">📜 Legado</h3>
-        <p style="color: #ccc;">Desde experimento a sistema institucional.</p>
-        <div class="extra">
-          <p style="color: #aaa;">Cada commit tiene historia. Abyssus no compite. Deja huella. Y si no lo firma Mr.Abyssus, no es Abyssus.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- OVERLAY PARA FONDO OSCURO -->
-  <div class="overlay"></div>
-
-  <!-- FOOTER -->
-  <footer style="text-align: center; margin-top: 60px; color: #555;">
-    <p>© 2021–2025 Abyssus. Todos los derechos reservados.</p>
-    <a href="http://abyssusbot.mired.ovh:3000/status">
-      <button style="margin: 10px; padding: 10px 20px; background-color: #9b59b6; color: white; border: none; border-radius: 6px;">Status</button>
+<!-- Firma técnica -->
+<div class="card">
+  <h3 style="color: #FFD700;">🔐 Firma técnica</h3>
+  <p style="color: #ccc;">Blindaje y trazabilidad.</p>
+  <div class="extra">
+    <p style="color: #aaa;">Cada línea está documentada. Cada dashboard está firmado.  
+    La autoría técnica es pública, verificable y sin ambigüedad.  
+    Los módulos se auditan manualmente y se integran con control de versión institucional.</p>
+    <a href="changelog.html">
+      <button style="margin-top: 10px; padding: 10px 20px; background-color: #FFD700; color: #1c1c1c; border: none; border-radius: 6px;">Ver changelog firmado</button>
     </a>
-    <p style="margin-top: 20px;">Website firmado por <strong>Mr.Abyssus</strong></p>
-  </footer>
+  </div>
+</div>
 
-  <!-- SCRIPT PARA EXPANSIÓN -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".card");
-      const overlay = document.querySelector(".overlay");
+<!-- Expansión -->
+<div class="card">
+  <h3 style="color: #00ff99;">📈 Expansión</h3>
+  <p style="color: #ccc;">Servidores activos:</p>
+  <p style="font-size: 2em; color: #00ff99;" id="serverCount">0</p>
+  <div class="extra">
+    <p style="color: #aaa;">Cada semana se suman nuevos módulos, comandos y bloques visuales.  
+    La expansión es real, trazable y emocionalmente integrada.  
+    Meta institucional: blindaje total en 1000 servidores antes de fin de ciclo.</p>
+  </div>
+</div>
 
-      cards.forEach(card => {
-        card.addEventListener("click", () => {
-          const isExpanded = card.classList.contains("expanded");
-          document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
-          overlay.classList.remove("active");
+<!-- Legado -->
+<div class="card">
+  <h3 style="color: #888;">📜 Legado</h3>
+  <p style="color: #ccc;">Desde experimento a sistema institucional.</p>
+  <div class="extra">
+    <ul style="list-style: none; padding: 0; color: #aaa; text-align: left;">
+      <li>📦 2021 — Primer módulo experimental</li>
+      <li>🔐 2022 — Blindaje técnico y firma institucional</li>
+      <li>📈 2023 — Expansión a 300 servidores</li>
+      <li>🧠 2024 — Integración de IA y comandos inteligentes</li>
+      <li>🏛️ 2025 — Indexación pública y trazabilidad total</li>
+    </ul>
+    <p style="color: #aaa;">Cada commit tiene historia. Abyssus no compite. Deja huella.</p>
+  </div>
+</div>
 
-          if (!isExpanded) {
-            card.classList.add("expanded");
-            overlay.classList.add("active");
-          }
-        });
-      });
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
+    const overlay = document.querySelector(".overlay");
 
-      overlay.addEventListener("click", () => {
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const isExpanded = card.classList.contains("expanded");
         document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
         overlay.classList.remove("active");
+
+        if (!isExpanded) {
+          card.classList.add("expanded");
+          overlay.classList.add("active");
+        }
       });
     });
-  </script>
-</body>
-</html>
+
+    overlay.addEventListener("click", () => {
+      document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
+      overlay.classList.remove("active");
+    });
+
+    // Contador animado
+    let count = 0;
+    const target = 648;
+    const display = document.getElementById("serverCount");
+    if (display) {
+      const interval = setInterval(() => {
+        count += 4;
+        display.textContent = count;
+        if (count >= target) clearInterval(interval);
+      }, 30);
+    }
+  });
+</script>
 
 
 
