@@ -295,26 +295,26 @@
     <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">💰 Comandos de Economía</summary>
 
     <div class="command-block" style="margin-top: 20px;">
-      <p><strong>/balancen</strong> — Consulta tu saldo <button class="copy-button" onclick="copyCommand('/balancen')">Copiar</button></p>
-      <p><strong>/daily</strong> — Reclama tu recompensa diaria <button class="copy-button" onclick="copyCommand('/daily')">Copiar</button></p>
-      <p><strong>/work</strong> — Realiza trabajos para ganar monedas <button class="copy-button" onclick="copyCommand('/work')">Copiar</button></p>
-      <p><strong>/shop</strong> — Muestra la tienda disponible <button class="copy-button" onclick="copyCommand('/shop')">Copiar</button></p>
-      <p><strong>/shopadd</strong> — Agregar un producto a la tienda <button class="copy-button" onclick="copyCommand('/shopadd')">Copiar</button></p>
-      <p><strong>/shopremove</strong> — Remover un producto de la tienda <button class="copy-button" onclick="copyCommand('/shopremove')">Copiar</button></p>
-      <p><strong>/shoplist</strong> — Muestra los productos <button class="copy-button" onclick="copyCommand('/shoplist')">Copiar</button></p>
-      <p><strong>/shopbuy</strong> — Comprar producto de la tienda <button class="copy-button" onclick="copyCommand('/shopbuy')">Copiar</button></p>
-      <p><strong>/shopsearch</strong> — Buscar producto por nombre o ID <button class="copy-button" onclick="copyCommand('/shopsearch')">Copiar</button></p>
-      <p><strong>/give</strong> — Dar dinero <button class="copy-button" onclick="copyCommand('/give')">Copiar</button></p>
-      <p><strong>/inventory</strong> — Revisa tu inventario <button class="copy-button" onclick="copyCommand('/inventory')">Copiar</button></p>
-      <p><strong>/reset</strong> — Reiniciar el sistema de economía <button class="copy-button" onclick="copyCommand('/reset')">Copiar</button></p>
-      <p><strong>/limosna</strong> — Pedir limosna diaria o a un usuario <button class="copy-button" onclick="copyCommand('/limosna')">Copiar</button></p>
-      <p><strong>/banco depositar</strong> — Depositar AbyCoins en tu cuenta bancaria <button class="copy-button" onclick="copyCommand('/banco depositar')">Copiar</button></p>
-      <p><strong>/banco retirar</strong> — Retira AbyCoins de tu cuenta de banco <button class="copy-button" onclick="copyCommand('/banco retirar')">Copiar</button></p>
-      <p><strong>/banco consultar</strong> — Consultar tu estado bancario <button class="copy-button" onclick="copyCommand('/banco consultar')">Copiar</button></p>
-      <p><strong>/equipar</strong> — Usa un artículo de tu inventario por ID <button class="copy-button" onclick="copyCommand('/equipar')">Copiar</button></p>
-      <p><strong>/top</strong> — Lista de lo más comprado <button class="copy-button" onclick="copyCommand('/top')">Copiar</button></p>
-      <p><strong>/rob</strong> — Roba dinero a otro usuario <button class="copy-button" onclick="copyCommand('/rob')">Copiar</button></p>
-      <p><strong>/pay</strong> — Envía monedas a otro usuario <button class="copy-button" onclick="copyCommand('/pay')">Copiar</button></p>
+      <p><strong>/balancen</strong> — Consulta tu saldo <button class="copy-button" data-command="/balancen">Copiar</button></p>
+      <p><strong>/daily</strong> — Reclama tu recompensa diaria <button class="copy-button" data-command="/daily">Copiar</button></p>
+      <p><strong>/work</strong> — Realiza trabajos para ganar monedas <button class="copy-button" data-command="/work">Copiar</button></p>
+      <p><strong>/shop</strong> — Muestra la tienda disponible <button class="copy-button" data-command="/shop">Copiar</button></p>
+      <p><strong>/shopadd</strong> — Agregar un producto a la tienda <button class="copy-button" data-command="/shopadd">Copiar</button></p>
+      <p><strong>/shopremove</strong> — Remover un producto de la tienda <button class="copy-button" data-command="/shopremove">Copiar</button></p>
+      <p><strong>/shoplist</strong> — Muestra los productos <button class="copy-button" data-command="/shoplist">Copiar</button></p>
+      <p><strong>/shopbuy</strong> — Comprar producto de la tienda <button class="copy-button" data-command="/shopbuy">Copiar</button></p>
+      <p><strong>/shopsearch</strong> — Buscar producto por nombre o ID <button class="copy-button" data-command="/shopsearch">Copiar</button></p>
+      <p><strong>/give</strong> — Dar dinero <button class="copy-button" data-command="/give">Copiar</button></p>
+      <p><strong>/inventory</strong> — Revisa tu inventario <button class="copy-button" data-command="/inventory">Copiar</button></p>
+      <p><strong>/reset</strong> — Reiniciar el sistema de economía <button class="copy-button" data-command="/reset">Copiar</button></p>
+      <p><strong>/limosna</strong> — Pedir limosna diaria o a un usuario <button class="copy-button" data-command="/limosna">Copiar</button></p>
+      <p><strong>/banco depositar</strong> — Depositar AbyCoins en tu cuenta bancaria <button class="copy-button" data-command="/banco depositar">Copiar</button></p>
+      <p><strong>/banco retirar</strong> — Retira AbyCoins de tu cuenta de banco <button class="copy-button" data-command="/banco retirar">Copiar</button></p>
+      <p><strong>/banco consultar</strong> — Consultar tu estado bancario <button class="copy-button" data-command="/banco consultar">Copiar</button></p>
+      <p><strong>/equipar</strong> — Usa un artículo de tu inventario por ID <button class="copy-button" data-command="/equipar">Copiar</button></p>
+      <p><strong>/top</strong> — Lista de lo más comprado <button class="copy-button" data-command="/top">Copiar</button></p>
+      <p><strong>/rob</strong> — Roba dinero a otro usuario <button class="copy-button" data-command="/rob">Copiar</button></p>
+      <p><strong>/pay</strong> — Envía monedas a otro usuario <button class="copy-button" data-command="/pay">Copiar</button></p>
     </div>
   </details>
 </section>
@@ -365,8 +365,6 @@
     });
   });
 </script>
-
-
 
 <!-- COMANDOS SOCIALES -->
 <section id="sociales" style="width: 80%; margin: 40px auto;">
