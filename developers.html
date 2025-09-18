@@ -39,45 +39,105 @@
   </div>
 
   <!-- EQUIPO TÉCNICO INSTITUCIONAL -->
+<!-- EQUIPO TÉCNICO INSTITUCIONAL -->
 <section id="equipo" style="width: 90%; margin: 60px auto;">
   <h2 style="text-align: center; font-size: 2em; color: #00ffff;">👥 Equipo técnico institucional</h2>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
     
     <!-- Mr.Abyssus -->
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 0 12px rgba(0,255,255,0.2);">
+    <div class="card" onclick="this.classList.toggle('expanded')">
       <img src="img/arpan.jpg" alt="Mr.Abyssus" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
       <h3 style="color: #FFD700;">👑 Mr.Abyssus</h3>
-      <p style="color: #ccc;">Arquitecto técnico e institucional. Cada comando, módulo y override está firmado por él.</p>
+      <p style="color: #ccc;">Arquitecto técnico e institucional.</p>
+      <div class="extra">
+        <p style="color: #aaa;">Diseña, audita y firma cada bloque.  
+        Lidera la expansión, controla la narrativa visual y emocional, y blinda la identidad técnica del sistema.</p>
+      </div>
     </div>
 
     <!-- Hikendrasec -->
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 0 12px rgba(0,255,255,0.2);">
+    <div class="card" onclick="this.classList.toggle('expanded')">
       <img src="img/hdr.jpg" alt="Hikendrasec" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
       <h3 style="color: #00ffff;">🧪 Hikendrasec</h3>
-      <p style="color: #ccc;">Pruebas de módulos, interacción y respuesta emocional. Testeo institucional constante.</p>
+      <p style="color: #ccc;">Tester institucional.</p>
+      <div class="extra">
+        <p style="color: #aaa;">Realiza pruebas de módulos, comandos y respuesta emocional.  
+        Evalúa la experiencia del usuario y la coherencia narrativa del sistema.</p>
+      </div>
     </div>
 
     <!-- Firma técnica -->
-    <div style="background-color: #0f0f0f; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #FFD700;">
+    <div class="card" onclick="this.classList.toggle('expanded')">
       <h3 style="color: #FFD700;">🔐 Firma técnica</h3>
-      <p style="color: #ccc;">Cada línea está blindada. Cada bloque está documentado. Cada dashboard está firmado por <strong>Mr.Abyssus</strong>.</p>
+      <p style="color: #ccc;">Blindaje y trazabilidad.</p>
+      <div class="extra">
+        <p style="color: #aaa;">Cada línea está documentada. Cada dashboard está firmado.  
+        La autoría técnica es pública, verificable y sin ambigüedad.</p>
+      </div>
     </div>
 
     <!-- Expansión -->
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #00ff99;">
+    <div class="card" onclick="this.classList.toggle('expanded')">
       <h3 style="color: #00ff99;">📈 Expansión</h3>
-      <p style="color: #ccc;">Abyssus está activo en <strong>648 servidores</strong>. Cada semana se suman módulos, comandos y bloques visuales.</p>
+      <p style="color: #ccc;">648 servidores activos.</p>
+      <div class="extra">
+        <p style="color: #aaa;">Cada semana se suman nuevos módulos, comandos y bloques visuales.  
+        La expansión es real, trazable y emocionalmente integrada.</p>
+      </div>
     </div>
 
     <!-- Legado -->
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #888;">
+    <div class="card" onclick="this.classList.toggle('expanded')">
       <h3 style="color: #888;">📜 Legado</h3>
-      <p style="color: #ccc;">El sistema nació como experimento. Hoy es estructura institucional con trazabilidad, blindaje y expansión real.</p>
+      <p style="color: #ccc;">Desde experimento a sistema institucional.</p>
+      <div class="extra">
+        <p style="color: #aaa;">Cada commit tiene historia.  
+        Abyssus no compite. Deja huella.  
+        Y si no lo firma Mr.Abyssus, no es Abyssus.</p>
+      </div>
     </div>
 
   </div>
 </section>
+
+<!-- ESTILO INTERACTIVO -->
+<style>
+  .card {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  }
+
+  .card.expanded {
+    background-color: #0f0f0f;
+    transform: scale(1.05);
+    z-index: 10;
+    border-color: #00ffff;
+  }
+
+  .card .extra {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+  }
+
+  .card.expanded .extra {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 15px;
+  }
 
   <!-- FOOTER -->
   <footer style="text-align: center; margin-top: 60px; color: #555;">
