@@ -157,6 +157,7 @@
     <div id="listaComentarios" style="margin-top: 30px;">
       <h3 style="color: #00ffff;">🗂 Comentarios recibidos</h3>
       <ul id="comentariosGuardados" style="list-style: none; padding: 0; color: #ccc;"></ul>
+      <button onclick="borrarTodos()" style="margin-top: 20px; padding: 8px 16px; background-color: #ff4444; color: white; border: none; border-radius: 6px;">🗑️ Borrar todos</button>
     </div>
   </div>
 </section>
@@ -168,7 +169,7 @@ function guardarComentario(e) {
   if (!texto) return alert("El comentario está vacío.");
 
   const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
-  comentarios.unshift(texto); // Agrega al principio
+  comentarios.unshift(texto);
   localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
   document.getElementById("comentario").value = "";
   mostrarComentarios();
@@ -181,14 +182,29 @@ function mostrarComentarios() {
 
   comentarios.slice(0, 5).forEach((c, i) => {
     const item = document.createElement("li");
-    item.textContent = `📝 ${c}`;
+    item.innerHTML = `📝 ${c} <button onclick="borrarComentario(${i})" style="margin-left: 10px; background-color: #ff4444; color: white; border: none; border-radius: 4px; padding: 2px 6px;">Eliminar</button>`;
     item.style.marginBottom = "10px";
     lista.appendChild(item);
   });
 }
 
+function borrarComentario(index) {
+  const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
+  comentarios.splice(index, 1);
+  localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
+  mostrarComentarios();
+}
+
+function borrarTodos() {
+  if (confirm("¿Seguro que querés borrar todos los comentarios?")) {
+    localStorage.removeItem("abyssusComentarios");
+    mostrarComentarios();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", mostrarComentarios);
 </script>
+
 
 
 
