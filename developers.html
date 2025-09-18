@@ -161,7 +161,7 @@
 </section>
 
 <script>
-const CLAVE_CORRECTA = "Abyssus123!";
+const CLAVE_CORRECTA = "claveAbyssus";
 
 // Activar modo moderador si la clave es correcta
 document.getElementById("claveModerador").addEventListener("input", e => {
@@ -183,27 +183,14 @@ function enviarComentario(e) {
 
   const comentario = { texto, fecha: new Date().toISOString(), clave };
 
-  fetch("", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ content: `📝 Comentario:\n${texto}` })
-  })
-  .then(response => {
-    if (!response.ok) throw new Error("Error al enviar al webhook");
+  const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
+  comentarios.unshift(comentario);
+  localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
 
-    const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
-    comentarios.unshift(comentario);
-    localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
-
-    document.getElementById("comentario").value = "";
-    document.getElementById("claveModerador").value = "";
-    alert("Comentario enviado y documentado.");
-    mostrarComentarios();
-  })
-  .catch(error => {
-    console.error("Error:", error);
-    alert("Hubo un error al enviar el comentario.");
-  });
+  document.getElementById("comentario").value = "";
+  document.getElementById("claveModerador").value = "";
+  alert("Comentario guardado localmente.");
+  mostrarComentarios();
 }
 
 function mostrarComentarios() {
