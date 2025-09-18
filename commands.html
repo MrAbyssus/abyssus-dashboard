@@ -42,34 +42,34 @@
 
     <div class="command-block" style="margin-top: 20px;">
       <p><strong>/vip boost</strong> — Activa boost de reputación por 1 hora
-        <button class="copy-button" onclick="copyCommand('/vip boost')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/vip boost')">Copiar</button>
       </p>
       <p><strong>/vip ghostkick</strong> — Expulsá a un usuario sin dejar rastro
-        <button class="copy-button" onclick="copyCommand('/vip ghostkick')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/vip ghostkick')">Copiar</button>
       </p>
       <p><strong>/vip lockdown</strong> — Bloqueá el canal actual por minutos
-        <button class="copy-button" onclick="copyCommand('/vip lockdown')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/vip lockdown')">Copiar</button>
       </p>
       <p><strong>/vip override</strong> — Ignorá restricciones en comandos específicos
-        <button class="copy-button" onclick="copyCommand('/vip override')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/vip override')">Copiar</button>
       </p>
       <p><strong>/enlace</strong> — Analiza una URL
-        <button class="copy-button" onclick="copyCommand('/enlace')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/enlace')">Copiar</button>
       </p>
       <p><strong>/ia consejo</strong> — Recibe un consejo de la IA
-        <button class="copy-button" onclick="copyCommand('/ia consejo')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/ia consejo')">Copiar</button>
       </p>
       <p><strong>/ia historia</strong> — Genera una historia
-        <button class="copy-button" onclick="copyCommand('/ia historia')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/ia historia')">Copiar</button>
       </p>
       <p><strong>/ia npc</strong> — Simula un personaje
-        <button class="copy-button" onclick="copyCommand('/ia npc')">Copiar</button>
+        <button class="copy-button" onclick="copyCommand(this, '/ia npc')">Copiar</button>
       </p>
     </div>
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -88,16 +88,28 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO SIN ALERTA -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
-    });
+  function copyCommand(button, command) {
+    navigator.clipboard.writeText(command);
+    button.innerText = '🕊️';
+    button.classList.add('copied');
+
+    setTimeout(() => {
+      button.innerText = 'Copiar';
+      button.classList.remove('copied');
+    }, 1500);
   }
 </script>
+
 
  
 <!-- COMANDOS GENERALES -->
