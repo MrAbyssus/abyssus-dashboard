@@ -160,7 +160,7 @@
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -179,15 +179,32 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
     });
-  }
+  });
 </script>
 
 
@@ -223,7 +240,7 @@
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -242,15 +259,32 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
     });
-  }
+  });
 </script>
 
 
@@ -285,7 +319,7 @@
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -304,15 +338,32 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
     });
-  }
+  });
 </script>
 
 
@@ -337,7 +388,7 @@
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -356,15 +407,32 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
     });
-  }
+  });
 </script>
 
 
@@ -394,7 +462,7 @@
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -413,15 +481,32 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
     });
-  }
+  });
 </script>
 
 
@@ -449,7 +534,7 @@
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -468,17 +553,33 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
     });
-  }
+  });
 </script>
-
 
 <!-- COMANDOS REACT -->
 <section id="react" style="width: 80%; margin: 40px auto;">
@@ -504,7 +605,7 @@
   </details>
 </section>
 
-<!-- ESTILO DEL BOTÓN -->
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
   .copy-button {
     background-color: #FFD700;
@@ -523,15 +624,32 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
 </style>
 
-<!-- FUNCIÓN DE COPIADO -->
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
 <script>
-  function copyCommand(command) {
-    navigator.clipboard.writeText(command).then(() => {
-      alert(`Comando copiado: ${command}`);
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
     });
-  }
+  });
 </script>
 
 
