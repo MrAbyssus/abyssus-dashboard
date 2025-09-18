@@ -96,20 +96,21 @@
   }
 
   /* Animación institucional al desplegar */
-  details[open] .command-block {
-    animation: fadeSlide 0.5s ease forwards;
-  }
+details[open] .command-block {
+  animation: fadeSlide 1.2s ease forwards; /* antes era 0.5s */
+}
 
-  @keyframes fadeSlide {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 
 <!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
