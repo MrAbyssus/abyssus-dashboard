@@ -147,37 +147,49 @@
     <p style="color: #aaa; text-align: center;">¿Querés dejar feedback técnico, sugerencias o reportar un módulo?  
     Este espacio está para eso. Todo se documenta. Todo se firma.</p>
 
-    <form onsubmit="enviarComentario(event)" style="margin-top: 20px;">
+    <form onsubmit="guardarComentario(event)" style="margin-top: 20px;">
       <textarea id="comentario" placeholder="Escribí tu comentario aquí..." rows="5" style="width: 100%; padding: 15px; border-radius: 8px; border: none; background-color: #0f0f0f; color: #f1f1f1;"></textarea>
       <button type="submit" style="margin-top: 15px; padding: 10px 20px; background-color: #00ffff; color: #1c1c1c; border: none; border-radius: 6px;">Enviar comentario</button>
     </form>
 
-    <p style="color: #555; font-size: 0.9em; margin-top: 15px; text-align: center;">Los comentarios se procesan manualmente. Si el módulo falla, se documenta y se corrige.</p>
+    <p style="color: #555; font-size: 0.9em; margin-top: 15px; text-align: center;">Los comentarios se guardan localmente en tu navegador. No se envían a ningún servidor.</p>
+
+    <div id="listaComentarios" style="margin-top: 30px;">
+      <h3 style="color: #00ffff;">🗂 Comentarios recibidos</h3>
+      <ul id="comentariosGuardados" style="list-style: none; padding: 0; color: #ccc;"></ul>
+    </div>
   </div>
 </section>
 
 <script>
-function enviarComentario(e) {
+function guardarComentario(e) {
   e.preventDefault();
   const texto = document.getElementById("comentario").value.trim();
   if (!texto) return alert("El comentario está vacío.");
 
-  fetch("https://discord.com/api/webhooks/1418319104703598774/ISJUJi9Zwm2r6mO9Wo7LPAq9SdM0U02Kc8ch08rf_hwXCvwZCvEiqpeOSztBrf6eePT1", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      content: `📝 Comentario recibido desde Abyssus:\n${texto}`
-    })
-  })
-  .then(() => {
-    alert("Comentario enviado y documentado.");
-    document.getElementById("comentario").value = "";
-  })
-  .catch(() => {
-    alert("Hubo un error al enviar el comentario.");
+  const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
+  comentarios.unshift(texto); // Agrega al principio
+  localStorage.setItem("abyssusComentarios", JSON.stringify(comentarios));
+  document.getElementById("comentario").value = "";
+  mostrarComentarios();
+}
+
+function mostrarComentarios() {
+  const comentarios = JSON.parse(localStorage.getItem("abyssusComentarios") || "[]");
+  const lista = document.getElementById("comentariosGuardados");
+  lista.innerHTML = "";
+
+  comentarios.slice(0, 5).forEach((c, i) => {
+    const item = document.createElement("li");
+    item.textContent = `📝 ${c}`;
+    item.style.marginBottom = "10px";
+    lista.appendChild(item);
   });
 }
+
+document.addEventListener("DOMContentLoaded", mostrarComentarios);
 </script>
+
 
 
   <!-- OVERLAY PARA FONDO OSCURO -->
