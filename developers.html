@@ -164,7 +164,58 @@
   <div class="overlay"></div>
 
   <!-- FOOTER -->
-  <footer style="text-align: center; margin-top: 60px; color: #
+  <footer style="text-align: center; margin-top: 60px; color: #  <!-- OVERLAY PARA FONDO OSCURO -->
+  <div class="overlay"></div>
+
+  <!-- FOOTER -->
+  <footer style="text-align: center; margin-top: 60px; color: #555;">
+    <p>© 2021–2025 Abyssus. Todos los derechos reservados.</p>
+    <a href="http://abyssusbot.mired.ovh:3000/status">
+      <button style="margin: 10px; padding: 10px 20px; background-color: #9b59b6; color: white; border: none; border-radius: 6px;">Status</button>
+    </a>
+    <p style="margin-top: 20px;">Website firmado por <strong>Mr.Abyssus</strong></p>
+  </footer>
+
+  <!-- SCRIPT PARA EXPANSIÓN Y CONTADOR -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+      const overlay = document.querySelector(".overlay");
+
+      cards.forEach(card => {
+        card.addEventListener("click", () => {
+          const isExpanded = card.classList.contains("expanded");
+          document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
+          overlay.classList.remove("active");
+
+          if (!isExpanded) {
+            card.classList.add("expanded");
+            overlay.classList.add("active");
+          }
+        });
+      });
+
+      overlay.addEventListener("click", () => {
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
+        overlay.classList.remove("active");
+      });
+
+      // Contador animado
+      let count = 0;
+      const target = 648;
+      const display = document.getElementById("serverCount");
+      if (display) {
+        const interval = setInterval(() => {
+          count += 4;
+          display.textContent = count;
+          if (count >= target) clearInterval(interval);
+        }, 30);
+      }
+    });
+  </script>
+</body>
+</html>
+
 
 
 
