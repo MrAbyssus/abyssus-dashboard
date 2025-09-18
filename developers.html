@@ -19,6 +19,7 @@
       position: relative;
       overflow: hidden;
       border: 1px solid transparent;
+      z-index: 1;
     }
 
     .card:hover {
@@ -27,9 +28,15 @@
     }
 
     .card.expanded {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.1);
+      width: 90%;
+      max-width: 600px;
       background-color: #0f0f0f;
-      transform: scale(1.05);
-      z-index: 10;
+      z-index: 999;
+      box-shadow: 0 0 40px rgba(0,255,255,0.5);
       border-color: #00ffff;
     }
 
@@ -40,9 +47,22 @@
     }
 
     .card.expanded .extra {
-      max-height: 300px;
+      max-height: 500px;
       opacity: 1;
       margin-top: 15px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 998;
+      display: none;
+    }
+
+    .overlay.active {
+      display: block;
     }
   </style>
 </head>
@@ -71,7 +91,7 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
       
       <!-- Mr.Abyssus -->
-      <div class="card" onclick="this.classList.toggle('expanded')">
+      <div class="card">
         <img src="img/arpan.jpg" alt="Mr.Abyssus" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
         <h3 style="color: #FFD700;">👑 Mr.Abyssus</h3>
         <p style="color: #ccc;">Arquitecto técnico e institucional.</p>
@@ -81,7 +101,7 @@
       </div>
 
       <!-- Hikendrasec -->
-      <div class="card" onclick="this.classList.toggle('expanded')">
+      <div class="card">
         <img src="img/hdr.jpg" alt="Hikendrasec" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
         <h3 style="color: #00ffff;">🧪 Hikendrasec</h3>
         <p style="color: #ccc;">Tester institucional.</p>
@@ -91,7 +111,7 @@
       </div>
 
       <!-- Firma técnica -->
-      <div class="card" onclick="this.classList.toggle('expanded')">
+      <div class="card">
         <h3 style="color: #FFD700;">🔐 Firma técnica</h3>
         <p style="color: #ccc;">Blindaje y trazabilidad.</p>
         <div class="extra">
@@ -100,7 +120,7 @@
       </div>
 
       <!-- Expansión -->
-      <div class="card" onclick="this.classList.toggle('expanded')">
+      <div class="card">
         <h3 style="color: #00ff99;">📈 Expansión</h3>
         <p style="color: #ccc;">648 servidores activos.</p>
         <div class="extra">
@@ -109,7 +129,7 @@
       </div>
 
       <!-- Legado -->
-      <div class="card" onclick="this.classList.toggle('expanded')">
+      <div class="card">
         <h3 style="color: #888;">📜 Legado</h3>
         <p style="color: #ccc;">Desde experimento a sistema institucional.</p>
         <div class="extra">
@@ -120,6 +140,9 @@
     </div>
   </section>
 
+  <!-- OVERLAY PARA FONDO OSCURO -->
+  <div class="overlay"></div>
+
   <!-- FOOTER -->
   <footer style="text-align: center; margin-top: 60px; color: #555;">
     <p>© 2021–2025 Abyssus. Todos los derechos reservados.</p>
@@ -129,8 +152,33 @@
     <p style="margin-top: 20px;">Website firmado por <strong>Mr.Abyssus</strong></p>
   </footer>
 
-  <script src="js/script2.js"></script>
+  <!-- SCRIPT PARA EXPANSIÓN -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+      const overlay = document.querySelector(".overlay");
+
+      cards.forEach(card => {
+        card.addEventListener("click", () => {
+          const isExpanded = card.classList.contains("expanded");
+          document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
+          overlay.classList.remove("active");
+
+          if (!isExpanded) {
+            card.classList.add("expanded");
+            overlay.classList.add("active");
+          }
+        });
+      });
+
+      overlay.addEventListener("click", () => {
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("expanded"));
+        overlay.classList.remove("active");
+      });
+    });
+  </script>
 </body>
 </html>
+
 
 
