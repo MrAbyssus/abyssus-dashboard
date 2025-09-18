@@ -104,7 +104,7 @@
         const command = button.getAttribute("data-command");
         if (!command) return;
         navigator.clipboard.writeText(command).then(() => {
-          button.innerText = '🕊️';
+          button.innerText = '✅';
           button.classList.add('copied');
           setTimeout(() => {
             button.innerText = 'Copiar';
