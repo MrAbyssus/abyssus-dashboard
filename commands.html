@@ -582,6 +582,69 @@
     <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">🤖 Comandos React</summary>
 
     <div class="command-block" style="margin-top: 20px;">
+      <p><strong>/pet invocar</strong> — Invoca una criatura emocional  <button class="copy-button" data-command="/angry">Copiar</button></p>
+      <p><strong>/pet jugar</strong> — Interactúa emocionalmente con tu mascota <button class="copy-button" data-command="/blush">Copiar</button></p>
+      <p><strong>/pet alimentar</strong> — Alimenta a tu mascota <button class="copy-button" data-command="/confused">Copiar</button></p>
+      <p><strong>/pet estado</strong> — Consulta el estado actual de tu mascota <button class="copy-button" data-command="/disgust">Copiar</button></p>
+      <p><strong>/pet fusionar</strong> — Fusiona tu mascota con una entidad desconocida <button class="copy-button" data-command="/fail">Copiar</button></p>
+      <p><strong>/pet liberar</strong> — Libera a tu mascota <button class="copy-button" data-command="/happy">Copiar</button></p>
+    </div>
+  </details>
+</section>
+
+<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
+<style>
+  .copy-button {
+    background-color: #FFD700;
+    color: #1c1c1c;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+  }
+
+  .copy-button:hover {
+    background-color: #fff176;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  }
+
+  .copy-button.copied {
+    background-color: #2ecc71;
+    color: white;
+    transform: scale(1.1);
+  }
+</style>
+
+<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".copy-button").forEach(button => {
+      button.addEventListener("click", () => {
+        const command = button.getAttribute("data-command");
+        if (!command) return;
+        navigator.clipboard.writeText(command).then(() => {
+          button.innerText = '🕊️';
+          button.classList.add('copied');
+          setTimeout(() => {
+            button.innerText = 'Copiar';
+            button.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    });
+  });
+</script>
+
+<!-- COMANDOS REACT -->
+<section id="react" style="width: 80%; margin: 40px auto;">
+  <details style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
+    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">🤖 Comandos React</summary>
+
+    <div class="command-block" style="margin-top: 20px;">
       <p><strong>/angry</strong> — Expresa tu enfado <button class="copy-button" data-command="/angry">Copiar</button></p>
       <p><strong>/blush</strong> — Sonrojarse <button class="copy-button" data-command="/blush">Copiar</button></p>
       <p><strong>/bored</strong> — Estás aburrido/a <button class="copy-button" data-command="/bored">Copiar</button></p>
