@@ -100,14 +100,15 @@
 <script>
   function copyCommand(button) {
     const command = button.getAttribute('data-command');
-    navigator.clipboard.writeText(command);
-    button.innerText = '🕊️';
-    button.classList.add('copied');
-
-    setTimeout(() => {
-      button.innerText = 'Copiar';
-      button.classList.remove('copied');
-    }, 1500);
+    if (!command) return;
+    navigator.clipboard.writeText(command).then(() => {
+      button.innerText = '🕊️';
+      button.classList.add('copied');
+      setTimeout(() => {
+        button.innerText = 'Copiar';
+        button.classList.remove('copied');
+      }, 1500);
+    });
   }
 </script>
 
