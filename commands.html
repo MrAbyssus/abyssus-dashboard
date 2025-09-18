@@ -96,21 +96,20 @@
   }
 
   /* Animación institucional al desplegar */
-details[open] .command-block {
-  animation: fadeSlide 10.8s ease forwards; /* antes era 0.5s */
-}
-
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
+  details[open] .command-block {
+    animation: fadeSlide 1.2s ease forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
+  @keyframes fadeSlide {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 
 <!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
@@ -132,8 +131,6 @@ details[open] .command-block {
     });
   });
 </script>
-
-
   
 <!-- COMANDOS GENERALES -->
 <section id="generales" style="width: 80%; margin: 40px auto;">
