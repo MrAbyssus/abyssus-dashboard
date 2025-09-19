@@ -150,12 +150,58 @@
   <p>Hoy, el sistema opera en servidores reales, con trazabilidad activa y blindaje funcional.</p>
 </div>
 
-  <!-- BOTONES SECUNDARIOS -->
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="https://discord.gg/gU7XAxTpX5"><button style="margin: 10px; padding: 12px 24px; background-color: #2980b9; color: white; border: none; border-radius: 6px;">Servidor de soporte</button></a>  
-    <a href="https://top.gg/bot/680897280433324081/vote"><button style="margin: 10px; padding: 12px 24px; background-color: #f1c40f; color: black; border: none; border-radius: 6px;">Votá por Abyssus</button></a>  
-    <a href="https://www.paypal.com/donate/?hosted_button_id=DMFBBR5VNYV94"><button style="margin: 10px; padding: 12px 24px; background-color: #e74c3c; color: white; border: none; border-radius: 6px;">Apoyá el proyecto</button></a>  
-  </div>
+ <!-- BOTONES SECUNDARIOS -->
+<div style="text-align: center; margin-top: 40px;">
+  <a href="https://discord.gg/gU7XAxTpX5">
+    <button class="boton-secundario azul">Servidor de soporte</button>
+  </a>  
+  <a href="https://top.gg/bot/680897280433324081/vote">
+    <button class="boton-secundario dorado">Votá por Abyssus</button>
+  </a>  
+  <a href="https://www.paypal.com/donate/?hosted_button_id=DMFBBR5VNYV94">
+    <button class="boton-secundario rojo">Apoyá el proyecto</button>
+  </a>  
+</div>
+
+<!-- CSS (agregalo en tu <style> o style.css) -->
+<style>
+  .boton-secundario {
+    margin: 10px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+
+  .boton-secundario.azul {
+    background-color: #2980b9;
+    color: white;
+  }
+
+  .boton-secundario.dorado {
+    background-color: #f1c40f;
+    color: black;
+  }
+
+  .boton-secundario.rojo {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  .boton-secundario:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  }
+
+  .boton-secundario:active {
+    transform: scale(0.97);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+</style>
+
 
   <!-- FIRMA TÉCNICA -->
   <div style="width: 80%; margin: 60px auto; text-align: center; color: #888;">
