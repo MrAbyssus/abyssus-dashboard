@@ -100,26 +100,18 @@
 
 <!-- Google Ads -->
 <script>
-  fetch('stats.json') // ← sin carpeta, porque está en la raíz
-    .then(response => response.json())
-    .then(data => {
-      const total = data.comandosTotales;
-      const contador = document.getElementById('contadorComandos');
-      let actual = 0;
+  const total = 853;
+  const contador = document.getElementById('contadorComandos');
+  let actual = 0;
 
-      const animar = setInterval(() => {
-        actual += Math.ceil(total / 100);
-        if (actual >= total) {
-          actual = total;
-          clearInterval(animar);
-        }
-        contador.textContent = actual.toLocaleString();
-      }, 20);
-    })
-    .catch(error => {
-      console.error('❌ Error al cargar stats.json:', error);
-      document.getElementById('contadorComandos').textContent = '—';
-    });
+  const animar = setInterval(() => {
+    actual += Math.ceil(total / 100);
+    if (actual >= total) {
+      actual = total;
+      clearInterval(animar);
+    }
+    contador.textContent = actual.toLocaleString();
+  }, 20);
 </script>
 
 <!-- JS -->
