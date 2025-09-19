@@ -92,12 +92,44 @@
 
 <body>
   <!-- NAV -->
-  <nav id="nav" style="text-align: center; margin-top: 20px;">
-    <a href="index.html" style="margin: 0 15px; color: #00ffff;">Inicio</a>
-    <a href="commands.html" style="margin: 0 15px; color: #00ffff;">Comandos</a>
-    <a href="developers.html" style="margin: 0 15px; color: #00ffff;">Developers</a>
-    <a href="changelog.html" style="margin: 0 15px; color: #00ffff;">Changelog</a>
-  </nav>
+<nav id="nav" style="text-align: center; margin-top: 20px;">
+  <a href="index.html" class="nav-link">Inicio</a>
+  <a href="commands.html" class="nav-link">Comandos</a>
+  <a href="developers.html" class="nav-link">Developers</a>
+  <a href="changelog.html" class="nav-link">Changelog</a>
+</nav>
+
+<!-- CSS -->
+<style>
+  .nav-link {
+    margin: 0 15px;
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #00ffff;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffffff;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
 
   <!-- LOGO + NOMBRE -->
   <div class="logo-nombre fade-in" style="text-align: center; margin-top: 40px;">
