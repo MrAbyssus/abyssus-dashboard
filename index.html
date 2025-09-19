@@ -123,7 +123,7 @@
   <p>Si ya lo hiciste, invitá al bot y desbloqueá tu recompensa.</p>
 </div>
 
-<!-- CSS (agregalo en tu <style> o style.css) -->
+<!-- CSS GLOBAL (una sola vez en tu <style>) -->
 <style>
   .fade-in {
     opacity: 0;
@@ -147,7 +147,7 @@
   }
 </style>
 
-<!-- JS (agregalo antes de </body>) -->
+<!-- JS GLOBAL (una sola vez antes de </body>) -->
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -159,6 +159,7 @@
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
+
 
 
   <!-- CONTADOR INSTITUCIONAL -->
