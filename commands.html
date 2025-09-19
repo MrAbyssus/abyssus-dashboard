@@ -400,13 +400,10 @@
   });
 </script>
 
-
-
-
 <!-- COMANDOS MODERACIÓN -->
 <section id="moderacion" style="width: 80%; margin: 40px auto;">
-  <details style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">🛡️ Comandos de Moderación</summary>
+  <details class="bloque-comandos">
+    <summary class="categoria-comandos">🛡️ Comandos de Moderación</summary>
 
     <div class="command-block" style="margin-top: 20px;">
       <p><strong>/ban</strong> — Banea a un usuario <button class="copy-button" data-command="/ban">Copiar</button></p>
@@ -433,6 +430,34 @@
     </div>
   </details>
 </section>
+
+<!-- CSS -->
+<style>
+  .bloque-comandos {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .bloque-comandos:hover {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  }
+
+  .categoria-comandos {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #FFD700;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+
+  .categoria-comandos:hover {
+    transform: scale(1.03);
+    color: #ffffff;
+  }
+</style>
+
 
 <!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
