@@ -94,26 +94,21 @@
   </footer>
 
   <!-- CONTADOR ANIMADO -->
-  <script>
-  const fallback = 853;
+<script>
+  const mensajeFinal = "más de 150 comandos";
+  const limite = 150;
+  const contador = document.getElementById('contadorComandos');
+  let actual = 0;
 
-  fetch('stats.json')
-    .then(res => res.json())
-    .then(data => iniciarContador(data.comandosTotales))
-    .catch(() => iniciarContador(fallback));
-
-  function iniciarContador(total) {
-    const contador = document.getElementById('contadorComandos');
-    let actual = 0;
-    const animar = setInterval(() => {
-      actual += Math.ceil(total / 100);
-      if (actual >= total) {
-        actual = total;
-        clearInterval(animar);
-      }
+  const animar = setInterval(() => {
+    actual += Math.ceil(limite / 100);
+    if (actual >= limite) {
+      clearInterval(animar);
+      contador.textContent = mensajeFinal;
+    } else {
       contador.textContent = actual.toLocaleString();
-    }, 20);
-  }
+    }
+  }, 20);
 </script>
 
   <!-- Google Ads -->
