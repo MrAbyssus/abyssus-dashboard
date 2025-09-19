@@ -95,10 +95,16 @@
 
   <!-- CONTADOR ANIMADO -->
   <script>
-    const total = 853;
+  const fallback = 853;
+
+  fetch('stats.json')
+    .then(res => res.json())
+    .then(data => iniciarContador(data.comandosTotales))
+    .catch(() => iniciarContador(fallback));
+
+  function iniciarContador(total) {
     const contador = document.getElementById('contadorComandos');
     let actual = 0;
-
     const animar = setInterval(() => {
       actual += Math.ceil(total / 100);
       if (actual >= total) {
@@ -107,7 +113,8 @@
       }
       contador.textContent = actual.toLocaleString();
     }, 20);
-  </script>
+  }
+</script>
 
   <!-- Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1001547242"></script>
