@@ -34,7 +34,7 @@ Porque cada comando es una chispa de caos controlado
 
 Gracias por la paciencia y por apoyar el desarrollo del bot. ¡Seguimos mejorando! 💪
 
-Solo Invitalo - [https://top.gg/bot/680897280433324081/invite](https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Banner%20Dashboard.png)
+Solo Invitalo - [https://top.gg/bot/680897280433324081/invite](https://top.gg/bot/680897280433324081/invite)
 
 ---
 
