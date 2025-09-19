@@ -35,11 +35,50 @@
   </div>
 
   <!-- RECOMPENSA -->
-  <div style="background-color: #f39c12; color: #1c1c1c; padding: 20px; margin: 40px auto; width: 80%; border-radius: 10px; text-align: center;">
-    <h2>🎁 ¡RECLAMA TU RECOMPENSA POR INVOCAR A ABYSSUS!</h2>
-    <p>Usa <code>/reclamar</code> en el servidor oficial para recibir tus objetos.</p>
-    <p>Si ya lo hiciste, invitá al bot y desbloqueá tu recompensa.</p>
-  </div>
+<div class="recompensa fade-in" style="background-color: #f39c12; color: #1c1c1c; padding: 20px; margin: 40px auto; width: 80%; border-radius: 10px; text-align: center;">
+  <h2 class="pulso">🎁 ¡RECLAMA TU RECOMPENSA POR INVOCAR A ABYSSUS!</h2>
+  <p>Usa <code>/reclamar</code> en el servidor oficial para recibir tus objetos.</p>
+  <p>Si ya lo hiciste, invitá al bot y desbloqueá tu recompensa.</p>
+</div>
+
+<!-- CSS (agregalo en tu <style> o style.css) -->
+<style>
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .pulso {
+    animation: pulso 1.8s infinite;
+  }
+
+  @keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+</style>
+
+<!-- JS (agregalo antes de </body>) -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+
   <!-- CONTADOR INSTITUCIONAL -->
   <div style="text-align: center; margin-top: 30px;">
     <p style="font-size: 1.2em;">🧠 Abyssus está activo en <strong>648 servidores</strong></p>
