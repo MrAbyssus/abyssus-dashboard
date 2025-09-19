@@ -641,8 +641,8 @@
 
 <!-- COMANDOS SOCIALES -->
 <section id="sociales" style="width: 80%; margin: 40px auto;">
-  <details style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">💬 Comandos Sociales</summary>
+  <details class="bloque-comandos">
+    <summary class="categoria-comandos">💬 Comandos Sociales</summary>
 
     <div class="command-block" style="margin-top: 20px;">
       <p><strong>/ship</strong> — Calcula compatibilidad entre dos usuarios <button class="copy-button" data-command="/ship">Copiar</button></p>
@@ -655,22 +655,61 @@
       <p><strong>/afk clear</strong> — Elimina el estado AFK del usuario <button class="copy-button" data-command="/afk clear">Copiar</button></p>
       <p><strong>/signo</strong> — Te dice tu signo según tu fecha de nacimiento <button class="copy-button" data-command="/signo">Copiar</button></p>
       <p><strong>/reputation</strong> — Gana reputación o dale reputación a otro usuario <button class="copy-button" data-command="/reputation">Copiar</button></p>
-      <p><strong>/birthday date</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Muestra tu fecha registrada <button class="copy-button" data-command="/birthday date">Copiar</button></p>
-      <p><strong>/birthday list</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Muestra la lista de cumpleaños del servidor <button class="copy-button" data-command="/birthday list">Copiar</button></p>
-      <p><strong>/birthday deny</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Oculta tu cumpleaños del resto <button class="copy-button" data-command="/birthday deny">Copiar</button></p>
-      <p><strong>/birthday allow</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Permite que otros vean tu cumpleaños <button class="copy-button" data-command="/birthday allow">Copiar</button></p>
-      <p><strong>/birthday setup</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Configura tu fecha de cumpleaños <button class="copy-button" data-command="/birthday setup">Copiar</button></p>
-      <p><strong>/birthday channel</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Configura el canal de avisos <button class="copy-button" data-command="/birthday channel">Copiar</button></p>
-      <p><strong>/birthday reset</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Elimina tu cumpleaños registrado y lo deja en blanco <button class="copy-button" data-command="/birthday reset">Copiar</button></p>
-      <p><strong>/birthday role</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Cambia el nombre o color del rol @Birthday <button class="copy-button" data-command="/birthday role">Copiar</button></p>
-      <p><strong>/birthday today</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Muestra quién cumple hoy sin listar todos <button class="copy-button" data-command="/birthday today">Copiar</button></p>
-      <p><strong>/birthday stats</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Muestra estadísticas: cuántos cumpleaños hay por mes <button class="copy-button" data-command="/birthday stats">Copiar</button></p>
-      <p><strong>/birthday ping</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Menciona a los cumpleañeros del día en el canal configurado <button class="copy-button" data-command="/birthday channel">Copiar</button></p>
-      <p><strong>/birthday export</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Exporta la lista de cumpleaños como JSON (solo visual, sin archivo) <button class="copy-button" data-command="/birthday export">Copiar</button></p>
-      <p><strong>/birthday test</strong> <span style="background:#ffd700; color:#000; padding:2px 6px; border-radius:4px; font-size:0.8em;">Nuevo</span> — Simula un cumpleaños para probar el sistema sin fecha real <button class="copy-button" data-command="/birthday test">Copiar</button></p>  
+
+      <!-- Comandos de cumpleaños -->
+      <p><strong>/birthday date</strong> <span class="etiqueta-nuevo">Nuevo</span> — Muestra tu fecha registrada <button class="copy-button" data-command="/birthday date">Copiar</button></p>
+      <p><strong>/birthday list</strong> <span class="etiqueta-nuevo">Nuevo</span> — Muestra la lista de cumpleaños del servidor <button class="copy-button" data-command="/birthday list">Copiar</button></p>
+      <p><strong>/birthday deny</strong> <span class="etiqueta-nuevo">Nuevo</span> — Oculta tu cumpleaños del resto <button class="copy-button" data-command="/birthday deny">Copiar</button></p>
+      <p><strong>/birthday allow</strong> <span class="etiqueta-nuevo">Nuevo</span> — Permite que otros vean tu cumpleaños <button class="copy-button" data-command="/birthday allow">Copiar</button></p>
+      <p><strong>/birthday setup</strong> <span class="etiqueta-nuevo">Nuevo</span> — Configura tu fecha de cumpleaños <button class="copy-button" data-command="/birthday setup">Copiar</button></p>
+      <p><strong>/birthday channel</strong> <span class="etiqueta-nuevo">Nuevo</span> — Configura el canal de avisos <button class="copy-button" data-command="/birthday channel">Copiar</button></p>
+      <p><strong>/birthday reset</strong> <span class="etiqueta-nuevo">Nuevo</span> — Elimina tu cumpleaños registrado y lo deja en blanco <button class="copy-button" data-command="/birthday reset">Copiar</button></p>
+      <p><strong>/birthday role</strong> <span class="etiqueta-nuevo">Nuevo</span> — Cambia el nombre o color del rol @Birthday <button class="copy-button" data-command="/birthday role">Copiar</button></p>
+      <p><strong>/birthday today</strong> <span class="etiqueta-nuevo">Nuevo</span> — Muestra quién cumple hoy sin listar todos <button class="copy-button" data-command="/birthday today">Copiar</button></p>
+      <p><strong>/birthday stats</strong> <span class="etiqueta-nuevo">Nuevo</span> — Muestra estadísticas: cuántos cumpleaños hay por mes <button class="copy-button" data-command="/birthday stats">Copiar</button></p>
+      <p><strong>/birthday ping</strong> <span class="etiqueta-nuevo">Nuevo</span> — Menciona a los cumpleañeros del día en el canal configurado <button class="copy-button" data-command="/birthday ping">Copiar</button></p>
+      <p><strong>/birthday export</strong> <span class="etiqueta-nuevo">Nuevo</span> — Exporta la lista de cumpleaños como JSON (solo visual) <button class="copy-button" data-command="/birthday export">Copiar</button></p>
+      <p><strong>/birthday test</strong> <span class="etiqueta-nuevo">Nuevo</span> — Simula un cumpleaños para probar el sistema <button class="copy-button" data-command="/birthday test">Copiar</button></p>
     </div>
   </details>
 </section>
+
+<!-- CSS -->
+<style>
+  .bloque-comandos {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .bloque-comandos:hover {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  }
+
+  .categoria-comandos {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #FFD700;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+
+  .categoria-comandos:hover {
+    transform: scale(1.03);
+    color: #ffffff;
+  }
+
+  .etiqueta-nuevo {
+    background: #ffd700;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+</style>
+
 
 <!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
@@ -721,8 +760,8 @@
 
 <!-- COMANDOS DIVERSIÓN -->
 <section id="diversion" style="width: 80%; margin: 40px auto;">
-  <details style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">🎉 Comandos de Diversión</summary>
+  <details class="bloque-comandos">
+    <summary class="categoria-comandos">🎉 Comandos de Diversión</summary>
 
     <div class="command-block" style="margin-top: 20px;">
       <p><strong>/roleta</strong> — Ruleta con castigos <button class="copy-button" data-command="/roleta">Copiar</button></p>
@@ -744,6 +783,34 @@
     </div>
   </details>
 </section>
+
+<!-- CSS -->
+<style>
+  .bloque-comandos {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .bloque-comandos:hover {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  }
+
+  .categoria-comandos {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #FFD700;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+
+  .categoria-comandos:hover {
+    transform: scale(1.03);
+    color: #ffffff;
+  }
+</style>
+
 
 <!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
@@ -794,8 +861,8 @@
 
 <!-- COMANDOS ANIMALES -->
 <section id="animales" style="width: 80%; margin: 40px auto;">
-  <details style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">🐾 Comandos de Animales</summary>
+  <details class="bloque-comandos">
+    <summary class="categoria-comandos">🐾 Comandos de Animales</summary>
 
     <div class="command-block" style="margin-top: 20px;">
       <p><strong>/animals bunny</strong> — 🐰 Muestra un conejo <button class="copy-button" data-command="/animals bunny">Copiar</button></p>
@@ -814,6 +881,34 @@
     </div>
   </details>
 </section>
+
+<!-- CSS -->
+<style>
+  .bloque-comandos {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .bloque-comandos:hover {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  }
+
+  .categoria-comandos {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #FFD700;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+
+  .categoria-comandos:hover {
+    transform: scale(1.03);
+    color: #ffffff;
+  }
+</style>
+
 
 <!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
@@ -864,11 +959,11 @@
 
 <!-- COMANDOS PET -->
 <section id="react" style="width: 80%; margin: 40px auto;">
-  <details style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-    <summary style="font-size: 1.4em; font-weight: bold; color: #FFD700;">🐯 Comandos Pet</summary>
+  <details class="bloque-comandos">
+    <summary class="categoria-comandos">🐯 Comandos Pet</summary>
 
     <div class="command-block" style="margin-top: 20px;">
-      <p><strong>/pet invocar</strong> — Invoca una criatura emocional  <button class="copy-button" data-command="/pet invocar">Copiar</button></p>
+      <p><strong>/pet invocar</strong> — Invoca una criatura emocional <button class="copy-button" data-command="/pet invocar">Copiar</button></p>
       <p><strong>/pet jugar</strong> — Interactúa emocionalmente con tu mascota <button class="copy-button" data-command="/pet jugar">Copiar</button></p>
       <p><strong>/pet alimentar</strong> — Alimenta a tu mascota <button class="copy-button" data-command="/pet alimentar">Copiar</button></p>
       <p><strong>/pet estado</strong> — Consulta el estado actual de tu mascota <button class="copy-button" data-command="/pet estado">Copiar</button></p>
@@ -877,6 +972,34 @@
     </div>
   </details>
 </section>
+
+<!-- CSS -->
+<style>
+  .bloque-comandos {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .bloque-comandos:hover {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  }
+
+  .categoria-comandos {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #FFD700;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+  }
+
+  .categoria-comandos:hover {
+    transform: scale(1.03);
+    color: #ffffff;
+  }
+</style>
+
 
 <!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
