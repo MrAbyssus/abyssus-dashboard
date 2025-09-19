@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/style.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/favicon.png">
-
-  <!-- SEO institucional -->
   <meta name="description" content="Abyssus Bot: sistema modular, visual y emocional para servidores con identidad. Moderación, economía, reputación y blindaje técnico.">
   <meta name="keywords" content="Discord, bot, Abyssus, moderación, economía, reputación, institucional">
   <meta name="author" content="Mr.Abyssus">
@@ -51,35 +49,33 @@
     <p style="color: #00ff99;">📈 Hoy se sumaron <strong>2 nuevos servidores</strong>. La expansión continúa.</p>
   </div>
 
-<!-- COMANDOS EJECUTADOS -->
-<div style="text-align: center; margin-top: 20px;">
-  <p style="font-size: 1.2em;">⚙️ Abyssus ha ejecutado <strong style="color: #00ffff;">853 comandos</strong> desde su lanzamiento público.</p>
-  <p style="color: #888;">Cada uno deja huella. Cada uno está firmado.</p>
-</div>
+  <!-- COMANDOS EJECUTADOS CON CONTADOR ANIMADO -->
+  <div id="comandos" style="text-align: center; margin-top: 20px;">
+    <p style="font-size: 1.2em;">
+      ⚙️ Abyssus ha ejecutado <strong id="contadorComandos" style="color: #00ffff;">0</strong> comandos desde su lanzamiento público.
+    </p>
+    <p style="color: #888;">Cada uno deja huella. Cada uno está firmado.</p>
+  </div>
 
+  <!-- COMPATIBILIDAD DISCORD -->
+  <div style="width: 80%; margin: 40px auto; background-color: #1c1c1c; padding: 20px; border-radius: 10px; text-align: center;">
+    <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/discord-logo-icon-editorial-free-vector.jpg" alt="Logo Discord" style="width: 80px; margin-bottom: 10px;">
+    <h2 style="color: #00ffff;">🔗 Compatible con Discord</h2>
+    <p style="color: #ccc;">Abyssus está diseñado para integrarse de forma nativa con servidores Discord. Moderación, economía, reputación y comandos visuales, todo desde tu comunidad.</p>
+  </div>
 
- <!-- COMPATIBILIDAD DISCORD -->
-<div style="width: 80%; margin: 40px auto; background-color: #1c1c1c; padding: 20px; border-radius: 10px; text-align: center;">
- <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/discord-logo-icon-editorial-free-vector.jpg" alt="Logo Discord" style="width: 80px; margin-bottom: 10px;">
-  <h2 style="color: #00ffff;">🔗 Compatible con Discord</h2>
-  <p style="color: #ccc;">Abyssus está diseñado para integrarse de forma nativa con servidores Discord.  
-  Moderación, economía, reputación y comandos visuales, todo desde tu comunidad.</p>
-</div>
-
-  
- <!-- BANNER INSTITUCIONAL -->
-<div style="width: 75%; margin: 60px auto; text-align: center;">
-  <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Banner%20Dashboard.png" alt="Banner institucional Abyssus Bot" style="width: 100%; max-width: 1200px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.6);">
-  <p style="margin-top: 15px; color: #888;">Donde la identidad técnica se convierte en experiencia emocional.</p>
-</div>
-
+  <!-- BANNER INSTITUCIONAL -->
+  <div style="width: 75%; margin: 60px auto; text-align: center;">
+    <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Banner%20Dashboard.png" alt="Banner institucional Abyssus Bot" style="width: 100%; max-width: 1200px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.6);">
+    <p style="margin-top: 15px; color: #888;">Donde la identidad técnica se convierte en experiencia emocional.</p>
+  </div>
 
   <!-- ORIGEN INSTITUCIONAL -->
   <div id="origen" style="width: 80%; margin: 60px auto; background-color: #1c1c1c; padding: 30px; border-radius: 10px;">
     <h2 style="color: #00ffff;">📜 Origen institucional</h2>
     <p>Abyssus está diseñado, estructurado y fundado por <strong>Mr.Abyssus</strong>.</p>
     <p>Este sistema nació como un experimento para un servidor de amigos. La comunidad lo adoptó, lo recomendó y lo impulsó.</p>
-    <p>Así nació la versión pública: un bot que no compite, Cada módulo está firmado. Cada ciclo está documentado. Cada expansión deja huella.</p>
+    <p>Así nació la versión pública: un bot que no compite. Cada módulo está firmado. Cada ciclo está documentado. Cada expansión deja huella.</p>
   </div>
 
   <!-- BOTONES SECUNDARIOS -->
@@ -97,25 +93,49 @@
   </div>
 
   <!-- FOOTER -->
-  <footer style="text-align: center; margin-top: 60px; color: #555;">
-    <p>© 2022–2025 Abyssus. Todos los derechos reservados.</p>
-    <a href="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/Aviso%20de%20privacidad" target="_blank" style="color: #3498db;">📄 Aviso de Privacidad</a>
-  </footer>
+<footer style="text-align: center; margin-top: 60px; color: #555;">
+  <p>© 2022–2025 Abyssus. Todos los derechos reservados.</p>
+  <a href="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/Aviso%20de%20privacidad" target="_blank" style="color: #3498db;">📄 Aviso de Privacidad</a>
+</footer>
+
 <!-- Google Ads -->
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1001547242"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-1001547242');
 </script>
+
+<!-- Contador animado de comandos -->
+<script>
+  fetch('data/stats.json')
+    .then(response => response.json())
+    .then(data => {
+      const total = data.comandosTotales;
+      const contador = document.getElementById('contadorComandos');
+      let actual = 0;
+
+      const animar = setInterval(() => {
+        actual += Math.ceil(total / 100);
+        if (actual >= total) {
+          actual = total;
+          clearInterval(animar);
+        }
+        contador.textContent = actual.toLocaleString();
+      }, 20);
+    })
+    .catch(error => {
+      console.error('❌ Error al cargar stats.json:', error);
+      document.getElementById('contadorComandos').textContent = '—';
+    });
 </script>
-  <!-- JS -->
-  <script src="js/script.js"></script>
+
+<!-- JS -->
+<script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
