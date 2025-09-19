@@ -151,69 +151,115 @@
 </style>
 
 <!-- BLOQUE VIP PREMIUM REFINADO -->
-<section id="vip" style="width: 90%; margin: 60px auto; background-color: #111; border: 1px solid #FFD700; border-radius: 14px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.2); padding: 50px 30px; text-align: center; font-family: 'Segoe UI', sans-serif;">
+<section id="vip" class="vip-pulso" style="width: 90%; margin: 60px auto; background-color: #111; border: 1px solid #FFD700; border-radius: 14px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.2); padding: 50px 30px; text-align: center; font-family: 'Segoe UI', sans-serif;">
   <h2 style="color: #FFD700; font-size: 2.4em; margin-bottom: 15px;">👑 Acceso VIP</h2>
   <p style="color: #bbb; font-size: 1.15em; margin-bottom: 40px;">Comandos exclusivos, blindaje técnico y ventajas.</p>
 
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: left;">
     <!-- Comando -->
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/vip boost</strong></p>
-      <p style="color: #aaa;">Reputación + durante 1 hora</p>
-      <button class="copy-button" data-command="/vip boost" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/vip boost</strong></p>
+      <p>Reputación + durante 1 hora</p>
+      <button class="copy-button" data-command="/vip boost">Copiar</button>
     </div>
 
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/vip ghostkick</strong></p>
-      <p style="color: #aaa;">Expulsión sin rastro</p>
-      <button class="copy-button" data-command="/vip ghostkick" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/vip ghostkick</strong></p>
+      <p>Expulsión sin rastro</p>
+      <button class="copy-button" data-command="/vip ghostkick">Copiar</button>
     </div>
 
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/vip lockdown</strong></p>
-      <p style="color: #aaa;">Bloqueo temporal de canal</p>
-      <button class="copy-button" data-command="/vip lockdown" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/vip lockdown</strong></p>
+      <p>Bloqueo temporal de canal</p>
+      <button class="copy-button" data-command="/vip lockdown">Copiar</button>
     </div>
 
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/vip override</strong></p>
-      <p style="color: #aaa;">Ignora restricciones</p>
-      <button class="copy-button" data-command="/vip override" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/vip override</strong></p>
+      <p>Ignora restricciones</p>
+      <button class="copy-button" data-command="/vip override">Copiar</button>
     </div>
 
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/enlace</strong></p>
-      <p style="color: #aaa;">Analiza una URL</p>
-      <button class="copy-button" data-command="/enlace" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/enlace</strong></p>
+      <p>Analiza una URL</p>
+      <button class="copy-button" data-command="/enlace">Copiar</button>
     </div>
 
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/ia consejo</strong></p>
-      <p style="color: #aaa;">Consejo de la vida</p>
-      <button class="copy-button" data-command="/ia consejo" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/ia consejo</strong></p>
+      <p>Consejo de la vida</p>
+      <button class="copy-button" data-command="/ia consejo">Copiar</button>
     </div>
 
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/ia historia</strong></p>
-      <p style="color: #aaa;">Genera una historia</p>
-      <button class="copy-button" data-command="/ia historia" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/ia historia</strong></p>
+      <p>Genera una historia</p>
+      <button class="copy-button" data-command="/ia historia">Copiar</button>
     </div>
 
-    <div style="background-color: #1c1c1c; padding: 20px; border-radius: 10px;">
-      <p style="color: #FFD700;"><strong>/ia npc</strong></p>
-      <p style="color: #aaa;">Simula un personaje</p>
-      <button class="copy-button" data-command="/ia npc" style="margin-top: 10px;">Copiar</button>
+    <div class="vip-card">
+      <p><strong>/ia npc</strong></p>
+      <p>Simula un personaje</p>
+      <button class="copy-button" data-command="/ia npc">Copiar</button>
     </div>
   </div>
 
   <a href="https://discord.gg/S2M2cyeus4" target="_blank">
-    <button style="margin-top: 50px; padding: 16px 32px; background-color: #FFD700; color: #1c1c1c; font-weight: bold; border: none; border-radius: 10px; font-size: 1.1em; box-shadow: 0 0 12px rgba(255, 215, 0, 0.4); cursor: pointer;">
+    <button class="vip-boton">
       🔓 Desbloquear acceso VIP
     </button>
   </a>
 </section>
 
+<!-- CSS -->
+<style>
+  .vip-pulso {
+    animation: pulso-vip 6s infinite;
+  }
 
+  @keyframes pulso-vip {
+    0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.2); }
+    50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.4); }
+  }
+
+  .vip-card {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    color: #FFD700;
+    transition: transform 0.3s ease;
+  }
+
+  .vip-card p {
+    color: #aaa;
+    margin: 6px 0;
+  }
+
+  .vip-card:hover {
+    transform: scale(1.03);
+  }
+
+  .vip-boton {
+    margin-top: 50px;
+    padding: 16px 32px;
+    background-color: #FFD700;
+    color: #1c1c1c;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+    cursor: pointer;
+    animation: boton-vip 6s infinite;
+  }
+
+  @keyframes boton-vip {
+    0%, 100% { box-shadow: 0 0 12px rgba(255, 215, 0, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+  }
+</style>
 
 <!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
 <style>
