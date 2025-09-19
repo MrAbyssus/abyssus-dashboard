@@ -10,9 +10,7 @@
   <meta name="keywords" content="Discord, bot, Abyssus, moderación, economía, reputación, institucional">
   <meta name="author" content="Mr.Abyssus">
 </head>
-
 <body style="background-color: #0f0f0f; color: #f1f1f1; font-family: 'Segoe UI', sans-serif;">
-
   <!-- NAV -->
   <nav id="nav" style="text-align: center; margin-top: 20px;">
     <a href="index.html" style="margin: 0 15px; color: #00ffff;">Inicio</a>
@@ -42,7 +40,6 @@
     <p>Usa <code>/reclamar</code> en el servidor oficial para recibir tus objetos.</p>
     <p>Si ya lo hiciste, invitá al bot y desbloqueá tu recompensa.</p>
   </div>
-
   <!-- CONTADOR INSTITUCIONAL -->
   <div style="text-align: center; margin-top: 30px;">
     <p style="font-size: 1.2em;">🧠 Abyssus está activo en <strong>648 servidores</strong></p>
@@ -63,7 +60,6 @@
     <h2 style="color: #00ffff;">🔗 Compatible con Discord</h2>
     <p style="color: #ccc;">Abyssus está diseñado para integrarse de forma nativa con servidores Discord. Moderación, economía, reputación y comandos visuales, todo desde tu comunidad.</p>
   </div>
-
   <!-- BANNER INSTITUCIONAL -->
   <div style="width: 75%; margin: 60px auto; text-align: center;">
     <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Banner%20Dashboard.png" alt="Banner institucional Abyssus Bot" style="width: 100%; max-width: 1200px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.6);">
@@ -91,33 +87,42 @@
     <p>Este HTML v3.5 forma parte del dashboard institucional. Cada línea está pensada para escalar. Cada bloque está firmado.</p>
     <p>Si no deja huella, no es Abyssus.</p>
   </div>
-
   <!-- FOOTER -->
-<footer style="text-align: center; margin-top: 60px; color: #555;">
-  <p>© 2022–2025 Abyssus. Todos los derechos reservados.</p>
-  <a href="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/Aviso%20de%20privacidad" target="_blank" style="color: #3498db;">📄 Aviso de Privacidad</a>
-</footer>
+  <footer style="text-align: center; margin-top: 60px; color: #555;">
+    <p>© 2022–2025 Abyssus. Todos los derechos reservados.</p>
+    <a href="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/Aviso%20de%20privacidad" target="_blank" style="color: #3498db;">📄 Aviso de Privacidad</a>
+  </footer>
 
-<!-- Google Ads -->
-<script>
-  const total = 853;
-  const contador = document.getElementById('contadorComandos');
-  let actual = 0;
+  <!-- CONTADOR ANIMADO -->
+  <script>
+    const total = 853;
+    const contador = document.getElementById('contadorComandos');
+    let actual = 0;
 
-  const animar = setInterval(() => {
-    actual += Math.ceil(total / 100);
-    if (actual >= total) {
-      actual = total;
-      clearInterval(animar);
-    }
-    contador.textContent = actual.toLocaleString();
-  }, 20);
-</script>
+    const animar = setInterval(() => {
+      actual += Math.ceil(total / 100);
+      if (actual >= total) {
+        actual = total;
+        clearInterval(animar);
+      }
+      contador.textContent = actual.toLocaleString();
+    }, 20);
+  </script>
 
-<!-- JS -->
-<script src="js/script.js"></script>
+  <!-- Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1001547242"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-1001547242');
+  </script>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
 
