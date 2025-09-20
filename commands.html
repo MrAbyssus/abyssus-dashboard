@@ -889,7 +889,7 @@
   }
 </style>
 
-<!-- JS PARA COPIADO -->
+<!-- JS DE COPIADO -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".copy-button").forEach(button => {
@@ -899,16 +899,9 @@
         navigator.clipboard.writeText(command).then(() => {
           button.innerText = '🕊️';
           button.classList.add('copied');
-          setTimeout(() => {
-            button.innerText = '📋 Copiar';
-            button.classList.remove('copied');
-          }, 1500);
-        });
-      });
-    });
-  });
-</script>
 
+
+  
 <!-- COMANDOS SOCIALES -->
 <section id="sociales" style="width: 80%; margin: 40px auto;">
   <details class="bloque-comandos">
