@@ -259,11 +259,26 @@
   }
 </style>
 
-  <!-- BANNER INSTITUCIONAL -->
-  <div style="width: 75%; margin: 60px auto; text-align: center;">
-    <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Banner%20Dashboard.png" alt="Banner institucional Abyssus Bot" style="width: 100%; max-width: 1200px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.6);">
-    <p style="margin-top: 15px; color: #888;">Donde la identidad técnica se convierte en experiencia emocional.</p>
+<!-- BANNER INSTITUCIONAL -->
+<div style="width: 75%; margin: 60px auto; text-align: center; position: relative;">
+  <div style="position: relative; display: inline-block; border-radius: 14px; overflow: hidden; box-shadow: 0 0 30px rgba(0,255,255,0.2); animation: glow 3s infinite; transition: transform 0.3s ease;">
+    <img src="https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/img/Banner%20Dashboard.png" alt="Banner institucional Abyssus Bot" style="width: 100%; max-width: 1200px; display: block;">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); padding: 20px;">
+      <h2 style="color: #00ffff; margin: 0; font-size: 1.6em;">🔒 Sistema trazado por Mr.Abyssus</h2>
+      <p style="color: #ccc; margin-top: 6px;">Donde la identidad técnica se convierte en experiencia emocional.</p>
+    </div>
   </div>
+</div>
+
+<!-- ANIMACIÓN INSTITUCIONAL -->
+<style>
+  @keyframes glow {
+    0% { box-shadow: 0 0 30px rgba(0,255,255,0.2); }
+    50% { box-shadow: 0 0 50px rgba(0,255,255,0.4); }
+    100% { box-shadow: 0 0 30px rgba(0,255,255,0.2); }
+  }
+</style>
+
 
 <!-- CICLO OPERATIVO -->
 <div id="origen" style="width: 80%; margin: 60px auto; background-color: #1c1c1c; padding: 30px; border-radius: 10px; text-align: center;">
