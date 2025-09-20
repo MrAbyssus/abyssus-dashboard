@@ -520,38 +520,186 @@
   });
 </script>
 
-<!-- COMANDOS MODERACIÓN -->
+<!-- COMANDOS DE MODERACIÓN EN TARJETAS -->
 <section id="moderacion" style="width: 80%; margin: 40px auto;">
   <details class="bloque-comandos">
     <summary class="categoria-comandos">🛡️ Comandos de Moderación</summary>
 
-    <div class="command-block" style="margin-top: 20px;">
-      <p><strong>/ban</strong> — Banea a un usuario <button class="copy-button" data-command="/ban">Copiar</button></p>
-      <p><strong>/kick</strong> — Expulsa a un usuario <button class="copy-button" data-command="/kick">Copiar</button></p>
-      <p><strong>/warn</strong> — Advierte a un usuario <button class="copy-button" data-command="/warn">Copiar</button></p>
-      <p><strong>/view-warnings</strong> — Muestra advertencias <button class="copy-button" data-command="/view-warnings">Copiar</button></p>
-      <p><strong>/clearwarnings</strong> — Elimina advertencias por ID de Warn <button class="copy-button" data-command="/clearwarnings">Copiar</button></p>
-      <p><strong>/purge</strong> — Borra mensajes del canal por cantidad <button class="copy-button" data-command="/purge">Copiar</button></p>
-      <p><strong>/mute</strong> — Silencia temporalmente <button class="copy-button" data-command="/mute">Copiar</button></p>
-      <p><strong>/unmute</strong> — Quita el silencio <button class="copy-button" data-command="/unmute">Copiar</button></p>
-      <p><strong>/timemute</strong> — Silenciar a un usuario por un tiempo <button class="copy-button" data-command="/timemute">Copiar</button></p>
-      <p><strong>/ayuda</strong> — Solicita asistencia en el servidor <button class="copy-button" data-command="/ayuda">Copiar</button></p>
-      <p><strong>/rol crear</strong> — Crea nuevo rol con opciones avanzadas <button class="copy-button" data-command="/rol crear">Copiar</button></p>
-      <p><strong>/rol eliminar</strong> — Eliminar rol del servidor <button class="copy-button" data-command="/rol eliminar">Copiar</button></p>
-     <p><strong>/911</strong> — Sistema de alertas y moderación con subcomandos <button class="copy-button" data-command="/911">Copiar</button></p>
-      <p><strong>/911 enviar</strong> — Envía una alerta al equipo de moderación <button class="copy-button" data-command="/911 enviar">Copiar</button></p>
-      <p><strong>/911 estado</strong> — Consulta el estado de tu alerta <button class="copy-button" data-command="/911 estado">Copiar</button></p>
-      <p><strong>/911 resolver</strong> — Marca una alerta como resuelta <button class="copy-button" data-command="/911 resolver">Copiar</button></p>
-      <p><strong>/modlogs</strong> — Consulta el historial de moderación de un usuario <button class="copy-button" data-command="/modlogs">Copiar</button></p>
-      <p><strong>/configlogs</strong> — Consultar el historial de un usuario específico <button class="copy-button" data-command="/configlogs">Copiar</button></p>
-      <p><strong>/config setmute</strong> — Define el rol que se usará para silenciar usuarios <button class="copy-button" data-command="/config setmute">Copiar</button></p>
-      <p><strong>/confess set</strong> — Configura el canal donde se publican las confesiones <button class="copy-button" data-command="/confess set">Copiar</button></p>
-      <p><strong>/reportar</strong> — Recibe denuncias de usuarios <button class="copy-button" data-command="/reportar">Copiar</button></p>
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/ban</h3>
+        <p>Banea a un usuario</p>
+      </div>
+      <button class="copy-button" data-command="/ban">📋 Copiar</button>
     </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/kick</h3>
+        <p>Expulsa a un usuario</p>
+      </div>
+      <button class="copy-button" data-command="/kick">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/warn</h3>
+        <p>Advierte a un usuario</p>
+      </div>
+      <button class="copy-button" data-command="/warn">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/view-warnings</h3>
+        <p>Muestra advertencias</p>
+      </div>
+      <button class="copy-button" data-command="/view-warnings">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/clearwarnings</h3>
+        <p>Elimina advertencias por ID</p>
+      </div>
+      <button class="copy-button" data-command="/clearwarnings">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/purge</h3>
+        <p>Borra mensajes por cantidad</p>
+      </div>
+      <button class="copy-button" data-command="/purge">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/mute</h3>
+        <p>Silencia temporalmente</p>
+      </div>
+      <button class="copy-button" data-command="/mute">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/unmute</h3>
+        <p>Quita el silencio</p>
+      </div>
+      <button class="copy-button" data-command="/unmute">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/timemute</h3>
+        <p>Silencia por tiempo definido</p>
+      </div>
+      <button class="copy-button" data-command="/timemute">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/ayuda</h3>
+        <p>Solicita asistencia en el servidor</p>
+      </div>
+      <button class="copy-button" data-command="/ayuda">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/rol crear</h3>
+        <p>Crea nuevo rol con opciones avanzadas</p>
+      </div>
+      <button class="copy-button" data-command="/rol crear">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/rol eliminar</h3>
+        <p>Elimina rol del servidor</p>
+      </div>
+      <button class="copy-button" data-command="/rol eliminar">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/911</h3>
+        <p>Sistema de alertas y moderación</p>
+      </div>
+      <button class="copy-button" data-command="/911">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/911 enviar</h3>
+        <p>Envía una alerta al equipo</p>
+      </div>
+      <button class="copy-button" data-command="/911 enviar">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/911 estado</h3>
+        <p>Consulta el estado de tu alerta</p>
+      </div>
+      <button class="copy-button" data-command="/911 estado">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/911 resolver</h3>
+        <p>Marca una alerta como resuelta</p>
+      </div>
+      <button class="copy-button" data-command="/911 resolver">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/modlogs</h3>
+        <p>Consulta historial de moderación</p>
+      </div>
+      <button class="copy-button" data-command="/modlogs">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/configlogs</h3>
+        <p>Consulta historial de usuario</p>
+      </div>
+      <button class="copy-button" data-command="/configlogs">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/config setmute</h3>
+        <p>Define el rol para silenciar</p>
+      </div>
+      <button class="copy-button" data-command="/config setmute">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/confess set</h3>
+        <p>Configura canal de confesiones</p>
+      </div>
+      <button class="copy-button" data-command="/confess set">📋 Copiar</button>
+    </div>
+
+    <div class="tarjeta-comando">
+      <div class="comando-info">
+        <h3>/reportar</h3>
+        <p>Recibe denuncias de usuarios</p>
+      </div>
+      <button class="copy-button" data-command="/reportar">📋 Copiar</button>
+    </div>
+
+    <footer style="text-align:right; font-size:0.9em; color:#888; margin-top:30px;">
+      🔒 Comandos de moderación trazados por <strong>Mr.Abyssus</strong>
+    </footer>
   </details>
 </section>
 
-<!-- CSS -->
+<!-- CSS INSTITUCIONAL -->
 <style>
   .bloque-comandos {
     background-color: #1c1c1c;
@@ -559,11 +707,9 @@
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
   }
-
   .bloque-comandos:hover {
     box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
   }
-
   .categoria-comandos {
     font-size: 1.4em;
     font-weight: bold;
@@ -571,44 +717,35 @@
     cursor: pointer;
     transition: transform 0.2s ease, color 0.3s ease;
   }
-
   .categoria-comandos:hover {
     transform: scale(1.03);
     color: #ffffff;
   }
-</style>
-
-
-<!-- CSS -->
-<style>
-  .bloque-comandos {
-    background-color: #1c1c1c;
-    padding: 20px;
+  .tarjeta-comando {
+    background: linear-gradient(145deg, #1f1f1f, #292929);
+    padding: 16px 20px;
     border-radius: 10px;
-    transition: box-shadow 0.3s ease;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
-  .bloque-comandos:hover {
-    box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  .tarjeta-comando:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 14px rgba(255, 215, 0, 0.3);
   }
-
-  .categoria-comandos {
-    font-size: 1.4em;
-    font-weight: bold;
+  .comando-info h3 {
+    margin: 0;
+    font-size: 1.2em;
     color: #FFD700;
-    cursor: pointer;
-    transition: transform 0.2s ease, color 0.3s ease;
   }
-
-  .categoria-comandos:hover {
-    transform: scale(1.03);
-    color: #ffffff;
+  .comando-info p {
+    margin: 4px 0 0;
+    font-size: 0.95em;
+    color: #ccc;
   }
-</style>
-
-
-<!-- ESTILO DEL BOTÓN + ANIMACIÓN -->
-<style>
   .copy-button {
     background-color: #FFD700;
     color: #1c1c1c;
@@ -618,15 +755,12 @@
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-left: 10px;
   }
-
   .copy-button:hover {
     background-color: #fff176;
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
   }
-
   .copy-button.copied {
     background-color: #2ecc71;
     color: white;
@@ -634,7 +768,7 @@
   }
 </style>
 
-<!-- FUNCIÓN DE COPIADO CON EVENT LISTENER -->
+<!-- JS PARA COPIADO -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".copy-button").forEach(button => {
@@ -645,7 +779,7 @@
           button.innerText = '🕊️';
           button.classList.add('copied');
           setTimeout(() => {
-            button.innerText = 'Copiar';
+            button.innerText = '📋 Copiar';
             button.classList.remove('copied');
           }, 1500);
         });
