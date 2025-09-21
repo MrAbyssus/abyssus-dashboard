@@ -36,6 +36,7 @@ Gracias por la paciencia y por apoyar el desarrollo del bot. ¡Seguimos mejorand
 
 Solo Invitalo - [https://top.gg/bot/680897280433324081/invite](https://top.gg/bot/680897280433324081/invite)
 
+Dashboard - [📄 Dashboard  ](https://abyssusbot.info).
 ---
 
 ## 🔒 Aviso de Privacidad Legal
