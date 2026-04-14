@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- 🏠 Página principal -->
   <url>
-    <loc>https://abyssus-dashboard.netlify.app/</loc>
+    <loc>https://abyssus-dashboard.netlify.app</loc>
     <lastmod>2025-10-14</lastmod>
     <priority>1.0</priority>
   </url>
