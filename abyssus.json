@@ -1,7 +1,7 @@
 {
   "sistema": "Abyssus",
   "operador": "MrAbyssus",
-  "dominio": "abyssusbot.info",
+  "dominio": "https://abyssus-dashboard.netlify.app/",
   "verificado": true,
   "firma": "abyssus-verification=MrAbyssus",
   "version": "1.0",
