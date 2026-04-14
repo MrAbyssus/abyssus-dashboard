@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abyssusbot.info/sitemap.xml
+Sitemap: https://abyssus-dashboard.netlify.app/sitemap.xml
 
