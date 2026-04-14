@@ -34,8 +34,6 @@ Porque cada comando es una chispa de caos controlado
 
 Gracias por la paciencia y por apoyar el desarrollo del bot. ¡Seguimos mejorando! 💪
 
-Dashboard - [📄 Dashboard](https://abyssusbot.info)
-
 Solo Invitalo - [https://top.gg/bot/680897280433324081/invite](https://top.gg/bot/680897280433324081/invite)
 
 ---
@@ -49,7 +47,7 @@ Abyssus Bot ha sido diseñado con un principio fundamental: **la privacidad del 
 - No comparte información con terceros.
 - Toda la información se guarda localmente en el servidor.
 
-Para más detalles, consultá el archivo [📄 Aviso de Privacidad](https://abyssusbot.info/privacidad).
+Para más detalles, consultá el archivo [📄 Aviso de Privacidad Legal](https://raw.githubusercontent.com/MrAbyssus/abyssus-dashboard/refs/heads/main/Aviso%20de%20privacidad).
 
 
 ---

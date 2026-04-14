@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Abyssus Bot - Developers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00ffff">
+  <link rel="icon" type="image/png" href="img/favicon1.png">
+  <meta name="description" content="Bot en español con funciones de Economía, Moderación y más.">
+  <meta name="author" content="Mr.Abyssus">
+
+  <style>
+    :root {
+      --color-fondo: #0f0f0f;
+      --color-texto: #f1f1f1;
+      --color-acento: #00ffff;
+      --color-card: #1c1c1c;
+      --color-secundario: #bbbbbb;
+    }
+
+    body.light {
+      --color-fondo: #f8f8f8;
+      --color-texto: #1a1a1a;
+      --color-card: #ffffff;
+      --color-acento: #008b8b;
+      --color-secundario: #444;
+    }
+
+    body {
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.4s, color 0.4s;
+      margin: 0;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: var(--color-card);
+      border-bottom: 1px solid var(--color-acento);
+    }
+
+    .nav-link {
+      margin: 0 15px;
+      color: var(--color-acento);
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--color-acento);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover { color: var(--color-texto); }
+    .nav-link:hover::after { width: 100%; }
+
+    .header { text-align: center; margin-top: 40px; }
+
+    .logo-pulso {
+      width: 120px;
+      border-radius: 50%;
+      animation: pulso-logo 2.5s infinite;
+    }
+
+    @keyframes pulso-logo {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); filter: drop-shadow(0 0 10px var(--color-acento)); }
+      100% { transform: scale(1); }
+    }
+
+    .card {
+      background-color: var(--color-card);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+      z-index: 1;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px rgba(0,255,255,0.3);
+    }
+
+    .card.expanded {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.1);
+      width: 90%;
+      max-width: 600px;
+      z-index: 999;
+      animation: brillo-cian 2.5s infinite alternate;
+    }
+
+    @keyframes brillo-cian {
+      0% { box-shadow: 0 0 20px rgba(0,255,255,0.2), 0 0 40px rgba(0,255,255,0.1); border-color: var(--color-acento); }
+      100% { box-shadow: 0 0 40px rgba(0,255,255,0.6), 0 0 70px rgba(0,255,255,0.4); border-color: var(--color-acento); }
+    }
+
+    .card .extra {
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.6s ease, opacity 0.6s ease;
+    }
+
+    .card.expanded .extra {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 15px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 998;
+      display: none;
+      backdrop-filter: blur(3px);
+    }
+
+    .overlay.active { display: block; }
+
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--color-acento);
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      color: var(--color-acento);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px var(--color-acento);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px 20px;
+      background-color: var(--color-card);
+      border-top: 2px solid #FFD700;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255,215,0,0.1);
+    }
+
+    footer a {
+      color: #FFD700;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+<button id="theme-toggle" title="Cambiar tema">🌙</button>
+
+<nav>
+  <a href="index.html" class="nav-link">Inicio</a>
+  <a href="commands.html" class="nav-link">Comandos</a>
+  <a href="developers.html" class="nav-link">Developers</a>
+  <a href="changelog.html" class="nav-link">Changelog</a>
+</nav>
+
+<div class="header">
+  <img src="img/logo.jpg" alt="Logo Abyssus" class="logo-pulso">
+  <h1>Equipo técnico</h1>
+  <p style="color: var(--color-secundario);">Equipo encargado del desarrollo del bot.</p>
+</div>
+
+<section id="equipo" style="width: 90%; margin: 60px auto;">
+  <h2 style="text-align: center; font-size: 2em; color: var(--color-acento);">👥 Staff</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+
+    <div class="card">
+      <img src="img/arpan.jpg" alt="Mr.Abyssus" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
+      <h3 style="color: #FFD700;">👑 Mr.Abyssus</h3>
+      <p style="color: var(--color-secundario);">Desarrollador</p>
+      <div class="extra">
+        <p>Diseña, audita y firma cada bloque. Lidera la expansión y controla la identidad técnica.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img/hdr.jpg" alt="Hikendrasec" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
+      <h3 style="color: var(--color-acento);">🧪 Hikendrasec</h3>
+      <p style="color: var(--color-secundario);">Tester y Moderador</p>
+      <div class="extra">
+        <p>Realiza pruebas de módulos y comandos, evalúa la experiencia del usuario.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="color: #FFD700;">🔐 Ficha técnica</h3>
+      <p style="color: var(--color-secundario);">Blindaje y trazabilidad.</p>
+      <div class="extra">
+        <a href="changelog.html"><button style="padding:10px 20px;background:#FFD700;border:none;border-radius:6px;cursor:pointer;">📘 Ver changelog</button></a>
+        <a href="http://estado.abyssusbot.info:3000/status"><button style="padding:10px 20px;background:#00cc99;color:#fff;border:none;border-radius:6px;cursor:pointer;">📡 Ver status</button></a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 style="color: #00ff99;">📈 Expansión</h3>
+      <p style="color: var(--color-secundario);">Servidores activos:</p>
+      <p style="font-size: 1.4em; color: #00ff99;">Actualmente operando en <strong>652 servidores</strong></p>
+      <div class="extra">
+        <p>Meta proyectada: blindaje total en 1000 servidores antes de fin de ciclo.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="overlay"></div>
+
+<footer>
+  <p>© 2021–2025 <strong style="color:#FFD700;">Abyssus</strong>. Todos los derechos reservados.</p>
+  <p>
+    <a href="http://estado.abyssusbot.info:3000/status" target="_blank">📡 Estado en vivo</a> |
+    <a href="https://abyssusbot.info/privacidad" target="_blank">📄 Aviso de privacidad</a>
+  </p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  });
+  document.querySelectorAll('.card').forEach(el => observer.observe(el));
+
+  const overlay = document.querySelector('.overlay');
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      const expanded = card.classList.contains('expanded');
+      document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
+      overlay.classList.remove('active');
+      if (!expanded) { card.classList.add('expanded'); overlay.classList.add('active'); }
+    });
+  });
+  overlay.addEventListener('click', () => {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('expanded'));
+    overlay.classList.remove('active');
+  });
+
+  const themeBtn = document.getElementById('theme-toggle');
+  themeBtn.onclick = () => {
+    document.body.classList.toggle('light');
+    themeBtn.textContent = document.body.classList.contains('light') ? '☀️' : '🌙';
+  };
+</script>
+</body>
+</html>
