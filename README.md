@@ -54,7 +54,7 @@ La privacidad de los usuarios es una prioridad.
 * Los administradores mantienen el control sobre la configuración y registros generados dentro de sus servidores.
 
 📄 Política de Privacidad:
-https://mrabyssus.github.io/Abyssusbot/privacidad.html
+https://abyssusbot.site.je/privacidad.html?i=1
 
 ---
 
